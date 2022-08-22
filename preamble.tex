@@ -1,0 +1,128 @@
+% basics
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{pgffor}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows.meta,bending}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz-cd}
+
+\usepackage{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Doc Set UP
+
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancypagestyle{contentpage}{%
+	\lhead{\rightmark}
+	\cfoot{\thepage}
+}
+
+\definecolor{wikipediadarkblue}{rgb}{0.023, 0.270, 0.676}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=wikipediadarkblue,
+	urlcolor=wikipediadarkblue,
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Theorems
+
+
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em, innertopmargin=5pt, innerbottommargin=6pt}
+
+
+\declaretheoremstyle[
+  mdframed = {
+      linewidth = 0.5pt;
+  },
+  headfont=\normalfont\bfseries,
+  bodyfont=\normalfont,
+]{mystyle}
+
+\declaretheoremstyle[
+  mdframed = {
+      linewidth = 0.5pt,
+      rightline = false,
+      topline = false,
+      bottomline = false,
+  },
+  headfont=\normalfont\bfseries,
+  bodyfont=\normalfont,
+]{pfstyle}
+
+\declaretheoremstyle[
+  headfont=\normalfont\bfseries,
+  bodyfont=\normalfont,
+]{reg}
+
+
+\declaretheorem[style=mystyle, name=Theorem,within=section]{thm}
+\declaretheorem[style=mystyle, name = Theorem, sibling = thm]{theorem}
+\declaretheorem[style=mystyle, name = Definition, sibling = thm]{definition}
+\declaretheorem[style=mystyle, name = Proposition, sibling = thm]{proposition}
+\declaretheorem[style=mystyle, name = Lemma, sibling = thm]{lemma} 
+\declaretheorem[style=mystyle, name = Corollary, sibling = thm]{corollary}
+
+\declaretheorem[style = pfstyle, name = Proof, numbered = no]{pf}
+
+\declaretheorem[style =reg, name = Remark, sibling = thm]{remark}
+\declaretheorem[style = reg, name = Notation, sibling = thm]{notation}
+\declaretheorem[style = reg, name = Example, sibling = thm]{example}
+\declaretheorem[style = reg, name = Lemma, sibling = thm]{nblemma} 
+
+\declaretheorem[style = reg, name = Fact, sibling =thm]{fact}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Comands
+
+\newcommand{\mZ}{\mathbb{Z}}
+\newcommand{\mR}{\mathbb{R}}
+\newcommand{\mQ}{\mathbb{Q}}
+\newcommand{\mF}{\mathbb{F}}
+\newcommand{\mC}{\mathbb{C}}
+\newcommand{\mN}{\mathbb{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\ex}{\exists}
+\newcommand{\fa}{\forall}
+\newcommand{\from}{\leftarrow}
+\newcommand{\vspan}{\text{span}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\Endo}{\text{End}}
+\newcommand{\img}{\text{im}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\ifff}{\leftrightarrow}
+\newcommand{\vp}{\varphi}
+\newcommand{\ve}{\varepsilon}
+
+\newcommand{\rotaterelation}[1]{\rotatebox[origin=c]{-90}{$\mathstrut#1$}}
+
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cT}{\mathcal{T}}
+
+\newcommand{\tr}{\text{tr}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
