@@ -1,1 +1,35 @@
-a
+\documentclass[openany]{book}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper]{geometry}
+\geometry{left=2cm}
+\geometry{right=2cm}
+
+\usepackage{import}
+\input{../preamble.tex}
+
+\pagestyle{contentpage}
+
+\title{MATH 135: Introduction to the Theory of Sets}
+\author{Jad Damaj}
+\date{Fall 2022}
+\rhead{135: Set Theory}
+
+\begin{document}
+
+\maketitle
+
+
+\tableofcontents
+
+\newpage
+
+\chapter{TBD}
+
+\foreach \n in {25}
+{
+    \section{August \n} 
+    \input{Aug/Aug\n}
+}
+
+\end{document}

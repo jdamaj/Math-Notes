@@ -1,0 +1,35 @@
+\documentclass[openany]{book}
+\usepackage[utf8]{inputenc}
+
+\usepackage[a4paper]{geometry}
+\geometry{left=2cm}
+\geometry{right=2cm}
+
+\usepackage{import}
+\input{../preamble.tex}
+
+\pagestyle{contentpage}
+
+\title{MATH 142: Elementary Algebraic Topology}
+\author{Jad Damaj}
+\date{Fall 2022}
+\rhead{142: Algebraic Topology}
+
+\begin{document}
+
+\maketitle
+
+
+\tableofcontents
+
+\newpage
+
+\chapter{TBD}
+
+\foreach \n in {24}
+{
+    \section{August \n} 
+    \input{Aug/Aug\n}
+}
+
+\end{document}
