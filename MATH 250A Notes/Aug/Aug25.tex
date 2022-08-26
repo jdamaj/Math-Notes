@@ -1,0 +1,72 @@
+
+\subsection{Groups}
+
+Two ways to define groups
+\begin{itemize}
+    \item concrete: group = symmetries of an object $X$. Here a symmetry is a bijection $X \to X$ with inverse that preserves ``structure'' (topology, order, binary operation, $\ldots$)
+\end{itemize}
+
+\begin{example}
+    The rectangle has 4 symmetries. \\
+    The icossahedron has $20 \times 3$ symmetries since after fixing the first face there are 3 possible rotations. \\
+    Vector space $\bR^k$: $n \times n$ matrices with $\det \neq 0$, denoted $GL_n(K)$
+\end{example}
+
+\begin{itemize}
+    \item abstract definition: \\
+    \begin{definition}
+        A group is a set $G$ with a binary operation $G \times G \to G$ by $(a,b) \mapsto ab, a \times , a + b, \ldots$ with ''Inverse'' : $G \to G$ by $a \mapsto a^{-1}$ and ``Identity'': $1, 0, e, I, \ldots$ satsifying the axioms: \\
+        $1x = x1 = x$ \quad $x(x^{-1}) = (x^{-1})x = 1$ \quad $(xy)z = x(yz)$ 
+    \end{definition}
+\end{itemize}
+
+\noindent
+We can go from the concrete definition to the abstract one: the binary operation is composition, the identity is the trivial symmetry, inverses given y ``undoing' a symmetry. \\
+
+\noindent
+Is an abstract group the symmetries of something? 
+
+\begin{theorem}[Cayley's Theorem]
+    Any abstract group is the group of symmetries of some mathematical object. 
+\end{theorem}
+
+\noindent
+Recall group actions : 
+
+\begin{definition}
+    Given a group $G$, a set $S$, a (left) gtroup action is a map $G \times S \to S$ by $(g,s) \mapsto g(s), gs$ satisfying $g(h(s)) = gh(s)$, $1s=s$.
+\end{definition}
+
+\noindent 
+To prove Cayley's theorem we need to find : 
+\begin{enumerate}
+    \item a set $S$ acted on by $G$
+    \item structure on $S$ so that $G=$ all symmetries.
+\end{enumerate}
+
+\noindent
+What is $S$? \quad Take $S = G$. \\
+
+\noindent
+Need to define the action of $G on G$. There are 8 natural ways to do this. \\
+First 4, we defin4 $G \times S \to S$ by 
+\begin{itemize}
+    \item $g(s)=s$ \quad trivial action 
+    \item $g(s) = gs$ \quad group product 
+    \item Try $g(s)=sg$ \quad Fails since $G$ not necesarily commutative: $g(h(s)) = (sh)g \neq s(gh) = gh(s)$
+    \item $g(s) = sg^{-1}$ \quad works since $g(h(s)) = g(sh^{-1}) = sh^{-1}g^{-1} = s(gh)^{-1} = gh(s)$
+    \item $g(s) = gsg^{-1}$ \quad adjoint action 
+\end{itemize}
+
+\noindent 
+The above group action is known as a left group action, We define a right group action in a similar way : \\
+$S \times G \to S$ by$(s,g) \mapsti (s)g, s^g$ satisfying (sg)h = s(gh), $s1 = s$. \\
+
+\noindent
+We now define right group actions of $G$ on $G$: $S \times G \to G$ by 
+\begin{itemize}
+    \item $(s,g) \mapsto s$
+    \item $(s,g) \mapsto sg$
+    \item $(s,g) \mapsto g^{-1}s$
+    \item $(s,g) \mapsto g^{-1}sg$
+\end{itemize}
