@@ -60,7 +60,7 @@ First 4, we defin4 $G \times S \to S$ by
 
 \noindent 
 The above group action is known as a left group action, We define a right group action in a similar way : \\
-$S \times G \to S$ by$(s,g) \mapsti (s)g, s^g$ satisfying (sg)h = s(gh), $s1 = s$. \\
+$S \times G \to S$ by$(s,g) \mapsto (s)g, s^g$ satisfying (sg)h = s(gh), $s1 = s$. \\
 
 \noindent
 We now define right group actions of $G$ on $G$: $S \times G \to G$ by 
@@ -69,4 +69,136 @@ We now define right group actions of $G$ on $G$: $S \times G \to G$ by
     \item $(s,g) \mapsto sg$
     \item $(s,g) \mapsto g^{-1}s$
     \item $(s,g) \mapsto g^{-1}sg$
+\end{itemize}
+
+\noindent
+Now we have $S=G$, $S$=set acted on by $G$ using left action $g(s) = gs$ - left translation. So we have shown $G \subseteq$ symmetries of $S$. \\
+
+\noindent
+Want : $G=$symmetries of $S$ + ``structure''. Let structure on $S$= right action of $G$ on $S$. \\
+We now have 3 copies of G: 
+\begin{enumerate}
+    \item set $S=G$
+    \item $G$ acts on left on $S$ \quad ($G$ = symmetries of $S$)
+    \item $G$ acts o the right on $S$ \quad (Structure of $S$)
+\end{enumerate}
+Object $S$ = $S$ + right $G$ action \\
+
+\noindent
+What are the symmetries of this? \\
+Bijection $f : S \to S$ preserving the right $G$-action. eg. $f(sg) = f(s)g$ \\
+Need to check: 
+\begin{enumerate}
+    \item Left $G$-action of $G$ preserves the right $G$-action 
+    \item Anything that preserves the right $G$-action is given by left multiplication of an element of $G$
+\end{enumerate} 
+
+\noindent
+Check (1): For $g \in G$ need $(gs)h = g(sh)$ , follows by commutativity \\
+Note: left $G$-action does not preserve right $G$-action: $g(hs) \neq h(gs)$ in general \\
+
+\noindent
+Check (2): Suppose $f: S \to S$ preserves the right $G$-action, $f(sh) = f(s)h$ for all $h \in G$. Need to find $g \in G$ such that $f(s) = gs$. Take $s=1$, $f(1)=g1=g$ so $g=f(1)$. If $g = f(1)$, then $f(s)=gs$ since $gs = (f(1))s = f(1s) = f(s)$. \\
+So we have $G$ = symmetries of (Set $G$ + right $G$ action) 
+
+\begin{example}
+    $G$=symmetries of rectange (Insert Figure)
+\end{example}
+
+\noindent
+Cayley graph: Point for each $g \in G$ Draw a line from $g$ to $h$ with $gf=h$. \\
+
+\noindent
+Goal of Group theory
+\begin{enumerate}
+    \item Classify all groups 
+    \begin{itemize}
+        \item Hard but can do special cases: Groups of order 60, finite subgroups of rotations in $\bR^3$, all finite simple groups, symmetries of crystals 
+    \end{itemize}
+    \item Given a group $G$, classify all ways $G$ can act on something (called a representation of $G$)
+    \begin{itemize}
+        \item Permutation representation : $G$ acts on a set $S$
+        \item Linear representation : $G$ acts on a vector space 
+    \end{itemize}
+\end{enumerate}
+
+\begin{example}
+    Poncaire group = symmetries of space time \\
+    elementary particle: space of states = vector space acted on by $G$ = linear group of $G$
+\end{example}
+
+\subsection{Review of homomorphisms, isomorphims} 
+
+\begin{definition}
+    A homomorphism is a map $f : G \to H$ that preserves structure \\
+    eg. $f(gh)=f(g)f(h)$, $f(1)=1$, $f(g^{-1}) = f(g)^{-1}$ 
+\end{definition}
+Note: last two properties can be derived from the first. 
+
+\begin{example}
+    $\exp(x)=e^x$ : $(\bR, +) \to (\bR, \times)$ \\
+    $\exp(x+y)=\exp(x)\exp(y)$, $\exp(0)=1$, $\exp(-x)=\exp(x)^{-1}$
+\end{example}
+
+\begin{definition}
+    The kernel of a homomorphism $f$ is the set of elements with image the identity. 
+\end{definition}
+
+\begin{example}
+    $\bR \to $ rotation is the plane by $\theta \mapsto$ rotation by angle $\theta$. \\
+    nontrivial kernel : multiples of $2 \pi$. \\
+    We get the short exact sequence: $0 \to 2\pi\bZ \to \bR \to \text{rotations} \to 0$ 
+\end{example}
+
+\begin{definition}
+    A sequence of homomorphisms $A \to B \to C$ is exact if Image $A \to B$ = Kernel $B \to C$
+\end{definition}
+$0 \to A \to B$ means $A \to B$ is injective \\
+$A \to B \to 0$ means $A \to B$ is surjective 
+
+\begin{definition}
+    $f : A \to B$ is an isomorphim if it is a homomorphism with an inverse. We say $A,B$ are isomorphic. ``basically the same''
+\end{definition}
+
+\begin{example}
+    $2 \pi \bZ$ is isomorphic to $\bZ$.
+\end{example}
+
+\begin{example}
+    $\bZ/4\bZ$, integers mod 4 with addition: $\{0, 1, 2, 3\}$ and $(\bZ/5\bZ)^{\times}$, under multiplcation: $\{1, 2, 3, 4 \}$ are isomorphic. \\
+    We map $0 \to 1=2^0$, $1 \to 2 = 2^1$, $2 \to 4=2^2$, $3 \to 3= 2^3$    eg. $x \mapsto 2^x$
+\end{example}
+
+\subsection{Classify all finite groups up to isomorphim}
+
+\begin{definition}
+    The order of a group $G$ = number of elements in $G$
+\end{definition}
+
+\noindent
+\textbf{Order 1}: $e \times e = e$ \quad 1 group - trivial group
+
+\noindent 
+\textbf{Order 2}: 1 group - $e,f$ with $f^2=e$ $\cong \bZ/2\bZ$ 
+
+\noindent
+\textbf{Order $p$ for $p$ prime}: only one group $\bZ/p\bZ$ (integers modulo $p$)
+
+\begin{definition}
+    For $g \in G$ the order of $g$ is the smallest $ n \ge 1$ with $g^n=1$
+\end{definition}
+
+\begin{theorem}[Lagrange's Theorem]
+    If $g \in G$, the roder of $g$ divides the order of $G$. 
+\end{theorem}
+
+\begin{example}
+    Suppose $|G|=p$, ($p$ prime). Pick $g \in G$ with $g \neq e$. Order of $g$ divides $|G|=p$ so is either 1 or $p$. Can't be one since $g \neq e$. So elemenets of $G$ $1, g, \ldots, g^{p-1}$ are all distinct since $g^p=1$, $g^x \neq 1$ for $0 \le x < p$ and if $g^i = g^j, g^{i-j}=1$. Thus, these must be all elements of $G$. 
+\end{example}
+
+\noindent
+\textbf{Order 4}: 
+\begin{itemize}
+    \item Ex : $\bZ/4\bZ$, symmetries of rectangle, $(\bZ/5\bZ)^{\times}$, $(\bZ/8\bZ)^{\times}$, symmetries of (Insert Figure)
+    \item only 2 groups of order 4
 \end{itemize}
