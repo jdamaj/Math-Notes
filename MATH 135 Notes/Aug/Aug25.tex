@@ -1,0 +1,46 @@
+
+\subsection{Introduction}
+
+Foundations of Mathematics: language, axioms, formal proofs
+\begin{itemize}
+    \item We focus on the axioms in set theory 
+    \item We use ZFC (Zermelo-Fraenkel + Choice)
+    \item There is only one primitive notion : $\in$
+    \item Within the ZFC universe, everything is a set
+\end{itemize}
+
+\noindent 
+Course Outline: 
+\begin{itemize}
+    \item Basic axioms
+    \item Operations, relations, functions
+    \item $\bN, \bZ, \bQ, \bR$
+    \item carindals
+    \item AC
+    \item ordinals
+\end{itemize}
+
+\subsection{Basics}
+
+\textbf{Principle of Extensionality}: Two sets $A, B$ are the same $\ifff$ they have the same elements $\fa x (x \in A \ifff x \in B)$ 
+
+\begin{example}
+    ${2, 3, 5} = \{5, 2, 4\} = \{2, 5, 2, 3, 3, 2\}$
+\end{example}
+
+\begin{definition}
+    There is a set with no elements, denoted $\vn$
+\end{definition}
+
+\begin{itemize}
+    \item $\vn \neq \{ \vn \}$
+    \item $A \subseteq B$ : $A$ is a subset of $B$ $\ifff$ each element of $A$ is in $B$ (use $\subsetneq$ to denote proper subset)
+    \item $\{2\} \subseteq \{2, 3, 5\}$ but $\{2\} \not\in \{2, 3, 5\}$
+    \item Power set opertaion: $\cP(A) = \{ B \, | \, B \subseteq A\}$
+\end{itemize}
+
+\noindent 
+We can define a hierarchy: \\
+$V_0 = \vn$, $V_1 = \cP(\vn) = \{\vn\}$, $V_2 = \cP \cP (\vn) = \{\vn, \{ \vn \} \}$ \\
+$V_3 = \cP(V_2) = \{\vn, \{\vn\}, \{\{ \vn \}\}, \{ \vn, \{\vn\}\}\}$, $V_4, \ldots $ \\
+$V_{\omega} = \bigcup_{n \in \bN} V_n$, $\cP (V_{\omega})$, $\cP \cP (V_{\omega}), \ldots, V_{\omega + \omega}, \ldots, V_{\omega + \omega + \cdots}, \ldots, V_{\omega \times \omega}, \ldots, V_{\omega^{\omega}}$ 
