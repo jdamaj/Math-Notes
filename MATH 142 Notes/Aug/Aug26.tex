@@ -1,0 +1,64 @@
+
+\subsection{Continuity}
+
+Recall: Given $(X, d^X)$, $(Y, d^Y)$ and $f: X \to Y$, f is continuous at $x_0$ if for any open ball $B_1$ about $f(x_0)$ there is an open ball $B_2$ about $x_0$ such that if $x \in B_2$ then $f(x) \in B_1$, ie. $B_2 \subseteq f^{-1}(B_1)$
+
+\begin{definition}
+    Let $(X,d)$ be a metric space. Let $U \subseteq X$. We say that $U$ is open if for every $x \in U$ ther is an open ball $B$ about x such that $B \subseteq U$, ie. $U$ is a neighborhood of each point it contains. 
+\end{definition}
+
+\noindent
+We say $f: X \to Y$ is continuous if it is continuous at each point of $X$.
+
+\noindent
+Let $U$ be an open set in $Y$, $x \in X$ with $f(x) \in U$. For each ball $B_1$ in $U$ about $f(x)$, there is an open ball about $x$ $B_2 \subseteq X$ such that if $x' \in B_2$ then $f(x') \in B_1$, ie. $B_2 \subseteq f^{-1}(B_1) \subseteq f^{-1}(U)$ \\
+ie. if $x \in f^{-1}(U)$ then there is an open ball $B_2$ about $x$ with $B_2 \subseteq f^{-1}(U)$ \\
+ie. $f^{-1}(U)$ is open \\
+Conversely, if the preimage $f^{-1}(U)$ of every open set $U$ in $Y$ is open, then $f$ is continuous. This is because if $x_0 \in X$, $B_1$ an open ball about $f(x_0)$, then $f^{-1}(B_1)$ is open in $X$. $f(x_0) \in B_1$ so we have an open ball $B_2 \subseteq X$ about $x_0$ such that $B_2 \subseteq f^{-1}(B_1)$ so $f$ is continuous at $x_0$. \\
+Thus, $f : X \to Y$ is continuous exactly if for any open $U$ in $Y$, $f^{-1}(U)$ is open in $X$. 
+
+\subsection{Topology}
+
+Let $(X,d)$ be a metric space. Let $J$ be the collection of open subsets in $X$ of $d$. $J$ has the following properties: 
+\begin{enumerate}
+    \item $X \in J$, $\vn \in J$
+    \item an arbitrary, maybe infinite, union of open sets is open 
+    \item a finite intersection of open sets is open. 
+\end{enumerate}
+
+\begin{proof}[Proof of (3)]
+    If $U_1, \ldots, U_n$ are open sets and $x \in U_1 \cap \cdots, \cap U_n$ then there are $r_1, \ldots, r_n \in \bR$ such that $B(x, r_j) \subseteq U_j$ for $j=1, \ldots, j_n$. Let $r = \min \{ r_1, \ldots, r_n \}$, then $B(x, r) \subseteq U_j$ for each $j$ so $B(x,r)\subseteq U_1 \cap \cdots \cap U_n$. Thus, $U_1 \cap \cdot \cap U_n$ is open. 
+\end{proof}
+
+\noindent
+Note: This does not hold for infinite intersections, consider $\bigcap_{i \in \bN} B(x, \frac{1}{n}) = \{x\}$ in the plane. \\
+
+\noindent
+This motivates the following definition: 
+\begin{definition}
+    Let $X$ be a set. Bya  topology on $X$ we mean a collection, $\cT$, of subsets of $X$ (called the open sets of the topology) satisfuing \textbf{1}, \textbf{2}, and \textbf{3} above. 
+\end{definition}
+
+\begin{definition}
+    If $(X, \cT^X)$, $(Y, \cT^Y)$ are topological spaces, $f: X \to Y$ is continuous if for every $U \in \cT^Y$, $f^{-1}(U) \in \cT^X$
+\end{definition}
+
+\begin{example}
+    Given $X$, let $\cT_X$ be all subsets of $X$. This is called the discrete topology on $X$. 
+    \begin{itemize}
+        \item This topology can also be given by the metric $d(x,y)=1$ if $x \neq 1$
+    \end{itemize}
+\end{example}
+
+\begin{definition}
+    If $\cT_1, \cT_2$ are topologies on $X$, we say $\cT_1$ is bigger, or finer, than $\cT_2$ if $\cT_1 \supseteq \cT_2$.
+\end{definition}
+
+\begin{itemize}
+    \item the disrcete topology is the biggest topology on $X$.
+\end{itemize}
+
+\begin{example}
+    $\cT = \{X, \vn\}$, called the indiscrete topology on X. \\
+    Note: this topology can not be given by a metric if $X$ has 2 or more points. 
+\end{example}
