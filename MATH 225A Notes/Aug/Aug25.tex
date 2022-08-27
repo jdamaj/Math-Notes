@@ -1,2 +1,116 @@
 \subsection{Review}
 
+\begin{definition}
+    A language $\cL$ consists of $\{ \cC , \cR, \cF \}$ where $\cC$ is the set of constant symbols, $\cR$ is the set of relation symbols, $\cF$ is the set of function symbols, and and arity function $n : \cR \cup \cF \to \bN$. For $R \in \cR$, $n_R$ is the arity of $R$, for $f \in \cF$, $n_f$ is the number of inputs $f$ takes. 
+\end{definition}
+
+\begin{definition}
+    An $\cL$-structure consist of 
+    \begin{itemize}
+        \item a set $M$ called the domain 
+        \item an element $c^{\cM}$ for each $c \in \cC$
+        \item a subset $R^{\cM} \subseteq M^{n_R}$ for each $R \in \cR$
+        \item a function $f^{\cM}: M^{n_f} \to M$ for each $f \in \cF$ 
+    \end{itemize}
+    denoted $\cM = (M \, : \, \{c^{\cM} : c \in \cC\} , \{R^{\cM} : R \in \cR \} , \{f^{\cM} : f \in \cF\})$
+\end{definition}
+
+\begin{definition}
+    An $\cL$-embedding $\eta : \cM \to \cN$ is a one to one function $M \to N$ that preserves interpretation \\
+    eg. $\eta(c^{\cM}) = c^{\cN}$, $\eta(f^{\cM})(m_1, \ldots, m_{n_f}) = f^{\cN} (\eta(m_1), \ldots, \eta(m_{n_f}))$, \\
+     $(m_1, \ldots, m_{n_R}) \in R^{\cM} \iff (\eta(m_1), \ldots, \eta(m_n)) \in R^{\cN}$
+\end{definition}
+
+\begin{definition}
+    An $\cL$-isomorphim is an $\cL$-embedding that is onto. 
+\end{definition}
+
+\begin{definition}
+    $\cM$ is a substructure if $\cN$, written $\cM \subseteq \cN$ if: \\
+    $c^{\cM} = c^{\cN}$, $f^{\cM} = f^{\cN} \upharpoonright M^{n_f}$, $R^{\cM} = R^{\cN} \cap M^{n_R}$
+\end{definition}
+
+\noindent
+First Order language: 
+\begin{itemize}
+    \item Use symbols : 
+    \begin{itemize}
+        \item $\cL$
+        \item Logical symbols: connectives ($\wedge, \vee, \neg$) , quantifiers ($\fa$, $\ex$), equality (=), variables ($v_0, v_1, \ldots $) 
+        \item paranthesis and commas 
+    \end{itemize}
+    \item terms 
+    \begin{itemize}
+        \item $c$ : constants 
+        \item $v_i$ : variables 
+        \item $f(t_1, \ldots, t_{n_f})$ for terms $t_1, \ldots, t_{n_f}$
+    \end{itemize}
+    \item given an $\cL$-structure $\cM$, a term $t(v_0, \ldots, v_n)$, and $m_0, \ldots, m_n \in M$ we inductively define $t^{\cM}(m_0, \ldots, m_n)$
+    \item atomic formulas: $t_1 = t_2$ and $R(t_1, \ldots, t_{n_R})$
+    \item $\cL$-formulas: If $\phi and \psi$ are $\cL$-formulas, then so are: $\neg \phi$, $(\phi \wedge \psi)$, $(\phi \vee \psi)$, $\ex v \phi$, $\fa v \phi$
+\end{itemize}
+
+\begin{definition}
+    We say a variable $v$ occurs freely in $\psi$ when it is not in a quantifier $\fa v$ or $\ex v$ 
+    \begin{itemize}
+        \item an $\cL$-sentence is an $\cL$-formula with no free variables 
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    A theory is a set of $\cL$-sentences
+\end{definition}
+
+\begin{definition}
+    Given an $\cL$-formla $\psi(v_1, \ldots, v_k)$, $\cL$-structure $\cM$, $m_1, \ldots, m_k \in M$ we can define $\cM \models \phi(m_1, \ldots, m_k)$ inductively. We say $(m_1, \ldots, m_k)$ satisfies $\phi$ in $\cM$ or $\phi$ is true in $\cM, m_1, \ldots, m_k$.
+    \begin{itemize}
+        \item A theory $T$ is satisfiable if it has a model $\cM$, eg. $\cM$ such that $\cM \models \phi$ for $\phi \in T$
+    \end{itemize}
+\end{definition}
+
+\begin{proposition}
+    If $\cM \subseteq \cN$, $\phi(\overline{v})$ is quantifier free, $\overline{m} \in M$, then $\cM \models \phi(\overline{m}) \ifff \cN \models \phi(\overline{m})$.
+\end{proposition}
+
+\begin{definition}
+    $\cM$ is elementarily equivalent to $\cN$ if for all $\cL$-sentences $\phi$, $\cM \models \phi \ifff \cN \models \phi$, denoted $\cM \equiv \cN$
+\end{definition}
+
+\begin{itemize}
+    \item Th($\cM$), the full theory of $\cM$, is $\{ \phi \, \, \cL-\text{sentence } \, | \, \cM \models \phi \}$
+    \item $\cM \equiv \cN \iff \text{TH}(\cM) = \text{Th}(\cN)$
+    \item A class of $\cL$-structures $\mathcal{K}$ is elementary if there is a theory $T$ such that $\mathcal{K}$ is the class of all $\cM$ such that $\cM \models T$.
+\end{itemize}
+
+\noindent
+Logical implication: $T \models \phi$ if for every $\cM \models T$, $\cM \models \phi$ \\
+G{\"o}dels Completeness Theorem: $T \models \phi \ifff$ there is a formal proof for $T \vdash \phi$  
+
+\mbox{} \\
+\mbox{} \\
+\mbox{} \\
+
+\subsection{Definable Sets}
+
+\begin{definition}
+    $X \subseteq M^n$ is definable if there is an $\cL$-formula $\phi(v_1, \ldots, v_n, w_1, \ldots, w_m)$ and $b_1, \ldots, b_m \in M$ such that $\fa \overline{a}$, $\overline{a} \in X \ifff \cM \models \phi(\overline{a}, \overline{b})$ (definable over $\overline{b}$) 
+    \begin{itemize}
+        \item Given $A \subseteq M$, $X$ is definable over $A$, or $A$-definable, if it is definable over $\overline{b}$ for some $\overline{b} \in A$.
+    \end{itemize}
+\end{definition} 
+
+\begin{proposition}
+    Suppose $\mathcal{D} = (D_n : n \in \omega)$ is the smallest collection of subsets $D_n \subseteq \cP(M^n)$ such that 
+    \begin{itemize}
+        \item $M^n \in D_n$
+        \item $D_n$ is closed under union, intersection, complement, permutation
+        \item if $X \in D_{n+1}$, then $\pi(X) \in D_n$ where $\pi(m_1, \ldots, m_{n+1}) = (m_1, \ldots, m_n)$
+        \item $\{\overline{b}\} \in D_n$ for $\overline{b} \in M^n$
+        \item $R^{\cM} \in D_{n_R}$, graph$(f) \in D_{n_f +1}$
+        \item if $X \in D_n$, $M \times X \in D_{n+1}$
+        \item $\{(m_1, \ldots, m_n) \, : \, m_i - m_j\} \in D_n$ 
+    \end{itemize}
+    Then $X \subseteq \cM^n$ is definable $\ifff$ $X \in D_n$
+\end{proposition}
+
+
