@@ -102,7 +102,73 @@ Check (2): Suppose $f: S \to S$ preserves the right $G$-action, $f(sh) = f(s)h$ 
 So we have $G$ = symmetries of (Set $G$ + right $G$ action) 
 
 \begin{example}
-    $G$=symmetries of rectange (Insert Figure)
+    $G$=symmetries of rectange, set $S=G$
+    \[\begin{tikzpicture}
+        \draw[draw=black] (0,0) rectangle ++(1,0.5);
+        \node at (1.2, 0.25) {1};
+        
+        \draw[draw=black] (2,0) rectangle ++(1,0.5);
+        \draw[<->] (1.8, 0) -- (1.8, 0.5);
+        \draw[<->] (3.2, 0) -- (3.2, 0.5);
+        \node at (3.4, 0.25) {$a$};
+        
+        \draw[draw=black] (0,-1.2) rectangle ++(1,0.5);
+        \draw[<->] (0, -0.5) -- (1, -0.5);
+        \draw[<->] (0, -1.4) -- (1, -1.4);
+        \node at (1.2, -0.95) {$b$};
+        
+        \draw[draw=black] (2,-1.2) rectangle ++(1,0.5);
+        \draw[<->] (2.1, -1.1) -- (2.9, -0.8);
+        \draw[<->] (2.1, -0.8) -- (2.9, -1.1);
+        \node at (3.2, -0.95) {$c$};
+        
+        \node at (6,0) {\begin{tabular}{c c}
+         & \, \, \, \, 1 \, \,  $a$ \, \, $b$ \, \, $c$ \\
+         & \begin{tabular}{c}
+              1  \\ $a$ \\ $b$ \\ $c$
+         \end{tabular}
+         \begin{tabular}{|c c c c|}
+        \hline 
+         1 & $a$ & $b$ & $c$ \\
+         $a$ & 1 & $c$ & $b$ \\
+         $b$ & $c$ & 1 & $a$ \\
+         $c$ & $b$ & $a$ & 1 \\ \hline
+    \end{tabular} \\
+    \end{tabular} };
+    \end{tikzpicture}\]
+    We get the graph: 
+    \[ \begin{tikzpicture}
+        \filldraw [black] (1, 1) circle (2pt);
+        \filldraw [black] (1, -1) circle (2pt);
+        \filldraw [black] (-1, 1) circle (2pt);
+        \filldraw [black] (-1, -1) circle (2pt);
+        
+        \node (A) at (-1,1) {};
+        \node (B) at (1,1) {};
+        \node (C) at (1, -1) {};
+        \node (D) at (-1, -1) {};
+        
+        \draw[->, shorten >=2pt,shorten <=2pt] (A.south) to [out=240, in=120] (D.north);
+        \draw[<-, shorten >=2pt,shorten <=2pt] (A.south) to [out=300, in=60] (D.north);
+        \draw[->, shorten >=2pt,shorten <=2pt] (B.south) to [out=240, in=120] (C.north);
+        \draw[<-, shorten >=2pt,shorten <=2pt] (B.south) to [out=300, in=60] (C.north);
+        
+        \draw[->, shorten >=2pt,shorten <=2pt] (A.east) to [out=30, in=150] (B.west);
+        \draw[<-, shorten >=2pt,shorten <=2pt] (A.east) to [out=330, in=210] (B.west);
+        \draw[->, shorten >=2pt,shorten <=2pt] (D.east) to [out=30, in=150] (C.west);
+        \draw[<-, shorten >=2pt,shorten <=2pt] (D.east) to [out=330, in=210] (C.west);
+        
+        \draw[->, shorten >=2pt,shorten <=2pt] (A.east) to [out=330, in=120] (C.north);
+        \draw[<-, shorten >=2pt, shorten <=2pt] (A.south) [out=300, in=150] to (C.west);
+        \draw[->, shorten >=2pt,shorten <=2pt] (B.west) [out=210, in=60] to (D.north) ;
+        \draw[<-, shorten >=2pt,shorten <=2pt] (B.south) [out=240, in=30] to (D.east) ;
+        
+        \node at (-1,0) {$a$};
+        \node at (1,0) {$a$};
+        \node at (0, -1) {$b$};
+        \node at (0, 1) {$b$};
+        \node at (0,0) {$c$};
+    \end{tikzpicture}\]
 \end{example}
 
 \noindent
