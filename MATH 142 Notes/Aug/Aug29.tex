@@ -1,0 +1,51 @@
+
+\subsection{Bases and Subbases}
+
+Let $(X, \cT)$ be a topological space. 
+
+\begin{definition}
+    A subset $A$ of $X$ is said to be closed if $A'$ ($X-A$) is open. 
+\end{definition}
+
+\noindent
+Let $\cC$ be the collection of closed subsets 
+\begin{enumerate}
+    \item $X, \vn \in \cC$
+    \item any (maybe infinite) intersection of closed sets is closed
+    \item A finite union of closed sets is closed 
+\end{enumerate}
+
+\noindent 
+Let $X$ be a set, any (maybe infinite) intersection of topologies on $X$ is a topology on $X$. \\
+Thus, for any $\cS$, a subset of $X$, thete is a smallest topology that conatins $\cS$, namely the intersection of all topolgies that contain $\cS$. We sat that $\cS$ generates this topology. 
+
+\begin{definition}
+    If $\cS$ has the property that $\bigcup (U \in \cS) = X$, then $\cS$ is called a subbasis of the topology it generates. 
+\end{definition}
+
+\noindent
+Let $\cI^{\cS}$ be the collection of all finite intersection of elements of $\cS$, then the intersection of a finite number of elements of $\cI^{\cS}$ is in $\cI^{\cS}$. 
+
+\noindent
+Let $\cI$ be a collection of subsets of $X$ (union of elements of $\cI$ is $X$) with the property that the intersection of a finite number of elements of $\cI$ is in $\cI$. Then the collection, $\cT$, of arbitrary unions of elements of $\cI$ is a topology (the smallest topology containing $\cI$) \\
+Why is a finite intersection of elements of $\cT$ in $\cT$?  \\
+Suppose $\cO_1 = \bigcup_{\alpha}U_{\alpha}^1$, $\cO_2 = \bigcup_{\beta} U_{\beta}^2$ with $U_{\alpha}^1 , U_{\beta}^2 \in \cI$, then $\cO_1 \cap \cO_2 = (\bigcup U_{\alpha}^1) \cap (\bigcup U_{\beta}^2) = \bigcup_{\alpha, \beta} (U_{\alpha}^1 \cap U_{\beta}^2).$
+
+\begin{definition}
+    Given a topological space $(X, \cT)$, a base for it is a set of subsets, $\cB$, of $\cT$ , with the property that every element of $\cT$ is a (maybe infinite) union of elements of $\cB$. 
+\end{definition}
+
+\noindent
+If $\cS$ is a subbase for $\cT$, then $\cI^{\cS}$ is a base for $\cT$. \\
+Note: definition does not require $\cB$ to be closed under finite intersection 
+
+\noindent 
+$(X,d)$ is a metric space, let $\cB$ be the set of open balls. Then $\cB$ is a base for the metric topology but usually the intersection of two open balls is not an open ball. \\
+The intersection of finitely many elements of $\cB$ is the union of elements of $\cB$. \\
+
+\noindent
+Let $(X, \cT^X), (Y, \cT^Y)$ be topological spaces, and $\cS$ a subbase of $\cT^Y$. Let $f: X \to Y$, then $f$ is continuous if for every $U \in \cS$, $f^{-1}(U) \in \cT^X$. 
+
+\begin{example}
+    For $X = \bR$, $\cS = \{ (-\infty, a), (b, +\infty) \, : \, a, b\in \bQ\}$ generates the usual topology. 
+\end{example}
