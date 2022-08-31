@@ -1,0 +1,76 @@
+\subsection{Zermelo Fraenkel Axioms of Set Theory}
+
+Setting: in ZFC all objects are sets \\
+Language: contains vocabulary $(\in)$, logical symbols $(=, \wedge, \vee\, \ex, \fa, \neg)$, variables ($x, y, A, B$, etc.)
+
+\begin{axiom}[Extensionality Axiom]
+    Two sets are the same if they have the same elements \\
+    $\fa A , B(\fa x (x \in A \ifff x \in B) \to A = B)$
+\end{axiom}
+
+\begin{axiom}[Empty Set Axiom]
+    There is a set with no members, denoted $\vn$ \\
+    $\ex A \fa x (x \not\in A)$
+\end{axiom}
+
+\begin{axiom}[Pairing Axiom]
+    For any sets $u,v$ there is a est whose elements are $u$ and $v$, denoted $\{u, v\}$ \\
+    $\fa u, v \ex A \fa x (x \in A \ifff x = u \vee x = v)$
+\end{axiom}
+
+\begin{axiom}[Union Axiom (Preliminary Form)]
+    For any sets $a,b$ there is a set whose elements are elements of $a$ and elements of $b$, denoted $a \cup b$ \\
+    $\fa a, b \ex A \fa x (x \in A x \in u \vee x \in v)$
+\end{axiom}
+
+\begin{axiom}[Powerset Axiom]
+    Each set $A$, has a power set $\cP(A)$. \\
+    $\fa A \ex B \fa x(x \in B \iff x \subseteq A)$ \quad where $x \subseteq A$ stands for $\fa y (y \in x \to y \in A)$
+\end{axiom} 
+
+\begin{axiom}[Union Axiom]
+    For any set $A$, there is a set $\bigcup A$ whose members are members of the members of $A$. \\
+    $\fa A \ex B \fa x (x \in B \ifff \ex y \in A (x \in y))$
+\end{axiom}
+
+\noindent 
+Idea for the subset axiom: For any set $A$, there is a set $B$ whose memebrs are members of $A$ satisfying some property. \\
+eg. $B = \{ x\in A \, | \, x \text{ satisfies property } P \} \subseteq A$ 
+
+\begin{example}
+    $B = \{ n \in \bN \, | \, n \text{cannot be described in less that 20 words} \}$
+    \begin{itemize}
+        \item let $b$ be the smallest element in $B$, then $b$ is the smallest element that cannot be described in 20 words. 
+        \item Paradox : need to use formal language to express property $P$. 
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    Let $B = \{x \, | \, x \not\in x\}$ \\
+    Question: $B \in B$? $B \in B \ifff B \not\in B$: need to have property be contained in some larger set.
+\end{example}
+
+\noindent 
+We can now restate the axiom more formally: 
+
+\begin{axiom}[Subset Axiom (Scheme)]
+    For each formula $\phi(x)$, there is an axiom: \\ 
+    $\fa A \ex B \fa x (x \in B \ifff x \in A \wedge \phi(x))$ 
+\end{axiom}
+
+\begin{example}
+    Suppose there is a set of all sets $A$. Consider $B = \{x \in A \, | \, x \not \in x \}$. Then $B \in B \ifff B \not\in B$, contradiction. So there can be no such set $A$.
+\end{example}
+
+\noindent
+The language of 1rst order logic for ZFC: \\
+The following are formulas: 
+\begin{itemize}
+    \item $x = y$, $x \in y$ \quad atomic formulas 
+    \item $(\vp \wedge \psi), (\vp \vee \psi), \neg \vp$ \quad where $\vp, \psi$ are formulas 
+    \item $\ex v \vp, \fa x \vp$
+\end{itemize}
+
+\begin{example}
+    $\vp(v,w):= (\ex v (v \in x \wedge \neg v=w)) \to (\fa y (\neg y \in y))$ is a formula 
+\end{example}
