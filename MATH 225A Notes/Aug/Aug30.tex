@@ -1,0 +1,63 @@
+
+\subsection{Compactness Theorem}
+
+\begin{theorem}[Compactness]
+    If $T$ is finitely satisfiable, then $T$ has a model $\cM$. Furthermore, $|\cM| \le |\cL| + \aleph_0$ 
+\end{theorem}
+
+\begin{itemize}
+    \item $T$ is finitely satisfiable if every finite subset is satisfiable
+\end{itemize}
+
+\noindent
+Compactness II: if $T \models \phi$, then there is finite $T_0 \subset T$ such that $T_0 \models \phi$ \\
+$T \models \phi \ifff T \cup \{\neg \phi\}$ is not satisfiable \\
+
+\noindent 
+\textbf{Proposition 1}: If $T$ is finitely satisfiable, maximal, and has the witness property, then $T$ has a model $\cM$ with $|\cM| \le |\cL|$ \\
+
+\noindent
+\textbf{Proposition 2}: If $T$ is finitely satisfiable, then there is $\cL^* \supseteq \cL$ and an $\cL^*$-theory $T^* \supseteq T$ such that $T^*$ is finite;y satisfiable, maximal, and has the witness property. Further, $|\cL^*| \le |\cL| + \aleph_0$ 
+
+\begin{definition}
+    \begin{itemize}
+        \item $T$ is maximal if for any sentence $\phi$, either $\phi \in T$ or $\neg \phi \in T$
+        \item $T$ has the witness property if for all $\cL$-formulas $\phi(v)$ there is a constant $c_{\phi}$ such that  $\ex v \phi(v) \to \phi(c_{\phi}) \in T$ 
+    \end{itemize}
+\end{definition}
+
+\noindent
+\textbf{Lemma 1}: If $T$ is maximal and finitely satisfiable, if there is finite $\Delta \subseteq T$ such that $\Delta \models \phi$, then $\phi \in T$. 
+\begin{pf}
+    If $\phi \not\in T$, $\neg \phi \in T$. Since $\Delta \models \phi$, $\Delta \cup \{\neg\phi\}$ is not satisfiable, contradicting our assumption. 
+\end{pf}
+
+\noindent
+Henekin Construction: \\
+We want to define $\cM = (M, c^{\cM}, R^{\cM}, f^{\cM})$ 
+\begin{itemize}
+    \item Let $M = \cC/\sim$ where $\cC$ is the set of constant symbols and $\sim$ is the equivalence relation defined by $c_1 \sim c_2 \ifff c_1 = c_2 \in T$ 
+    \item $R^{\cM} \subseteq M^{n_R}$ by $(c_1^*, \ldots, c_{n_R}^*) \in R^{\cM} \ifff R(c_1, \ldots, c_n) \in T$ where $c^*$ equivalence class of $c$ \\
+    This is well defined since if we have $c_1' \sim c_1 , \ldots, c_n' \sim c_n, R(c_1, \ldots, c_n) \in T$ then $R(c_1', \ldots, c_n') \in T$
+    \item $f^{\cM}$ by $f^{\cM}(c_1^*, \ldots, c_n^*)=d^* \ifff f(c_1, \ldots, c_n)=d \in T$. SUch a $d^*$ exists since $T$ has the witness property: $\ex v f(c_1, \ldots, c_n)=v \to f(c_1, \ldots, c_n) \in T$
+    \item $c^{\cM}:=c^*$
+\end{itemize}
+
+\noindent
+Claim: For every formula $\phi(v_1, \ldots, v_k)$ and constant symbols $c_1, \ldots, c_k$, $\cM \models \phi(c_1^*, \ldots, c_n^*) \ifff \phi(c_1, \ldots, c_n) \in T$ \\
+This implies $\cM \models T$ 
+\begin{pf}
+    By induction on formulas $\phi(v_1, \ldots, v_l)$
+    \begin{itemize}
+        \item atomic formulas: $\phi(v_1, \ldots, v_k)$ is $t_1(v_1, \ldots, v_k)=t_2(v_1, \ldots, v_k)$ \\
+        Subclaim: $t^{\cM}(c_1^*, \ldots, c_n^*) = c^* \ifff t(c_1 \ldots, c_n)=c \in T$ \\
+        Proved by induction on terms 
+        \item $\phi(v_1, \ldots, v_k)$ is $R(v_1, \ldots, v_k)$. Follows by deifnition of $R^{\cM}$
+        \item Suppose $\phi(\overline{v})$ is $\psi_1 (\overline{v}) \wedge \psi_2(\overline{v})$, then \\
+        $\cM \models \psi_1 \wedge \psi_2 (\overline{v}) \ifff \cM \models \psi_1(\overline{v}) \text{ and } \cM \models \psi_2(\overline{v}) \stackrel{\text{IH}}{\ifff}  \psi_1(\overline{c}) \in T \text{ and } \psi_2(\overline{c}) \in T \stackrel{\text{lemma}}{\ifff} \psi_1 \wedge \psi_2 (\overline{c}) \in T$
+        \item Suppose $\phi(\overline{v})$ is $\neg \psi(\overline{v})$, then \\
+        $\cM \models \neg \psi(\overline{c}^*) \ifff \cM \not\models \psi(\overline{c}^*) \stackrel{\text{IH}}{\ifff} \vp(\overline{c}) \not \in T \stackrel{\text{maximality}}{\ifff} \neg \psi(\overline(c)) \in T$
+        \item Suppose $phi(\overline{v})$ is $\ex w \vp(\overline{v}, w)$, then \\
+        $\cM \models \ex w \vp(\overline{c}^*, w) \ifff \ex d \in M \text{ such that } \cM \models \phi(\overline{c}^*, d) \ifff \ex d \in M \text{ such that } \vp(\overline{c}, d) \in T \stackrel{\text{witness principle}}{\ifff} \ex w \vp(\overline{c} w) \in T$
+    \end{itemize}
+\end{pf}
