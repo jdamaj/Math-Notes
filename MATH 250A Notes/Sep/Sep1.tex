@@ -1,0 +1,159 @@
+
+\subsection{Semidirect Products}
+
+\textbf{Groups of Order 6}: \\
+2 subgroups $A,B$ of order 2,3 \quad $|A| \cdot |B| = |G|$, $A \cap B = \{e\}$ \\
+
+\noindent 
+In general, suppose that for a group $G$, subgroups $A, B$
+\begin{enumerate}
+    \item $|G| = |A| \cdot |B|$
+    \item $A \cap B = \{e\}$
+\end{enumerate}
+Want to reconstruct $G$ from $A$, $B$ \\
+$G = AB = \{ab \, | \, a \in A, b \in B \}$, \# pairs $(a,b) = |G|$ \\
+If $a_1b_1 = a_2b_2$, $a_2^{-1}a_1 = b_2b_1^{-1} \in A \cap B = \{e\}$ so $a_1 = a_2, b_1 = b_2$ \\
+Every element of $G$ can be written uniquely as a product of $a \in A$, $b \in B$ \\
+
+\noindent
+Problem: What is $a_1b_1 \cdot a_2b_2$? \quad $=a_3b_3$ \\
+Easy case: $ab=ba$ for all $a \in A$, $b \in B$ \quad $(a_1b_1)(a_2b_2) = (a_1a_2)(b_1b_2)$ \\
+We can view $G$ as the product of $A,B \to G = A \times B$ \\
+Slightly less easy case: $A$ is a normal subgroup of $G$. We get an action of the group $B$ on the group $A$. \\
+Define the action of $B$ on $A$ by $b(a)=bab^{-1} \in A$ ($A$ normal) \\
+This determines the product on $G$. $(a_1b_1)(a_2b_2)=a_1(b_1a_2b^{-1})b_1b_2 = \underbrace{a_1b_1(a_2)}_{\in A} \times \underbrace{b_1b_2}_{\in B}$. \\
+Suppose given groups $A,B$ action of $V$ on $A$. We construct the semidirect product of $A$ and $B$, $A \rtimes B$ on the set $A \times B$ with the product given by : $(a_1, b_1)(a_2, b_2) = (a_1b_1(a_2), b_1b_2)$. We can check this is a group. \\
+
+\noindent
+\textbf{Order 6} \\
+So $\bZ/3\bZ \rtimes \bZ/2\bZ$ defined by the action of $\bZ/2\bZ$ on $\bZ/3\bZ$. \\
+Sym$(\bZ/3\bZ)$: either $f(1)=1$ or $f(1)=2$ so only two possible homomorphisms $\bZ/2\bZ \to \text{Sym}(\bZ/3\bZ) \cong \bZ/2\bZ$: identity and trivial homomorphisms \\
+So groups of order 6: 
+\begin{itemize}
+    \item $\bZ/3\bZ \times \bZ/2\bZ$ \quad trivial action $\cong \bZ/6\bZ$ 
+    \item $\bZ/3\bZ \rtimes \bZ/2\bZ$ \quad nontrivial action $\cong S_3$ 
+\end{itemize} 
+
+\subsection{Cauchy's Theorem}
+
+\begin{theorem}[Cauchy's Theorem]
+    If $p \, | \, |G|$ ($p$ prime), $G$ has an element of order $p$. 
+\end{theorem}
+
+\begin{pf}
+    We use induction on the size of the group: can assume true for any peroper subgroups and quotient groups \\
+    $G$ abelian: pick $g \in G$. If $p | \, |g|$, $g$ has order $pn$ so $g^n$ has order $p$. \\
+    If $p \not| \, |g|$, look at $G/\langle g \rangle$. $\langle g \rangle$ normal since $G$ is ableian, $p$ divides $|G/\langle g \rangle|$. Pick $h \in G/\langle g \rangle$, order divisible by $p$. Lift $h_1$ in $G$. Then $p | \, |h_1$. 
+\end{pf} 
+
+
+\noindent
+Standard Error: Can't always lift $h$ to element of the same order \\
+$G \cong \bZ/4\bZ$, $g = 2$. $G/\langle g \rangle$ has order 2 so take nontrivial element. Its lift does not have order 2 in $G$
+
+\begin{definition}
+    The center of $G$ is the elements that commute with all elements of $G$.
+\end{definition}
+
+\begin{lemma}
+    Suppose $G$ is nonotrivial, all proper subgroups have index divisible by $p$. Then the center of $G$ is divisible by $p$.
+\end{lemma} 
+
+\begin{pf}
+    Look at left action of $G$ on itself by conjugation. 
+    $G$ = union of orbuts where $a,b$ in the same orbit if there is some $g$ such that $g(a)=b$. $|G| = \sum$(size of orbits) \\
+    Size of orbit = $|G|$/subgroup of elements fixing a point. Either 1 or divisble by $p$ so \\
+    $G = \underbrace{1 + 1  +1}_{\text{size }1} + \cdots + \underbrace{pn_1 + pn_2}_{\text{size }>1} + \cdots$. Since $G$ divisible by $p$ \# orbits with one element is. Theorem follows since Center of $G$ = elements with orbit of size 1.  
+\end{pf}
+
+\begin{pf}[Cauchy's Theorem (Cont)]
+    Case 1: Some proper subgorup has order dvisible by $p$. \\
+    Such a subgroup has an element of order divisble by $p$ by induction. \\
+    Casse 2: All proper subgroups have index divisible by $p$. By lemma, center of $G$ has order divisble by $p$ \\
+    Center of $G$ is abelian so it has an element of order $p$. 
+\end{pf} 
+
+\noindent
+\textbf{Order 7}: $\bZ/7\bZ$ \\
+
+\noindent
+\textbf{Order 8}: Obvious examples: Producst $\bZ/2\bZ \times \bZ/2\bZ \times \bZ/2\bZ$, $\bZ/4\bZ \times \bZ/2\bZ$ \\
+$\bZ/8\bZ$, symmetries of a square $(D_8)$ - dihedral group.\\
+Orders of elements: $1, 2, 4, 8$ 
+\begin{itemize}
+    \item If element has order 8, group is cylic 
+    \item If all elements have order 1 or 2, group is vector field over $\bF^2$ so is $(\bZ/2\bZ)^2$ 
+\end{itemize}
+So can assume $G$ has an element $a$, of order 4. $a^4=1$. Subgroup $A = \{1,a, a^2, a^3\}$ has index 2 so is normal. Quotient group has order 2 so $\cong \bZ/2\bZ$ \\
+We have an exact sequence $1 \to \bZ/4\bZ \to G \to \bZ/2\bZ \to 1$ \\
+
+\noindent
+Problem: Given $1 \to A \to G \to B \to 1$ How to construct $G$ form $A,B$? \\
+Possibilities: $G = A \times B$, or $A \rtimes B$, not always the case: 
+\begin{itemize}
+    \item $1 \to \bZ/2\bZ \to \bZ/4\bZ \to \bZ/2\bZ \to 1$ \quad not a semidirect product 
+    \item $1 \to \bZ/3\bZ \to S_3 \to \bZ/2\bZ \to 1$ \quad $S_3 = \bZ/3\bZ \rtimes \bZ/2\bZ$ 
+\end{itemize}
+We get an action of $B$ on $A$ by conjugation so considering $1 \to \bZ/4\bZ \to G \to \bZ/2\bZ \to 1$ we can take the nontrivial element $b$ of $\bZ/2\bZ$. Cant say $b^2=1$, but $b^2 \in A$. Also $B$ acts on $A$ by conjugation. \\
+So we have $\bZ/4\bZ = \{1. a, a^2,a^3\}$ $a \mapsto bab^{-1}$: $a \mapsto a$ or $a \mapsto a^{-1}$ \\
+Possibilities: \\
+\begin{tabular}{c c c}
+    & $bab^{-1} = a$ \quad \quad \quad \quad $bab^{-1}=a^{-1}$ \\
+    \begin{tabular}{c} $b^2=1$ \\ $b^2=a$ $b^2=a^3$ \\ $b^2=a^2$ \end{tabular} & 
+    \begin{tabular}{|c|c|}
+    \hline 
+         $\bZ/4\bZ \times \bZ/2\bZ$ & $D_8$ \\ \hline
+         $\bZ/8\bZ$ $(a=1, b=2)$ & Impossible \\ \hline
+         $\bZ/4\bZ \times \bZ/2\bZ$ & Quaternions \\ \hline 
+    \end{tabular} & 
+    \begin{tabular}{c} Semidirect Products \\ $a=b^2$, $ab=ba \to a^2=1$ \\ \end{tabular}
+\end{tabular} \\ 
+
+\noindent
+Quaternion group: generated by $a,b$ with $a^4=1$, $b^2=a^2$, $bab^{-1}=a^{-1}$ \\
+Does it exst? \quad Yes: have be viewed in $M_2(\bC)$- $a = \begin{pmatrix}i & \\ & -1\end{pmatrix}$, $b = \begin{pmatrix}0 & 1 \\ -1 & 0\end{pmatrix}$ \\
+Usually denote elements: $I = \begin{pmatrix}i & 0 \\ 0 & -1\end{pmatrix}$, $J = \begin{pmatrix}0 & -1 \\ -1 & 0\end{pmatrix}$, $K = IJ= \begin{pmatrix}0 & i\\ i& 0\end{pmatrix}$ \\
+Quaternions $Q_8 = \{i, I, J, J, -1, -I, -J, -K\}$ satisfying $ I^2=j^2=K^2 =1$, $IJ = K$, $JK=1$, $KI=J$ \\
+Hamilton's Quaternions($H$) = all numbers $a + bi + cj + dk$ $a,b,c,d$ real \\
+Nonzero elements of $H$ form a gorup. \quad Problem: Show inverses exist. \\
+$(a+bi+cj+dk)(a-bi-cj-dk) = a^2 + b^2 + c^ + d^2 >0 $ so \\
+$(a+bI+cj+dk)^{-1} = \frac{a-bi-cj-dk}{a^2+b^2+c^2+d^2}$ \\
+Can also look at $S^3 \subset H = \{a + bi +cj+dk \, | \, a^2+b^2+c^2=d^2=1\}$ \\
+For $z = a+bi+cj+dK$, $\overline{z}=a-bi-cj-dk$ let $z\overline{z} = N(z)$ \\
+We see $N(z_1z_2)=N(z_1)N(z_2)$ so if $N(z)=1$ closed under $\times$ so is a group. \\
+
+\noindent
+Only spheres that are a group are $S^0, S^1, S^3$. Elements of $\bR, \bC, H$ with absolute value 1. \\
+
+\noindent
+Note: $Q_8 \subseteq S^3$ 
+
+\subsection{Burnside's Lemma} 
+
+Problem: How many ways to arrange 8 rooks on a chess board so that no 2 attack each other? \\
+8 ways for first row, 7 for second, \ldots, so $8! = 40320$ total \\
+Suppose we want to count them up to symmetry: 
+\begin{itemize}
+    \item For $3 \times 3$: (Insert Figure) \\
+    can only have 2
+\end{itemize}
+Approximate number = $\frac{\text{total \# of elements}}{\text{order of group}} = \frac{8!}{8} = 7!=5050$ \\
+
+\noindent
+General problem: Suppose we have a group $G$ acting on a set $S$. How many orbits? $\ge \frac{|S|}{|G|}$ \\
+Answer: 
+
+\begin{lemma}[Burnside's Lemma]
+    \# of orbits = average number of fixed points of $g \in G$, eg. $s \in S$ with $g(s)=s$    
+\end{lemma}
+
+\begin{pf}
+    Count number of pairs $(g,s) \in G \times S$ with $g(s)=s$ in 2 ways: 
+    \begin{enumerate}
+        \item Sum over $G$: $\sum_{g \in G}$ (\# fixed by $g$) 
+        \item Sum over $S$: Each orbit contributes (size of orbit) $\times$ (\# of elements fixing a point) = $|G|$ \\
+        so sum = $|G| \times $ \# of orbits
+    \end{enumerate}
+    So \# of orbits = $\frac{1}{|G|} \sum_{g}$\# fixed points = avg \# fixed points 
+\end{pf}
+
