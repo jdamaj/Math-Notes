@@ -1,0 +1,66 @@
+
+\subsection{Relations and Functions}
+
+Ordered Pair: $\langle a,b \rangle = \langle c, d \rangle \ifff a=c, b=d$ 
+
+\begin{definition}
+    $\langle a,b \rangle = \{ \{a\}, \{a, b\} \}$ 
+\end{definition}
+
+\noindent
+Cartesian product of $A$ and $B$, denoted $A \times B = \{ \langle x , y \rangle \, x \in A, y \in B\}$ \\
+Using the subset axiom $A \times B = \{z \in \cP \cP (A \cup B) \, | \, \ex x \in A \ex y \in B z = \langle x , y \rangle\}$ \\
+Observation: $\langle x , y \rangle \in \cP \cP (C) $ for $x, y \in C$ \\
+$\{x\}, \{x, y\} \in \cP(C)$ so $\{ \{x\}, \{ x,y\}\} \subseteq \cP(C)$ so $\{ \{x\}, \{ x,y\}\} \in \cP \cP(C)$ 
+
+\begin{definition}
+    A binary relation is a set $R$ whose elements are ordered pairs. 
+\end{definition}
+
+\noindent
+If $R \subset A \times B$ then $R$ is a relation from $A \to B$. 
+
+\begin{definition}
+    Given a relation $R$, dom $R = \{x \in \bigcup \bigcup R \, | \, \ex y \langle x , y \rangle \in R\}$,\\ range $R = \{y \in \bigcup \bigcup R \, | \, \ex x \langle x , y \rangle \in R \} $, field $(R) =$ dom$(R) \cup $range$(R)$
+\end{definition}
+
+\begin{example}
+    $R = \{ \langle a , b \rangle, \langle c, d \rangle, \langle e, f \rangle \} = \{ \{ \{a\}, \{a, b\} \}, \{ \{c\}, \{c, d\} \}, \{ \{e\}, \{e, f\} \} \}$ \\
+    $\bigcup R = \{\{a\}, \{a,b\}, \{c\}, \{c, d\}, \{e\}, \{e, f\}\}$ \\
+    $\bigcup \bigcup R = \{a, b, c, d, e, f\}$
+\end{example}
+
+\noindent
+$n$-ary relations: define $n$-tuple by $\langle a, b, c \rangle = \langle \langle a, b, \rangle , c \rangle$ etc. 
+
+\begin{definition}
+    A function is a relation $F$ such that $\fa x, y, z$ $\langle x , y \rangle \in F$ and $\langle x , z \rangle \in F$ $\to y = z$ 
+\end{definition}
+
+\noindent
+$\fa x \in $dom $(F)$ there is $y$ such that $\langle x , y \rangle \in F$. 
+If $A = \text{dom}(F)$, $B \supseteq \text{range}(F)$ then $F$ is said to a funtion from $A$ to $B$, $f : A \to B$ \\
+We say that $f:A \to B$ is onto if $B = \text{range}(F)$ 
+
+\begin{definition}
+    $F$ is injective if $\fa x, y, z$ $\langle x,z \rangle \in F \wedge \langle y, z \rangle in F \to x =y$. 
+\end{definition}
+
+\begin{definition}
+    For a set $A$, relations $F, G$ 
+    \begin{enumerate}[label = (\alph*)]
+        \item inverse $F^{-1} = \{\langle y , x \rangle \, | \, \langle x, y \rangle \in F \}$ 
+        \item composition: $G \circ F = \{ \langle x , z \rangle \, | \, \ex y \langle x, y \rangle \in F, \langle y , z \rangle \in G \}$
+        \item restriction: $F \upharpoonright_A - \{\langle x, y \rangle \in F \, | \, x \in A \}$ 
+        \item image of $A$ under $F$, $F \llbracket A \rrbracket = \{ y \, | \, \ex x \in A \langle x , y \rangle \in F\} = \text{range} (F \upharpoonright_A)$
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    If $F$ is a function, $F^{-1}$ may not be a function. $F^{-1}$ is a function $\ifff$ $F$ is one to one. 
+\end{example}
+
+\begin{example}
+    $F^{-1} \circ F = \{ \langle x , x \rangle \, | \, x \in \text{dom}(F) \}$ if $F$ is one to one \\
+    More generally, $F^{-1} \circ F = \{ \langle x , z \rangle \, | \, \ex y  \in \text{range } F \langle x , y \rangle, \langle z , y \rangle \in F \}$. 
+\end{example}
