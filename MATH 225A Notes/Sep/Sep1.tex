@@ -1,0 +1,52 @@
+
+\subsection{Compactness} 
+
+Proof of Compactness continued: \\
+We now prove proposition 2
+
+\noindent 
+\textbf{Lemma 1}: If $T$ is finitely satisfiable then there is $\cL^* \supset \cL$, $T^* \supset T$ such that $T^*$ has the witness property and is finitely satisfiable
+
+\begin{pf}
+    For each $\cL$-formula define a new constant symbol $c_{\phi}$. Let $\cL_1 = \cL \cup \{c_{\phi} \, : \, \phi(v) \, \cL-\text{formula} \}$, $T_1 = T \cup \{\ex v \phi(v) \to \phi(c_{\phi}) \, : \, \phi(v) \, \cL-\text{formula} \}$. \\
+    Claim: $T_1$ is finitely satisfiable. \\
+    Take $\Delta \subseteq T_1$ finite. $\Delta = T' \cup \{\ex v \phi_i(v) \to c_{\phi_i} \, : \, i = 1, \ldots, k\}$ for finite $T'$ in $T$. We make an $\cL_1$-structure $\cM_1$ that satisfies $\Delta$. Take $\cM \models T'$, $\cM$ $\cL$-structure. Make $\cM$ an $\cL_1$-structure by defining $c^{\cM_1}_{\phi}$ for each $c_{\phi}$. If $\cM \models \ex v \phi(v)$ let $c^{\cM_1}$ be such a $v$ otherwise let $c^{\cM_1}$ be anything. \\
+    We repeat this process, defining $\cL_{n+1}$ from $\cL_{n}$ similarly. \\
+    We have $\cL \subseteq \cL_1 \subseteq \cL_2 \subseteq \cL_3 \subseteq \cdots$, $T \subseteq T_1 \subseteq T_2 \subseteq T_3 \subseteq \cdots$ such that each $T_i$ is finitely satisfiable and for $\phi(v)$ an $\cL_{i-1}$-formula, there is $c_{\phi}$ in $\cL_i$ such that $\ex v \phi(v) \to \phi(c_{\phi}) \in T_i$. \\
+    Let $\cL^* = \bigcup_{n \in \omega} \cL_n$, $T^* = \bigcup_{n \in \omega} T_n$. We see $T^*$ has the witness property. \\
+    Sub-claim: If $T_0 \subset T_1 \subset T_2 \subset \cdots$ all finitely satisfiable, then $U_{n \in \omega}T_n$ is finitely satisfiable. 
+\end{pf}
+
+\noindent
+\textbf{Lemma 2}: If $T$ is finitely satisfiable and $\phi$ a sentence, one of $T \cup \{\phi \}$ or $T \cup \{\neg \phi\}$ is finitely satisfiable. 
+
+\begin{pf}
+    Assume that both $T \cup \{\phi\}$ and $T \cup \{ \neg \phi \}$ are not finitely satisfiable. Then there are $T_0, T_1 \subseteq T$ such that $T_0 \cup \{ \phi\}$ and $T_1 \cup \{\neg \phi\}$ are not satisfiable. Let $\cM \models T_0 \cup T_1$, then $\cM \models \phi$ or $\cM \models \neg \phi$ so $T_0 \cup \{\phi\}$ or $T_1 \cup \{\neg \phi\}$ is satisfiable, contradicting our assumption. 
+\end{pf}
+
+\noindent
+Zorn's Lemma: Let $\cA$ be a collection of sets such that for any chain $\cC \in \cA$. $\bigcup \cC \in \cA$ where $\cC$ is a chain if for $A, B \in \cC$ either $A \subseteq B$ or $B \subseteq A$, then $\cA$ has a maximal element, eg. $A \in \cA$ such that there is not $B \in \cA$ with $A \subsetneq B$. \\
+
+\noindent 
+\textbf{Lemma}: For every $T$, finitely satisfiable, there is $T' \supseteq T$ that is maximal and finitely satisfiable. 
+
+\begin{pf}
+    Let $\cA = \{S$ $\cL$-theory | $S \supseteq T$, $S$ finitely satisfiable $\}$. Can apply zorns lemma since for any $\cC \subseteq A$, $\bigcup \cC \in \cA$ so we have a maximal $S$. 
+\end{pf}
+
+\begin{example}
+    Let $\cL = \{ \cdot, e\}$ be the language of groups. In a group $G$, $g \in G$, ord$g$ = least $n$ such that $\overbrace{g \cdots g}^{n \text{ times}} = e$, if it exists. \\
+    Observation: If $T$ is an $\cL$-theory extending the axioms of groups, $\phi(v)$ such that for every $n$ there is $G_n \models T$, $g_n \in G_n$ of order greater than $n$ such that $G_n \models \phi(g_n)$. Then there is $G \models T$ and $g \in G$, ord($g$) = $\infty$ such that $G \models \phi(g)$. \\
+    \begin{pf}
+        Let $\cL' = \{ \cdot, e, c\}$. Let $T^* = T \cup \phi(c) \cup \{\psi_n\}$ where $\psi_n$ is $\underbrace{c \cdot c}_{n \text{ times}} \neq e$. $T^*$ finitely satisfiable so follows by compactness.
+    \end{pf}
+    This tells us that there is not sentence that axiomatizes when an element is torsion. 
+\end{example}
+
+\begin{lemma}
+    Let $\kappa$ be a carindal $\kappa \ge | \cL|$. Let $T$ be a satisfiable theory such that $\fa n \in \bN$, there is $\cM \models T$ such that $|\cM| > n$. Then $T$ has a model of size $\kappa$.
+\end{lemma}
+
+\begin{pf}
+    Extend the language by adding $\kappa$ may new constant symbols $c_i$ for $i \in \kappa$. $T^* = T \cup \{c_i \neq c_j \, | \, i \neq j\}$. If $\cM \models T^*$, $|\cM| \ge \kappa$. $T^*$ is finitely satisfiable so by compactness $T^*$ has a model $\cM$, $|\cM| \le |\cL^*| + \aleph_0 = \kappa$. Thus, $|M| = \kappa$. 
+\end{pf}
