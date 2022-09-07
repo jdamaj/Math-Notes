@@ -1,0 +1,127 @@
+
+\subsection{Burnside's Lemma}
+
+\begin{example}
+    Find the number of ways to arrange 8 nonattacking rooks on a chessboard up to symmetry. \\
+    Recall - \# of orbits of a set = average number of fixed points = $\frac{1}{|G|} \sum_{g \in G}$ \# fixed points of $g$. \\
+    $G$ = dihedral group $D_8$, acting on $8! = 40320$ ways to arrange 8 rooks \\
+    Elements of $D_8$: 
+    \begin{itemize}
+        \item Trivial (Insert Figure): $8! = 40320$ 
+        \item $180^{\circ}$ rotation (Insert Figure) : 8 options for 1rst, 6 options for 2cnd, $\ldots$ so $8 \times 6 \times 4 \times 2$ 
+        \item $90^{\circ}$ rotation (Insert Figure): 6 options for 1rst, 2 options for 2cnd so $6 \times 2$ 
+    \end{itemize}
+    2 elements $g_1,g_2$ are called conjugate if $g_1 = gg_2g^{-1}$ for some $g$ (Formalizes notion of ``looks the same'') \\
+    $g_1 = $(Insert Figure) \quad $g_2=$(Insert Figure) \quad $g = $ (Insert Figure) exchanging $g_1, g_2$. \\
+    If two elements are conjugate then they have the same number of fixed points. \\
+    $g_1(s)=s \to g_2(gs) = gg_1g^{-1}gs = gs$ 
+    \begin{itemize}
+        \item (Insert Figure): conjugate with $90^{\circ}$ rotation so $6 \times 2$ 
+        \item (Insert Figure): conjugate and have 0 since rotates rook to the same column/row 
+        \item (Insert Figure): conjugate. $C_n$ = \# ways to place rooks on $n \times n$ chessboard invariant under transformation. $c_0 = 1, c_1 = 1$. \\
+        Case 1 : (Insert Figure) \quad Case 2: (Insert Figure) \quad \\
+        so $c_n = c_{n-1} + (n-1)c_{n-2}$ and $c_n = 1, 1, 2, 4, 10, 26, 76, 232, 764$ 
+    \end{itemize}
+    So \# of ways to place rooks = $\frac{1}{8}(1 \times 8! + 1 \times 384 + 2 \times 12 + 2 \times 0 + 2 \times 764)  =5282$ \\
+    Slighly more than original guess $\frac{40320}{8} = 5040$ 
+\end{example}
+
+\begin{example}
+    Find the number of ways to color a cube with $n$ different colors up to symmetry. 
+\end{example}
+
+\subsection{Groups of order $p^2$} 
+
+\textbf{Order 9}: Obvious examples = $\bZ/9\bZ$, $\bZ/3\bZ \times \bZ/3\bZ$ \\
+
+\noindent
+Classify all groups of order $p^2$ ($p$ prime): only ex are $\bZ/p^2\bZ$, $(\bZ/p\bZ)^2$ \\
+\textbf{(1)}: Every group of order $p^n$ ($p$ prime, $n >0$) has nontrivial order 
+\begin{proof}
+        Recall, if all proper subgroups have index divisible by $p$, $p | \, |G|$ then $G$ has nontrivial center. So if $|G|=p^n$, $n>0$, we see $G$ has nontrivial center. 
+\end{proof} 
+
+\noindent
+Implies that if $|G|=p^n$, $G$ is nilpotent. ie. repeatedly modding out by the center gives you the trivial group. \\
+$G_0 = G$, $G_1 = G_0/Z(G_0)$, $G_2 = G_1/Z(G_1)$, $\ldots$ If $G_n$ is trivial for some $n$, $G$ is caleld nilpotent. \\
+This gives an exact sequence: $1 \to Z(G_i) \to G_i \to G_{i+1} \to 1$ \\
+Note: A group may still have nontrivial center even after modding out by the original center: $G= D_8$, $G/Z(G) = \bZ/2\bZ \times \bZ/2\bZ$. \\
+$S_3$ (order 6) is not nilpotent \\
+
+\noindent
+\textbf{(2)}: If $G/Z(G)$ is cyclic then $G$ is abelian. 
+
+\begin{proof}
+    Consider $1 \to Z(G) \to G/Z(G) \to 1$. $Z/(G)$ is powers of $g_1$, lift $g_1$ to $g$ in $G$. \\
+    Every element in $G$ is of the form $zg^n$ ($z \in$ center) so all commute $z_1g^{n_1}, z_2g^{n_2}$: \\
+    $z_1$ commutes with $z_2g^2n$, $g^{n_1}$ commutes with $z_2$, and $g^{n_1}$ commutes with $g^{n_2}$
+\end{proof}
+
+\noindent
+\textbf{(3)}: Every group of order $p^2$ is abelian. \\
+Note: not true for $p^3$, consider $D_8, Q_8$ of order $2^3$
+
+\begin{proof}
+    Center is nontrivial so has order $\ge p$. $G/Z(G)$ has order 1 or $p$ so it is cyclic so $G$ is abelian. 
+\end{proof}
+
+\noindent
+\textbf{(4)}: Every group of order $p^2$ is $(\bZ/p^2\bZ)$ or $(\bZ/p\bZ)^2$ 
+
+\begin{proof}
+    Case 1 : elements of order $p^2$ $\to$ $G$ is cyclic $\cong \bZ/p^2\bZ$ \\
+    Case 2: all elements have order $p$ or 1 + $G$ abelian. $G$ is really a vector field over $\bF_p$ the field with $p$ elements so $G = \bF_p \oplus \bF_p$. 
+\end{proof}
+
+\subsection{Dihedral Groups} 
+
+\textbf{Order 10}: $\bZ/10\bZ \cong \bZ/2\bZ \times \bZ/5\bZ$, $D_{10} = (\bZ/5\bZ) \rtimes \bZ/2\bZ$ \\
+
+\noindent
+Groups of Order $2p$: $G$ has a subgroup of order $p$, index 2 so is normal. $G$ has a subgroup of order 2 so $G \cong \bZ/p\bZ \rtimes \bZ/2\bZ$, determined by action of $\bZ/2\bZ$ on $\bZ/p\bZ$. \\
+Symmetries of $\bZ/p\bZ$: map generator 1 $\to$ elment of order $p$. $n \mapsto na$ $p \not| a$ \\
+Symmetries  = $(\bZ/p\bZ)^{\times}$ nonzero integers mod $p$ under $\times$. Only elements of order 2 are $\pm a \mod p$ \\
+$G \cong \bZ/p\bZ \times \bZ\/2\bZ$ \quad (trivial action of $\bZ/2\bZ$ on $\bZ/p\bZ$) \\
+$G \cong \bZ/p\bZ \rtimes \bZ\/2\bZ$ \quad ($\bZ/2\bZ$ acting by -1 on $\bZ/p\bZ$) = dihedral group. \\
+
+\noindent
+Dihedral Groups: symmetries of a regular $n$-gon $(n \ge 3)$. Order $2n$ \\
+(Insert Figure) \\
+
+\noindent
+What is the center of $D_{2n}?$ ($n \ge 2$)? \quad Order 2 if even, order 1 if odd. \\
+
+\noindent
+Why does $D_{12}$ split as a product? \\
+(Insert Figure) $D_12 = D_6 \times \bZ/2\bZ$ = symmetries of triangels $\times$ $180^{\circ}$ rotation commutes with elements and flips the two triangles \\ 
+$D_{10}$ (Insert Figure) Problem: $180^{\circ}$ does not flip two squares. \\
+$D_{2n}$ can be split $D_{2n} \times \bZ/2\bZ$ for $D_4, D_{12}, D_{20}, D_{28}$ \quad ($\equiv 2 \mod 4$) \\
+
+\noindent
+Involutions in dihedral groups (elements of order 2) \\
+$D_{2n}$ (Insert Figure) \\
+
+\noindent
+Reflection Groups (generated by relations)\\
+(Insert Figure) Suppose $g$ and $h$ are relations. If $g^2=1$, $h^2=1$, $(gh)^n=1$  \\
+
+\begin{itemize}
+    \item Fid property of all finite groups that doesn't hold for all infinite groups, in the language of groups. 
+\end{itemize}
+
+\noindent
+Property: If $g,h$ are involutions, either $g,h$ are conjugates or some involution commutes with $g,h$ \\
+$g^2=1$, $h^2=1$, $(gh)^n=1$ for some $n$ (since group finite) \\
+$n$ even: $D_{2n}$ has nontrivoal element in center \\
+$n$ odd: All involutions commute \\
+Fails for $\infty$ dihedral group $g^2=1$, $h^2=1$ (Insert Figure) 
+
+\noindent
+\textbf{Order 12}: $\bZ/12\bZ$, products - $\bZ/6\bZ \times \bZ/2\bZ$, $\bZ/4\bZ \times \bZ/3\bZ$, $\bZ/2\bZ \times \bZ/2\bZ \times \bZ/2\bZ \times \bZ/3\bZ$, $S_3 \times \bZ/2\bZ$, rotations of tetrahedrons, semidirect products- $\bZ/3\bZ \rtimes \bZ/4\bZ$, $\bZ/3\bZ \rtimes (\bZ/2\bZ \times \bZ/2\bZ)$, $(\bZ/2\bZ \times \bZ/2\bZ) \rtimes \bZ/4\bZ$. \\
+
+\noindent
+Binary Dihedral: $S^3$(= unit quaternions) is a group acting on $\bR^3 = bi + cj + dk$ - rotations in $\bR^3$ \\
+$1 \to \pm 1 \to S^3 \to$ rotaitons on $\bR^3 \to 1$ where $\pm 1$ act trivially on $\bR^3$ \\
+$1 \to \pm 1 \to \hat{G} \to G$ = finite reflecction group. \quad Ex: group over $D_{2n}$ \\
+Binary dihedral groups of order $4n$ so binary dihedral group of order 12. ($Q_8$ binary dihedral group of order 8) \\
+5 groups of order 12. 
