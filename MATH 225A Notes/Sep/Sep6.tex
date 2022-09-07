@@ -1,0 +1,66 @@
+
+\subsection{Complete Theories}
+
+\begin{definition}
+    Let $\kappa$ be an infinite cardinal. A theory $T$ is $\kappa$-categorical if all models of $T$ of size $\kappa$ are isomorphic (and there is at least one). 
+\end{definition}
+
+\begin{example}
+    The theory of torsion free abelian division groups (TFADG) is $\kappa$ categorical for all uncountable $\kappa$. \\
+    Language = $\{ \cdot, e \}$, TFADG = group axioms, commutativity, torsion free - $\fa a \neq e \, \overbrace{a \cdot a \cdots a}^{n}\neq e$ for $n \in \omega$, divisible - $\fa a \ex b \overbrace{b+ b+ \cdots +b}^{n}$ for each $n \in \omega$ \\
+    Observation: TFADG are essentialy $\bQ$-vector spaces \\
+    For $a \in G$, $n \in \bN$ $a \cdot n = \overbrace{a + \cdots + a}^{n \text{ times}}$ $\frac{a}{n}$ is $b$ such that $b \cdot n=a$. Such a $b$ exists since the group is division and is uniquely defined since if $b \cdot n = a = b' \cdot n$, $(b-b') \cdot n = 0$ so since the group is torsion free, $b-b'=0$. For $a \in G$, $\frac{p}{q} \in \bQ$ we define $a \cdot \frac{p}{q} = \frac{a}{q} \cdot p$ \\
+    Two vector $\bQ$-vector spaces are isomorphic $\ifff$ they have the same dimension. A $\bQ$ vector space of size $\kappa$ must have dimension $\kappa$ so two $\bQ$ vector spaces of size $\kappa$ must be isomorphic. 
+\end{example}
+
+\noindent
+Let $\text{ACF}_p$ be the theory of algebraicly closed fields of characteristic $p$. \\
+Language = $\{0, 1, + , \times\}$. $\text{ACF}_P$: field axioms, char $p$ - $\underbrace{1 + \cdots + 1}_{p}=0$, char $0$ - $\underbrace{1 + \cdots + 1}_{n} \neq 0$ for $n \in \omega$, algebraicly closed - every non-constant polynomial has at least one root: for degree $n$, $\fa z_0, z_1, \ldots, z_n \, z_n \neq 0 \, \ex x (z_nx^n + z_{n-1}x^{n-1} + \cdots + z_0 = 0)$. For each $n \in \omega$ 
+
+\begin{proposition}
+    ACF is $\kappa$ categorical for all uncountable $\kappa$. 
+\end{proposition}
+
+\noindent
+Facts and Definitions 
+\begin{itemize}
+    \item Every fielf $F$ has a prime subfield $P = \{ \frac{\overbrace{1 + \cdots + 1}^p}{\underbrace{1 + \cdots + 1}_q} \, : \, p \in \bZ, q \in \bN \}$ 
+    \begin{itemize}
+        \item if $F$ has char $p > 0$, then the prime subfield is $\bZ/p\bZ = \bF_p$ 
+        \item If $F$ has char $o=0$, then the prime subfield in $\bQ$ 
+    \end{itemize}
+    \item An element $a \in F$ is algebraic if there is a polynomial $p(x) \in P[x]$ such that $p(x)=0$. (Can think of as a polynomial in $\bZ[x]$) 
+    \item Otherwise $a$ is transcendental 
+    \item A tuple $\overline{a}$ is algebraicly independent if there is no nontrivial polynomial $p(\overline{x}) \in P[x]$ such that $p(\overline{x})=0$. 
+    \item the transcendence degree of a field $F$ is the size fo a maximal algebraicly independent set. 
+    \item Algebraicly closed fields are isomorphic $\ifff$ they have the same transcendence degree. 
+\end{itemize}
+Observation: an $\text{ACF}_p$ of size $\kappa$ must have transcendence degree $\kappa$ \\
+If $M \subset F$ is a maximal algebraicly independent set, $\fa a \in F$ there is a polynomial $p(\overline{x}, y) \in P[\overline{x},y]$ and $\overline{m} \in M$ such that $p(\overline{m}, a)=0$. 
+
+\begin{definition}
+    A theory $T$ is complete if for all $\cL$-sentences, $\phi$ either $T \models \phi$ or $T \models \neg \phi$
+\end{definition}
+
+\begin{theorem}[Vaught's Test]
+    If $T$ is satisfiable and has no finite models and is $\kappa$-categorical for $\kappa > | \cL |$, then $T$ is complete. 
+\end{theorem}
+
+\begin{corollary}
+    ALL $\text{ACF}_p$ satisfy the same sentences. 
+\end{corollary}
+
+\begin{pf} 
+    Suppose not. There is $\phi$ such taht $T \not\models \phi$, $T \not\models \neg \phi$ so $T \cup \{ \phi\}$ and $T \cup \{ \neg \phi\}$ are satisfiable. Both have models of size $\kappa$, contradicting $\kappa$-categoricity. 
+\end{pf}    
+
+\begin{definition}
+    $T$ is decidable if there is an algorithm to decdide $T \models \phi$ given $\phi$ 
+\end{definition}
+
+\noindent
+Observation: If $T$ is computably enumerable and complete then $T$ is decidable 
+
+\begin{corollary}
+    Th$(\bC; 0, 1, +, \times)$ is decidable.
+\end{corollary}
