@@ -1,0 +1,45 @@
+
+\subsection{Quotient Topologies} 
+
+\begin{definition}
+    Let $Y$ be a set. Let $(X_{\alpha}, \cT_{\alpha})$ be a topology with, for each $\alpha$, a function $f_{\alpha}: Y_{\alpha} \to Y$. The final topology is the largest topology that makes each $f_{\alpha}$ is continuous. 
+\end{definition} 
+
+\noindent
+So for $A \subset Y$, in order for $A$ to be in $\cT$ need $f_{\alpha}^{-1}(A) \in \cT_{\alpha}$ for all $\alpha$. \\
+For fixed $\alpha$, we want $\{A \in Y \, : \, f^{-1}_{\alpha}(A) \in \cT_{\alpha}\}$. This is a topology, denote it $\cT^Y_{\alpha}$. It follows that $T = \bigcap_{\alpha}\cT_{\alpha}^Y$ \\
+Let $Y$ be a set $(X, \cT^X)$, $f: X \to Y$, we require $f$ is onto $Y$. Then $\{A \subseteq Y \, : \, f^{-1}(A) \in \cT^X\} $ is the smallest topology that makes $f$ continuous. It is called the quotient topology. \\
+
+\noindent
+Other view: Let $X,Y$ be sets, $f: X \to Y$ onto. Then $f$ defines an equivalence relation on $X$ by $x_1 \sim x_2$ if $f(x_1)=f(x_2)$. \\
+If we have an equivalence relation on a set, it defines are partition of the set. \\
+If you have a partition, $P$, of a set $X$, then a set $P$ is a set where the elements are nonempty subsets of $X$. Then define $f: X \to P$, where $f(x)$ is the element, $A$, of $P$ such that $x \in A$. Then $f: X \to P$ onto. 
+
+\begin{definition}
+    $(X, \cT^X)$ and $(Y, \cT^Y)$ are homeomorphic if their $f: X \to Y$, one to one, onto such that $f$ and $f^{-1}$ are continuous. 
+\end{definition} 
+
+\begin{example}
+    $\bR_d = (\bR, \cT)$ with discrete topology. \\
+    Consider $\bR_d \stackrel{f}{\to} \bR$ by $f(t)=t$. $f$ is one to one, onto, and continuous but $f^{-1}$ not continuous so it is not a homeomorphism. 
+\end{example}
+
+\begin{example}
+    Let $X = [0,1]$, define an equivalence relation $0 \sim 1$ and $r \not\sim s$ of $r \neq s$ and $0 < r < 1$. \\
+    $[0,1]/\sim$ homeomorphic to the circle. Let $f(t) = e^{2 \pi i t}$, we see $f(0)=f(1)$, $f$ is a homeomorphism. \\
+    (Insert Figure)
+\end{example}
+
+\begin{example}
+    $X = [0,1] \times [0,2]$ \\
+    (Insert Figure) equivalence relation defined by $(0,r) \sim (2,r)$ for $0 \le r \le 1$ \\
+    Quotient space is homeomorphic to a cylinder. \\
+    Suppose we define $(0,1) \sim (2, 1-r)$ $0 \le r \le 1$ \\
+    (Insert Figure) Quotient space homeomorphic to the mobius strip. 
+\end{example}
+
+\begin{example}
+    Let $X$ be the unit sphere $\bR^3 = \{ v \in \bR \, | \, ||v||=1\}$. \\
+    Put an equivalence relation: for $v \in X$, $v \sim - v$ \\
+    $X/\sim$ is called a projective space.  
+\end{example}
