@@ -1,0 +1,133 @@
+
+\subsection{Sylow Theorems}
+
+\textbf{Order 12}: $\bZ/12\bZ$, $\bZ/6\bZ \times \bZ/2\bZ$, $S_3 \times \bZ/2\bZ$, $A_4$, $\bZ/3\bZ \rtimes \bZ/4\bZ$ 
+
+\noindent
+Sylow Theorems: 
+\begin{itemize}
+    \item Lagrange: if $H \subseteq G$, $|H| \, | \, |G|$ 
+    \item If $m \, | \, |G|$ can we find a subgroup of order $G$? \\
+    No: $A_4$=reflections of tetrahedron has no subgroup of order 6
+\end{itemize}
+
+\begin{theorem}[Sylow's Theorems]
+    \begin{enumerate}
+        \item If $p^n \, | \, |G|$ ($p$ prime) then $G$ has a subgroup of order $p^n$ if $n$ is maximal, called $p$-Sylow subgroup. 
+        \item Number is $1 \mod p$, divides $|G|$
+        \item All $p$-sylow subgroup are conjugate (so all isomorphic)
+        \item Any $p$-subgroup is contained in some sylow $p$-subgroup. 
+    \end{enumerate}
+\end{theorem}
+
+\begin{example}
+    $G=D_8$, contains two non-conjugate elements of order 2 - (Insert Figure)
+\end{example}
+
+\begin{example}
+    $G=D_8$, has nonisomorphic subgroups of order 4 \\
+    (Insert Figure) 
+\end{example}
+
+\begin{pf}
+    \begin{enumerate}
+        \item Existence. We proceed by induction on the order of the group. \\
+        Case 1: $G$ has some proper subgroup $H$,index not divisible by $p$. 
+        \begin{itemize}
+            \item Pick sylow $p$-subgroup of $H$. This is a sylow $p$-subgroup of $G$. 
+        \end{itemize}
+        Case 2: All Sylow $p$-subgroups have index divisble by $p \to $ center if $G$ has order divisible by $p$. 
+        \begin{itemize}
+            \item pick $g \in $ center, $g^p=1$. Look at $G / \langle g \rangle $. Pick $p$-sylow subgroup. Inverse image in $G$ is a sylow $p$-subgroup. 
+        \end{itemize}
+        \item Number of Sylow subroups is $1 \mod p$ \\
+        Key idea: look at action of Sylow $p$-subgroup $S$ on set of sylow $p$-subgroups by conjugation \\
+        All orbits have size power of $p$. Orbit $\{S\}$ has size 1. No other orbits of size 1. if $\{T\}$ orbit of size 1, then $S$ normalizes $T$ so $ST$ of order $p^m$, $m > n$. impossible. \\
+        1 orbit of size 1, all other orbits have size $p^k$, $k > 0$. Divisible by $p$ so total is $1 \mod p$
+        \item All Sylow $p$-subgroups are conjugate \\
+        Suppose not, then if $S$ is a $p$-sylow subgroup, number of conjugates is divisble by $p-1$. Suppose $T$ is a non-conjugate $p$-subgroup and let $T$ act on the set of $p$-sylow subgroups conjugate to $S$. $T$ can have no fixed points so the total number of $p$-sylow subgroups conjugate to $S$ is divisble by $p$, contradiction. 
+        \item Numberof Sylow $p$-subgroups divides the order of $G$ \\
+        Look at action of $G$ on sylow $p$-subgroups. Transitive so \# subgroups = $\frac{|G|}{|\text{subgroup fixing} 1|}$ which divides $G$. 
+        \item Any subgroup with order power of $p$ $\subseteq$ some sylow $p$-subgroup
+    \end{enumerate}
+\end{pf}
+
+\noindent
+Apply to groups of order $12 = 2^2 \times 3$ \\
+We know that $G$ has subgroups of order 3 and 4. \\
+Case 1: subgroup of order 3 is normal. 
+\begin{itemize}
+    \item Give $G$ semiproduct $(\bZ/3\bZ) \rtimes (\text{order 4 group})$ \\
+    4 cases: \\
+    \begin{tabular}{c c}
+        & Action trivial \quad Nontrivial \\
+        \begin{tabular}{c}
+            $\bZ/4\bZ$ \\ $(\bZ/2\bZ)^2$
+        \end{tabular} & 
+        \begin{tabular}{|c|c|}
+            \hline 
+            $\bZ/4\bZ\times \bZ/3\bZ$ & binary dihedral \\ \hline 
+            $(\bZ/2\bZ)^2 \times \bZ/3\bZ$ & $S_3 \times \bZ/2\bZ$ \\ \hline 
+        \end{tabular}
+    \end{tabular} \\
+    Case 2: Sylow 3 subgroups not normal \\
+    \# subgroups - divides 12, 1 mod 3, not 1 $\to$ = 4, call them $S_1, S_2, S_3, S_4$. $S_i \cap S_j = \{e\}$ so we have 8 elements of order 3, 1 element of order 1, 3 ``mystery'' elements. \\
+    $G$ has 2-sylow subgroups of order 4, at most one so must be normal. So $G = (\text{group of order 4}) \rtimes \bZ/2\bZ$, only nontrivial action on: $\bZ/2\bZ \times \bZ/2\bZ$ $\cong$ relfection of tetrahedron. 
+\end{itemize}
+
+\begin{example}
+    Apply to groups of order 56. 
+\end{example}
+
+\noindent
+Application: Nilpotent Groups \\
+Following are equivalent: 
+\begin{enumerate}
+    \item Group is nilpotnent (center >1 , $G$/center is nilpotent or $|G|=1$) 
+    \item Any proper subgroup $H$ has $N(H)$ strictly bigger than $H$. 
+    \item ALl Sylow subgroups are normal 
+    \item $G$ is product of groups of prime power order. 
+\end{enumerate}
+
+\noindent
+(1) $\to$ (2): Suppose $H$ is a subgroup. \\
+Case 1: $H$ does not contain $Z(G)$. $Z(G) \subseteq N(H)$. \\
+Case 2: $H$ contains $Z(G)$, look at $H/Z(G) \subseteq G/Z(G)$ \\
+
+\noindent
+(2) $\to$ (3): If $S$ is a sylow $p$-subgroup of $G$. Then $N(S)$ is its own normalizer. $e \subseteq S \subseteq N(S) \subseteq G$. Suppose $g \in G$ normalizes $N(S)$ $g$ takes $S$ to a sylow $p$-subgroup of $N(S)$. This subgroup is conjugate to $S$ in $N(S)$ so $gSg^{-1} = hSh^{-1}$ for $h \in N(S)$ so $gh^{-1}$ normalizes $S$ so $gh^{-1} \in N(S)$, since $h \in N(S)$, $g \in N(S)$. \\
+Now, if $N(S)$ proper subgroup then $N(N(S)) > N(S)$ so must have $N(S)=G$ so there is only one sylow subgroup. \\
+
+\noindent
+(3) $\to$ (4): Main step - members of different sylow subgroups comute. \\
+$S$ is a sylow $p$-subgroup, $T$ is a sylow $q$-subgroup with $p \neq q$, want $st=ts$ for $s \in S$, $t \in T$ \\
+Follows from: If $A$, $B$ normal subsets of $G$, and $A \cap B = \{e\}$ the elements of $A$ commute with the elements of $B$. Look at $aba^{-1}b^{-1}$, commutator of $a,b$ (=1 $\ifff$ $a,b$ commute). $aba^{-1} \in B$ so $aba^{-1}b^{-1} \in B$ and $ba^{-1}b^{-1} \in A$ so $aba^{-1}b^{-1} \in A$ so $aba^{-1}b^{-1}=e$ \\
+
+\noindent
+(4) $\to$ (1): Follows since 1. $p$-groups are nilpotent, 2. product of nilpotent groups is nilpotent \\
+
+\noindent
+\textbf{Order 15}: One group is $\bZ/15\bZ = \bZ/5\bZ \times \bZ/3\bZ$ \\
+
+\noindent
+Consider $p \neq q$, $p > q$. $G$ has sylow $p$-subgroup, number is $1 \mod p$, divides $pq$, $q < p$ so only possibility is 1. So since $p$ is normal $G = \bZ/p\bZ \rtimes \bZ/q\bZ$. \\
+How doe s$\bZ/q\bZ$ act on $\bZ/p\bZ$? Aut$(\bZ/p\bZ) = (\bZ/p\bZ)^{\times}$ order $p-1$ so if $q$ does not divides $p-1$ only action is trivial so only subgroup is cylic subgroup of order $pq$ \\
+If $q|p-1$, $\bZ/q\bZ$ can act nontrivially on $\bZ/p\bZ$. Essentially one action $(\bZ/p\bZ)^{\times}$ elements of order $q$ forms a cyclic subgroup of order $q$. \\
+Exactly two groups of order $pq$. 
+
+\noindent
+\textbf{Order 16}: Complete List 
+\begin{itemize}
+    \item 5 abelian: $\bZ/16\bZ$, $\bZ/8\bZ \times \bZ/2\bZ$, $\bZ/4\bZ \times \bZ/4\bZ$, $\bZ/4\bZ \times (\bZ/2\bZ)^2$, ($\bZ/2\bZ)^4$ 
+    \item 4 more, have subgroups of order $\bZ/8\bZ$: Generalized quaternion = binary dihedral, dihedral, groups generated by $a^8=1$ $b^2=1$, $bab^{-1} = a^3$ or $a^5$, if $a^3$ called semi-dihedral. 
+    \item Products: $D_8 \times \bZ/2\bZ$, $Q_8 \times \bZ/2\bZ$ 
+    \item Semidirect Product: two of form $\bZ/4\bZ \rtimes \bZ/4\bZ$, $(\bZ/2\bZ)^2 \rtimes \bZ/4\bZ$ \\
+    one of form: $(\bZ/2\bZ \times \bZ/4\bZ) \rtimes \bZ/2\bZ$ (Pauli group) 
+\end{itemize}
+
+\subsection{Classification of Abelian Groups (finite)} 
+
+All products of cylic-subgroups (not unique) eg. $\bZ/6\bZ \cong \bZ/2\bZ \times \bZ/3\bZ$ \\
+Product is unique up to order either, $n_1, n_2, \ldots$ satisfying $n_1 | n_2 | n_3 \cdots$ or $n_i$ prime powers. \\
+eg. $\bZ/2\bZ \times \bZ/6\bZ (2 | 6)$ or $(\bZ/2\bZ)^2 \times \bZ/3\bZ$ ($2^2, 3$ prime powers) 
+
