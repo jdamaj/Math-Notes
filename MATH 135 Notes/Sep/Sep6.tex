@@ -1,0 +1,55 @@
+
+\subsection{Functions and Relations} 
+
+\begin{theorem}
+    Let $F: A \to B$ with $A \neq \vn$ 
+    \begin{enumerate}[label = (\alph*)]
+        \item There is a function $G: B \to A$ such that $G \circ F = \text{id}_A \ifff F$ is one to one. 
+        \item There is a function $G: B \to A$ such that $F \circ F = \text{id}_B \ifff F$ is onto. 
+    \end{enumerate}
+\end{theorem}
+
+\begin{pf}
+    \begin{enumerate}[label = (\alph*)]
+        \item Suppose there is such a $G$. Take $a_1, a_2$ such that $F(a_1)=F(a_2)$, then $a_1 = G\circ F (a_1) = G \circ F (a_2)=a_2$ \\
+        Conversely, suppose $F$ is one to one. We want to define $G: B \to A$ given $b \in B$, let $G(b)$=the unique $a \in A$ such that $F(a)=b$ if $b \in $range$(F)$. If $b \not \in$ range$(F)$, let $G(b)=a_0$ with $a_0 \in A$ arbitrary (exists since $A$ nonempty)
+        \item Supppose that $G: B \to A$, with $F \circ G = \text{id}_B$ Want to show $\fa b \in B \ex a \, F(a)=b$ Take $a = G(b) \to F(a) = F(G(b))=b$ \\
+        Conversely, suppose $F$ is onto. We want to define $G$, given $b \in B$ want to define $G(b)$ such that $F(G(b))=b$, equivalently, want $G(b) \in F^{-1}(\{b\})$. Since $F$ is onto $F^{-1}(\{b\})$ is nonempty. Let $G(b)$ be any element of $F^{-1}(b)$, equivalently $G \subseteq F^{-1}$ and dom$(G)=B=$dom$(F^{-1})$. 
+    \end{enumerate}
+\end{pf}
+
+\begin{example}
+    Suppose $A = \bN$, let $G = \{(b, a) \in B \times \bN \, : \, a$ is least satisfying $f(a)=b\}$
+\end{example}
+
+\begin{itemize}
+    \item Don't have a method to specify such elements in gneral. 
+\end{itemize}
+
+\begin{axiom}[Axiom of Choice - Form I]
+    For every relation $R$, there is a function $G \subseteq R$ with dom$(G)=$dom$(R)$
+\end{axiom}
+
+\subsection{Infinite Cartesion Products}
+
+$A \times B = \{ \langle x, y \rangle \in \cP \cP (A \cup B) \, | \, x \in A \wedge y \in B\}$ 
+
+\begin{definition}
+    Let $M$ be a function with domain $I$ such that for every $i \in I$, $H(i)$ is a set. Let 
+    \[\bigtimes_{i \in I} H(i) - \{ f: I \to \bigcup H(i) \, | \, f(i) \in H9=(i) \} \] 
+\end{definition}
+
+\begin{example}
+    Let $\omega_g$ be $\{ G \subseteq \bR \, | \, 0 \neq G, \, G \cup \{0\}$ is closed under addition $\}$ \\
+    $\bigtimes_{G \in \omega_g} = \bigtimes_{G \in \omega_g}H(G)$ is a function such that for each $G \in \omega_g$, you get an element of $G$. 
+\end{example}
+
+\noindent
+Observation: If one of the $H(i)$ is $\vn$, then $\bigtimes_{i \in I}H(i) = \vn$ 
+
+\begin{axiom}[Axiom of Choice - Form II]
+    If $H$ is a function with domain $I$ such that $H(i) \neq \vn$ $\fa i \in I$, then $\bigtimes_{i \in I}H(i) \neq \vn$ 
+\end{axiom}
+
+\noindent
+(ACI) $\to$ (ACII): We are given $H$ with $H(i) \neq \vn$ for all $i$. Want $f: I \to H(i)$ with $f(i) \in H(i)$ $\fa i \in I$. Let $R = \{ \langle i, h \rangle \in I \times \bigcup_{i \in I}H(i) \, | \, h \in H(i) \}$. dom$(R)=I$, since $H(i) \neq \vn$ there is $h \in H(i)$ so $\langle i , h \rangle \in R$. BY ACI, there is $F \subseteq R$ with dom$(F)$=dom$(R) =I$. $\fa i$, $\langle i, f(i)\rangle \in R$ so $f(i) \in H(i)$ 
