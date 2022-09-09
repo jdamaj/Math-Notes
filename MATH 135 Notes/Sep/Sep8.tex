@@ -1,0 +1,78 @@
+
+\subsection{Natural Numbers}
+
+Idea: each natural number is the set of all the previous numbers. \\
+$0 = \vn, 1 = \{\vn\}, 2 = \{\vn, \{\vn \} \},\ldots, n = \{0, 1, \ldots, n-1\}, \ldots$ 
+
+\begin{definition}
+    The succesor of a set $a$ is defined as $a^+ = a \cup \{a\}$ 
+\end{definition}
+
+\begin{definition}
+    A set $I$ is inductive if $\vn \in I$ and $\fa a \in I, a^+ \in I$ 
+\end{definition}
+
+\begin{definition}
+    $a$ is a natural number if it belongs to all inductive sets, $\fa I (I \text{ inductive} \to a \in I)$ 
+\end{definition}
+
+\noindent
+If $I$ is any inductive set, let $\omega = \{a \in I \, | \, a \text{ belongs to all inductive sets}\}$=the minimal inductive set. 
+
+\noindent
+Observation: $\omega$ is inductive because $\vn$ is in all inductive sets and if $n$ belongs to all inductive sets then so does $n^+$
+
+\begin{axiom}[Ifinity Axiom]
+    There is an inductive set. 
+\end{axiom}
+
+\noindent
+\textbf{Inductivion Principle}: If $A \subseteq \omega$ is inductive set $A = \omega$ 
+
+\begin{example}
+    Every natural number is 0 or the succesor of some natural number. \\
+    Let $A = \{ n \in \omega \, | \, n=0 \vee \ex m \in \omega \, n=m^+\}$. $A$ is inductive so $A = \omega$ 
+\end{example}
+
+\begin{definition}
+    A set $A$ is transitive if one of the following equivalent conditions holds: 
+    \begin{itemize}
+        \item if $x \in a \in A$, then $x \in A$
+        \item $\bigcup A \subseteq A$ 
+        \item if $a \in A$, then $a \subseteq A$ 
+        \item $A \in \cP(A)$ 
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    Transitive sets includ $\vn$, each natural number, $\omega, V_{\omega}$ 
+\end{example}
+
+\noindent
+Claim: $A = \{ n \in \omega \, | \, n$ is transitive $\}$ is inductive (implies all nautrual numbers are transitiev ) 
+\begin{itemize}
+    \item Base: $0 \in A$ since $\vn$ is transitive 
+    \item Inductive Step: Suppose $n \in A$ transitive, want to show $n^+$ is transitive. \\
+    Consider $x \in a \in n^+ = n \cup \{n\}$. If $a=n$, $x \in n \subseteq n^+$. If $a \in n$, $x \in a \in$ so by transitivity $x \in \subseteq n^+$ so $x \in n^+$ 
+\end{itemize}
+
+\begin{theorem}
+    If $a$ is tansitive, then $\bigcup a^+ = a$ 
+\end{theorem}
+
+\begin{pf}
+    $(\supseteq)$ $a = \bigcup \{a\} \subseteq \bigcup ( a \cup \{a\} = \bigcup a^+)$ ($a \in a^+$ so $a \subseteq \bigcup a^+$)\\
+    $(\subseteq)$ Take $x \in \bigcup a^+$, then let $b \in a^+$ with $x \in b$. If $b=a$, $x \in a$. If $b \in a$, $x \in b \in a$ so $x \in a$. 
+\end{pf}
+
+\begin{itemize}
+    \item If $a,b$ transitive and $a^+ = b^+$ then $a = \bigcup a^+ = \bigcup b^+ = b$ so succesor function is one to one on transitive sets, more specifically $\omega$. 
+\end{itemize}
+
+\noindent
+Fix a number $k \in \omega$. Consdier the following functions: 
+\begin{itemize}
+    \item $A_k : \omega \to \omega$ by $A_k(0)=0$, $A_k(n^+) = A_k(n)^+$ 
+    \item $M_k : \omega \to \omega$ by $M_k(0)=0$, $M_k(n^+) = A_k(M_k(n))$
+\end{itemize}
+
