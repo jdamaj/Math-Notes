@@ -1,0 +1,57 @@
+
+\subsection{Group Actions on Topological Spaces}
+
+For a topologial spaees $(X, \cT)$ the set of homeomorphisms of $X$ to $X$ forms a group under composition, auto-homeomorphisms, Aut($(X, \cT))$ \\
+Then if $G$ is a group, then of an action of $G$ on a topological space is a group homomorphism $\alpha$, $\alpha: G \to \text{Aut}((X, \cT))$, so for each $g \in G$, $\alpha_g$ is a homeomorphism if $(X, \cT)$ \\
+$\alpha_{g_1} \circ \alpha_{g_2} = \alpha_{g_1g_2}$, $\alpha_{g_1^{-1}} = (\alpha_{g_1})^{-1}$ 
+
+\begin{definition}
+    For an action $\alpha$, of $G$ on some set $X$, given $x_0 \in X$, the orbit of $x_0$ for the action $\alpha$ is $\{ \alpha_g(x_0) \, : \, g \in G \}$. The orbits from a partition of $X$. (orbits of $\alpha_g(x_0)$ same as $x_0$, $\alpha_{g_1}^{-1} (\alpha_g (x_0)) = x_0$) 
+\end{definition}
+
+\noindent
+Let $X/\alpha$ be the set of orbits. Have ``quotient map'' $X \to X/\alpha$ by $x \mapsto $ orbit of $x$. \\
+If $X$ has a topology and $\alpha$ acts by homeomorphism, puts quotient topology on $X/\alpha$ 
+
+\begin{example}
+    Symmetry of letters: \\
+    $X$=A given $Z_2 = \bZ/2\bZ$ act by reflection. $X/\alpha$= (Insert Figure) \\
+    $X=H$, $Z_2 \times Z_2$, $X/\alpha$ = (Insert Figure)
+\end{example}
+
+\begin{example}
+    Let $G=\bZ$, let $X = \bR$, let $\alpha$ be an action of $\bZ$ on $\bR$ by translation, $\alpha_n(t)=t+n$ \\
+    each of $\{ \ldots, t_0-1, t_0, t_0+1, \ldots \}$. What is $\bR/\alpha$ 
+\end{example}
+
+\begin{example}
+    A fundamental domain for $\alpha$ is a subset of $X$ that contains exactly one element of each orbit. 
+\end{example}
+
+\begin{itemize}
+    \item For the above example, fundamnetal domain $[0,1)$ with open subsets ``wrapped around edges'' so $\bR/\alpha$ is homeorphic to the circle. Homoemorphism given by $t = e^{2\pi it}$, constant on equivalence classes. 
+\end{itemize}
+
+\begin{example}
+    The antipodal relation on the unit sphere with $v \sim - v$ acted on by $Z_2 = (0,1)$ by $\alpha_1(v)=-v$ \\
+    Let $Y$ be set of all lines in $\bR^3$ through 0. Let $\bR - \{0\}$, have an action on $\bR^3$ by $\alpha_t(r,s,v) = (tr, ts, tv)$ \\
+    Orbits in $\bR^3-\{0\}$, set of all lines through 0, (with 0 removed). Each line intersects the unit spehr in 2 antipodal points. Quotient topology gives a topology on the set of lines. 
+\end{example}
+
+\mbox{} \\
+\mbox{} \\
+\mbox{} \\
+
+\subsection{Connectedness}
+
+\begin{definition}
+    A topological space $(X, \cT)$ is connect if it does have two, nonempty, disjoint open sets $A,B$ with $A \cup B = X$
+\end{definition}
+
+\begin{itemize}
+    \item If this is the acse, $A, B$ also closed - called ``clopen'' 
+\end{itemize}
+
+\begin{theorem}
+    If $(X,\cT)$ is connected, $f: X \to Y$ is continuous, $f(X)=$range($f$) with the inherited topology is connected. 
+\end{theorem}
