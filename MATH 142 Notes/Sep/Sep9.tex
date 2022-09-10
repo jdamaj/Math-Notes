@@ -1,0 +1,40 @@
+
+\subsection{Connectedness}
+
+$(X, \cT)$ is connected if the only clopen sets are $X, \vn$
+
+\begin{proposition}
+    If $(X, \cT)$, $A \subseteq X$, give $A$ the relative topology, then if $A$ is connected then so is $\overline{A}$ 
+\end{proposition}
+
+\begin{pf}
+    Suppose that $C$ is a clopen subset of $\overline{A}$, then $C \cap A$ is a clopen subset of $A$ so either $C \cap A  =A$ or $C \cap A = \vn$. If $C \cap A = \vn$, $C \cap \overline{A} = \vn$ since $C$ is open. If $C \cap A$, $C \supseteq A$ so $C \supseteq \overline{A}$ since $C$ is closed. So $C  = \vn$ or $\overline{A}$  
+\end{pf}
+
+\begin{proposition}
+    Given $(X, \cT)$ a collection of $\{F_{\alpha}\}$ of subsets of $X$, let $Y = \bigcup_{\alpha}F_{\alpha}$. Suppose that each $F_{\alpha}$ is connected. If $\ex p \in \bigcap F_{\alpha}$ then $Y$ is connected.  
+\end{proposition}
+
+\begin{pf}
+    Let $C$ bea  aclopen subset of $Y$. We can asssume that $p \in C$, then for each $\alpha$, $C \cap F_{\alpha} \neq \vn$, $C \cap F_{\alpha}$ is clopen so $C \cap F_{\alpha} = F_{\alpha}$ so $F_{\alpha} \subseteq C$. Thus $C \supseteq \bigcup F_{\alpha} = Y$, so $C=Y$. 
+\end{pf}
+
+\begin{proposition}
+    Let $(X,\cT^X)$, $(Y, \cT^Y)$ be topological spaces and suppose that each is connected. THen $X \times Y$ with the product topology is connected. 
+\end{proposition}
+
+\begin{pf}
+    Choose a point $b \in X$ (a ``basepoint''). Then $E = \{b\} \times Y$ is homoemorphic to $Y$ and so is connected. For each $y \in Y$, let $H_y = X \times \{y\}$. Homoemorphic to $X$ so connected. For each $y \in Y$, let $T_y = H_y \cup E$, connected since $(y,b)$ is in both. Choose a basepoint $c \in Y$ so $(b,c) \in E$ and $(b,c)$ is in each $T_y$ so $X \times Y = \bigcup_{y \in Y}T_y$ is connected. 
+\end{pf}
+
+\noindent
+Follows that if $X_1, \ldots, X_n$ are topological spaces and each is connected then $X_1 \times \cdot \times X_n$ is connnected. \\
+
+\noindent
+Any open interval $(a',b')$ in $\bR$ is connected. (False for $(a,b)$ in $\bQ$) \\
+Suppose $C \subseteq (a',b')$ is clopen and $\neq \vn$ and suppose we have $a \in C$, $b \in C'$, $a<b$. Consider $A = \{r \in C \, : \, r < b\}$. $a \in A$ and $b$ is an upper bound. Let $c$ be its least upper bound then $c \in A$ since if $c \in C$ then there is an open ball about $c$ contained in $C$ (since $C$ is open), but $c \not\in C'$ for a similar reason. 
+
+\subsection{Connected Components} 
+
+Given $(X, \cT)$ define an equivalence realtion on $X$ by $x \sim y$ if there is a connected subset that contains both of them. \\
+Reflexivity, symmetry clear. If $x \sim y$, $y \sim z$, then $x,y \in C$, $y, z \in D$ so $y \in C \cap D$ so $C \cup D$ is connected. 
