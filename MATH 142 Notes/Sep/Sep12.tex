@@ -1,0 +1,48 @@
+
+\subsection{Connected Components}
+
+$(X, \cT)$ a topological space. Define an equivalence relation on $X$ by $x \sim y$ if there is a connected subset of $X$ containing both $x$ and $y$. \\
+Transitivity: If $x \sim y$ and $y \sim z$, there is connected $A$ with $x,y \in A$ and connected $B$ with $y,z \in B$ then $A \cup B$ is conected since $y \in A, y \in B$, $x, z \in A \cup B$. \\
+The equivalence classes foe this equivalence relation are called the connected components of $X$. Given $x \in X$, the equivalence class of $x$ is the union of all connected sets containing $x$. So the equivalence class is the largest connected set containing $x$. \\
+Since the closure of a connected set is conected, the equivalence classes are closed subsets of $X$. 
+
+\begin{example}
+    $X = \bQ$, the connected components we get are the one point subsets. \\
+    ($\bQ$ is totally disconnected, as is $\prod_{m=1}^{\infty} \{0, 1\}$, ``0 dimensional'')
+\end{example}
+
+\begin{definition}
+    By a parametrized path in $X$ we mean a continuous function, $f$, from some interval $[a.b] \subseteq \bR$. This path connects $f(a)$ to $f(b)$. 
+\end{definition}
+
+\noindent
+Define an equivalence relation on $(X, \cT)$ by $x \sim y$ if there is a path in $X$ connecting $x$ to $y$. \\
+Reflexive: Assume $f: [0,1] \to X$, $f(0)=x$, $f(1)=y$ set $g(t) = f(1-t)$, then $g(0)=y$, $g(1=x)$ \\
+Transitive: If $f: [a,b] \to X$, $f(a)=x, f(b)=y$ and $g: [c,d] \to X$, $g(c)=y, g(d)=z$ change interval such that $g: [b,c]$ with $g(b)=y, g(e)=z$. $[a, e] = [a,b] \cup [b, e]$ so define $h: [a,c] \to X$ by $h(t) = \begin{cases} f(t) \quad t \in [a,b] \\ g(t) \quad t \in [b,e] \end{cases}$ \\
+The equivalence classes are called path components of $(X, \cT)$ \\
+Note: path connected $\to$ connected. 
+
+\begin{example}
+    Let $f: (0,1], f(t) = (t, \sin(\frac{1}{t}))$, graph of $\sin (\frac{1}{t})$. \\
+    Subset is path connected but not closed. Closure is graph $\cup \{0\} \times [0,1]$. Closure consists of 2 path connected components but only 1 connected component. In closure, 1 path connected component is not closed, while the other is closed but not open.
+\end{example}
+
+\begin{definition}
+    $(X, \cT)$ is locally connected if $\fa x \in X$ $\fa$ open $\cO$ if $x \in \cO$ there is an open $U$, $x \in U \subseteq \cO$ with $U$ connected. 
+\end{definition}
+
+\begin{itemize}
+    \item If $(X, \cT)$ is locally connected then all conected components are open, and hence clopen. 
+\end{itemize}
+
+\begin{definition}
+    $(X, \cT)$ is locally path connected if $\fa x \in X$ $\fa$ open $\cO$ if $x \in \cO$ there is an open $U$, $x \in U \subseteq \cO$ with $U$ path connected. 
+\end{definition}
+
+\begin{itemize}
+    \item If $(X, \cT)$ is locallt path connected, then all path connected components are clopen. path components = connected components. 
+\end{itemize}
+
+\begin{definition}
+    A topological manifold of dimension $n$ is a topological space $(X, \cT)$ with the property that every $x \in X$ has an open set $\cO$ such that $x \in \cO$ with $\cO$ homoemorphic to an open set in $\bR^n$ (open ball in $\bR^n$, all of $\bR^n$). 
+\end{definition}
