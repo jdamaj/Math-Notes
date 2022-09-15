@@ -1,0 +1,128 @@
+
+\subsection{Classificaiton of Finitely Generated Abelian Groups}
+
+Classify all finite abelian grousp $G$. 
+\begin{itemize}
+    \item Write group law as + 
+    \item pick finite number of generators $g_1, \ldots, g_n$ (every element in $G$ is of the form $m_1g_1 + \cdot + m_ng_n$ with $m_i \in \bZ$) 
+\end{itemize}
+
+\noindent
+Classificaiton still works for finitely generated abelian groups. \\
+Relation: $a_1 g_1 + \cdots + a_ng_n 0$ \\
+Take some $a_{1,1}g_1 + \cdot + a_{1,n}, a_{2, 1} + \cdots + a_{2,n}, \ldots $ generating all relations. \\
+We get a matrix $\begin{pmatrix} a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\ a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\ & & \vdots & \end{pmatrix}$ \\
+Change matrix:
+\begin{enumerate}
+    \item Permute rows 
+    \item Permute columns 
+    \item Add a multiple of one row to another row. $\{R_1, R_2\} \equiv \{R_1, R_2 + nR_1\}$ 
+    \item Add a multiple of one column to another. $g_1, \ldots, g_n$ generators then $g_1 + ng_2, g_2, \ldots, $ also generators.  
+\end{enumerate}
+
+\noindent
+Do row, column operations to simplify matrix 
+\begin{itemize}
+    \item Arrage $a_{1,1}$ to be as small as possible $(>0)$. Possible unless all $a_{ij}=0$ \\
+    $a_{1,1}$ divides $a_{1,2}$ since if $a_{1,2} = ka_{1,1} + r$ with $0 \le r < a_{1,1}$, as $a_{1,1}$ is minimal , $r=0$. Can meake $a_{1,2}=0$. Similarly, we can make $a_{1,3}, a_{1,4}, \ldots, a_{2,1}, a_{2,2}, \ldots $ all 0 to get a matrix $\begin{pmatrix} a_{1,1} & 0 & \cdots & \cdot \\ 0 & a_{2,2} & a_{2,3} & \cdots \\ \vdots & a_{3,2} & \ddots & \\ \vdots &\vdots \end{pmatrix}$ \\
+    We can repeat this with $a_{2,2}$ to get $\begin{pmatrix} a_{1,1} & & & 0 \\ & a_{2,2} & & & \\ & & \ddots & \\ 0 & & &a_{n, n} \end{pmatrix}$ giving relations $a_{1,1}g_1=0$, $a_{2,2}g_2 = 0, \ldots$ so group is $\bZ/a_{1,1}\bZ \oplus \bZ/a_{2,2}\bZ \oplus \cdot \oplus \bZ/a_{n,n}/\bZ$ with $a_{1,1} | a_{2,2} | a_{3,3} | \ldots$ \\
+    If $\bZ/a_1\bZ \oplus \bZ/a_2\bZ \oplus \cdots \oplus \bZ/a_n\bZ \cong bZ/b_1\bZ \oplus \bZ/b_2\bZ \oplus \cdots \oplus \bZ/b_m\bZ$ with $a_1 | a_2 | a_3| \cdots$ and $b_1 | b_2 |b_3 | \cdot$ then $n=m$, $a_1=b_1$, $a_2=b_2, \ldots$ \\
+    Key idea - look at the number of homomorphisms from $G$ to $\bZ/m\bZ$  
+\end{itemize}
+
+\noindent
+How many abelian groups of order $p^n$ ($p$ prime)? \\
+$\bZ/a_1\bZ \oplus \bZ/a_2\bZ \oplus \cdots $ $a_i = p^{k_i}$, $k_1 \le k_2 \le k_3 \le \cdots$, $k_1 + k_2 + k_3 + \cdots = n$. \\
+\begin{tabular}{c|c}
+    $n$ & \# partitions \\ 
+    0 & 1 \\
+    1 & 1 \quad 1\\ 
+    2 & 2 \quad $2, 1+ 1$ \\
+    3 & 3 \quad $3, 2+ 1, 1+ 1+ 1$ \\
+    4 & 5 \quad $4, 3+1, 2+2, 2+1+1, 1+1+11$ \\
+    5 & 7 \quad $5, 4+1, \ldots$
+\end{tabular} 
+
+\noindent
+\textbf{Order 18}: Normal subgroup of order $3^2$ so group is order 9 $\rtimes \bZ/2\bZ$ \\
+$\bZ/9\bZ$- 2 actions of $\bZ/2\bZ$, $(\bZ/3\bZ)^3$- 3 actions of $\bZ/2\bZ$ (thinking of this as a vector space over $\bZ/3\bZ$ consider linear transformations of order 2, $V = V^+ \oplus V^-$, egienspaces of $\pm 1$, dimension of $V=0,1,2$) \\
+One of the groups $(\bZ/3\bZ)^3$ is wreath product. \\
+Suppose $G, H$ aer groups. Take product of $|G|$ copies of $H$. $H^{|G|} = H \times H \times \cdots$, $G$ acts on $H^{|G|}$ so we have the semidirect product of $H^{|G|} \rtimes G$ \\
+More generally, if $G$ acts on $\Omega$, can form $H^{|\Omega|} \rtimes G$ 
+
+\begin{example}
+    $H = \bZ/3\bZ$, $G = \bZ/2\bZ$ $(\bZ/3\bZ)^2 \rtimes \bZ/2\bZ$ $\to$ wreath product of order 18. \\
+    $H = \bZ/2\bZ$, $G = \bZ/2\bZ$ $(\bZ/2\bZ)^2 \rtimes \bZ/2\bZ = D_8$. 
+\end{example}
+
+\begin{example}
+    \begin{enumerate}
+        \item Symmetry of graphs (Insert Figure) 
+        \item Sylow subgroups of symmetric groups \\
+        Want to consider Sylow 2-subgroups of $S_10$. Highest power of 2 dividing $10! = \left\lfloor \frac{10}{8} \right\rfloor + \left\lfloor \frac{10}{4} \right\rfloor + \left\lfloor \frac{10}{2} \right\rfloor = 5 + 2 + 1 =8$. (Insert Figure) 
+    \end{enumerate}
+\end{example}
+
+\begin{itemize}
+    \item Any group of order $p^n$ is a subgroup of some $(\bZ/p\bZ)\wr(\bZ/p\bZ)\wr(\bZ/p\bZ)$ 
+\end{itemize}
+
+\noindent
+Physics - Gauge Theories \\
+G=gauge group. Symmeties = (continuous maps of spacetime $\to G) \rtimes ($Automorphims of spacetime$)$ 
+
+\noindent
+\textbf{Order 20}: $(\bZ/5\bZ) \rtimes (\text{order 4})$ \\
+5 possibilities: $\bZ/5\bZ \times (\bZ/2\bZ)^2$, $\bZ/5\bZ \rtimes (\bZ/2\bZ)^2$, $D_{10} \times \bZ/2\bZ = D_{20}$, $\bZ/5\bZ \times \bZ/4\bZ$, $\bZ/5\bZ \rtimes \bZ/4\bZ$ (elements of order 2, binary tetrahedral), $\bZ/5\bZ \rtimes \bZ/4\bZ$ (Frobenius Group) \\
+
+\noindent
+Frobenius Group is a group $G$ acting on a set $S$ transitively and faithfully such taht 
+\begin{enumerate}
+    \item If $g$ fixed two points of $S$ then $g$ is the identity 
+    \item $S$ is not the regular action of $G$ of a group on teh set. 
+\end{enumerate}
+
+\begin{example}
+    $\bZ/5\bZ \rtimes \bZ/4\bZ$ ``$ax+b$'' group. Take $F$ a field and consider all linear transformations $x \mapsto ax+b$, $x \in F$, $a \neq 0 , b \in F$ = matrix $\begin{pmatrix} a & b \\ 0 & 1 \end{pmatrix}$ $a \neq 0$ \\
+    $S_3$ also Frobenius gorup, ``$ax+b$'' for $\bZ/3\bZ$ \\
+    $A_4$ acts on 4 points also a Frobenius group. 
+\end{example}
+
+\noindent
+Frobenius: If $G$ is a Frobenius group then put $N$= identity $\cup$ elements with no fixed point, then $N$ is a normal subgroup of $G$= Frobenius kernel \\
+For $A_4$, the frobenious kernel is $\bZ/2\bZ \oplus \bZ/2\bZ$ \\
+Thompson: $N$ is nilpotent 
+
+\noindent
+\textbf{Order 21}: $\bZ/7\bZ \rtimes \bZ/3\bZ$ is first non-abelain group of odd order. 
+
+\noindent
+\textbf{Order 24}: Look at Sylow 3-subgroups , $\bZ/3\bZ$, either 1 or 4 \\
+if 1: $\bZ/4\bZ \rtimes (\text{order 8})$ \\
+if 4: We get an action of $G$ on 4 points (Sylow 3-subgroups) so we have a homomorphism $G \to S_4$. Kernel has order $1, 2, 3$ or $6$. 6, 3 not possible since no normal subgroup of order 3 so 2 possibilities: 
+\begin{enumerate}
+    \item Kernel is 1, $G \cong S_4$ (no normal Sylow Subgroup) 
+    \item $1 \to \bZ/2\bZ \to G \to \text{Aut}$ binary dihedral group
+\end{enumerate}
+
+\subsection{Symmetric Groups - $S_n$} 
+
+Order is $n!$ What are its conjugacy classes? \\
+General element: $(1 \, 3 \, 5)(2 \, 4)(6 \, 8 \, 9)$ \quad cycle shape = lengths of cycles in order. \\
+2 elements of group aer conjugate $\ifff$ they have the same cycle shape \\
+Problem: Given $a,b$, having the same cycle shape. Find $g$ with $gag^{-1}=b$ \\
+eg. $a=(1 \, 3)(2 \, 5 \, 9)(4 \, 6 \, 8)(7), b = (5 \, 7)(1 \, 3 \, 6)(2 \, 4 \, 9)(8)$ can define $g$ to map elements to corresponding element in other cycle eg. $1 \to 5, 3 \to 7, 2 \to 1, \ldots$ \\
+How many conjugacy classes of $S_n$? eg. How many cycle shapes? \\
+$(n_1)(n_2)(n_3) \cdots$ $0 \le n_1 \le n_2 \le n_3$ $n_1 + n_2 + n_3 + \cdots =n$, number of partitions of $n$ \\ 
+What is the set of conjugates of the cycle shape $1^{k_1}2^{k_2}3^{k_3} \cdots$ $\underbrace{1 \cdots 1}_{k_1} \cdot \underbrace{2 \cdots 2}_{k_2} \cdots$ \\
+\# is $|S_n$/ size of subgroup fixing one of the permutations \\
+Find an element of $S_n$ commuting with these, $S_{k_1}, 2^{k_2}S_{k_2}, 3^{k_3}S_{k_3}, \ldots$ so $\# = \frac{n_1}{k_1!2^{k_2}k_2!3^{k_3}k_3! \cdots}$ \\
+ $S_4$: \\
+ \begin{tabular}{c c}
+    4 & $\frac{24}{4}=6$ \\
+    3 1 & $\frac{24}{3 \cdot 1}=8$ \\
+    $2^2$ & $\frac{24}{2^22!}=8$ \\
+    2 $1^2$ & $\frac{24}{2 \cdot 1^3 \cdot 2!}=6$ \\
+    $1^4$ & $\frac{24}{1^4 \cdot 4!}=1$ 
+ \end{tabular}
+
