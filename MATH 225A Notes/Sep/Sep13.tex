@@ -1,0 +1,64 @@
+
+\subsection{Up and Down}
+
+\begin{definition}
+    $\cL^- \subseteq \cL$, $\cM$ is an $\cL$-stucture, then $\cL^-$ reduct of $\cM$ is the $\cL^-$ stucture with the same domain and $\cL^-$ interpretations of $\cM$. We say that $\cM^-$ is a reduction of $\cM$, $\cM$ is an expansion of $\cM^-$  
+\end{definition}
+
+\begin{lemma}
+    Consider $\cL$ structures $\cM, \cN$ 
+    \begin{enumerate}
+        \item there is an embedding $\cM \to \cN$ $\ifff$ there is an $\cL_M$ expansion $\cN^*$ of $\cN$ such that $\cN^* \models \dia(\cM)$ 
+        \item there is an elementary embedding $\cM \to \cN$ $\ifff$ there is an $\cL_M$ expansion $\cN^*$ of $\cN$ such that\\ $\cN^* \models \diae(\cM)$
+    \end{enumerate}
+\end{lemma}
+
+\noindent
+Here $\cN^* = (\cN, c_m^{\cN} \in N \text{ for }m \in M)$ 
+
+\begin{pf}
+     $\to)$ Suppose $f: \cM \to \cN$ is an embeeding. We need to find a $\cL_M$ expansion $\cN^*$ of $\cN$ by defining $c_m^{\cN}$ for $m \in M$ such that for all $\cL$-formulas $\vp(\overline{x})$, all $\overline{m} \in M$, if $\vp(\overline{c_m}) \in \dia(M) \to \cN^* \models \vp(\overline{c_m})$. Let $c_m^{\cN}=f(m)$ so $\vp(\overline{c_m}) \in \dia(\cM) \ifff \cM \models \vp(\overline{m}) \ifff \cN \models \vp(f(\overline{m})) \ifff \cN^* \models \vp(c_m^{\cN})$ \\
+     $\from)$ Given the $\cL_M$ expansion $\cN^*$ of $\cN$ such that $\cN^* \models \dia(\cM)$. Let $f: \cM \to \cN$ by $f(m) = c_m^{\cN^*}$ 
+\end{pf}
+
+\begin{theorem}[Upwards Lowenheim-Skolem]
+    Let $\cM$ be an infinite $\cL$-strucutre. For every $\kappa \ge |M| + |\cL|$ there is an $\cL$-strucure $\cN$ such that $|\cN| = \kappa $ and $\cM \preceq \cN$.
+\end{theorem}
+
+\begin{pf}
+    It suffices to show there is an elementary embedding $j: \cM \to \cN$ as $\cM$ can be identified with its image. Lt $\cN^*$ be a model of $\dia(\cM)$ of size $\kappa$. Let $\cN$ be the $\cL$-reduct of $\cN^*$
+\end{pf}
+
+\begin{example}
+    $(\bQ, 0 , +) \preceq (\bR, 0, _ )$ $\kappa$-categorical so there is only structure of size $2^{\aleph_0}$ up to isomorphism 
+\end{example}
+
+\begin{example}
+    $(\bQ^{\text{deg}}, 0, 1, + , \times) \preceq (\bC, 0, 1, +, \times)$ 
+\end{example}
+
+\begin{theorem}[Downward Lowenheim-Skolem]
+    Let $\cM$ be an infinite $\cL$-structure. For all $X \subseteq M$, there is an $\cL$ structure $\cN \subseteq \cM$, $|\cN| = |X| +|\cL| + \aleph_0$ and $\cN \preceq \cM$
+\end{theorem}
+
+\begin{proposition}[Tarski-Vaught Test]
+    Suppose $\cN \subseteq \cM$. Then $\cN \preceq \cM \ifff$ formulas $\phi(\overline{v},w)$ and all $\overline{n} \in N$ if $\cM \models \ex \phi(\overline{n}, w)$ then there is $c \in N$ such that $\cM \models \phi(\overline{n},c)$.
+\end{proposition}
+
+\begin{pf}
+    $\to )$ Assume $\cN \preceq \cM$, $\cM \models \ex w \phi(\overline{n},w)$ then $\cN \models \ex w \phi(\overline{n}, w)$ so there is $c \in N$ such taht $\cN \models \phi(\overline{n},c)$ so $\cM \models \phi(\overline{n},c)$ \\
+    $\from )$ We use induction on $\cL$-formulas to show that for all formulas $\psi(\overline{x})$ and all $\overline{n}$, $\cN \models \psi(\overline{n}) \ifff \cM \models \psi(\overline{n})$ 
+    \begin{itemize}
+        \item For $\psi$ atomic, this follows since $\cN \subseteq \cM$ 
+        \item For $\psi =\psi_1 \wedge \psi_2$, $\neg \psi_1$ clear by applying IH 
+        \item For $\psi(\overline{x})$ of the form $\ex \phi(\overline{x},w)$, pick $\overline{n} \in N$, $\cM \models \psi(\overline{n}) \ifff \cM \models \ex w \phi(\overline{n},w) \ifff$ there is $c \in N$ such that $\cM \models \phi(\overline{n},c) \stackrel{\text{IH}}{\ifff}$ there is $c \in N$ such that $\cN \models \phi(\overline{n},c) \ifff \cN \models \ex w \phi(\overline{n},w) \ifff \cN \models \psi(\overline{n})$.  
+    \end{itemize} 
+\end{pf}
+
+\begin{pf}[Proof of Lowenheim Skolem]
+    Let $X = X_0$. For any $\overline{n} \in X$ and $\vp(\overline{v},w)$ if $\cM \models \ex w \vp(\overline{n},w)$. let $c_{\overline{n},\vp} \in m$ such that $\cM \models \phi(\overline{n},c_{\overline{n}, \vp})$. Let $X_1 = \{c_{\overline{n}, \vp} \, | \vp \, \cL \text{ forumula }, \overline{n} \in X_0, \cM \models \ex w \vp(\overline{n},w)\} \cup X_0$ \\
+    We can define $X_{n+1}$ from $X_n$ similiarly and let $N = \bigcup_{i \in \omega}X_i$ \\
+    $|X_1|$ = (\# $\cL$ forumas) $\times$ (\# terms $X_0$) = $(|\cL| + \aleph_0) \times (|X_0|)$ \\
+    Since $|\cN| \le |\cL| + |\aleph_0| + |X_0|$, then $|X| \le |\cN| \le |X| + |\cL| + \aleph_0$. \\
+    We define $\cN$ with domain $N$ by restricting functions, relations, and constants from $\cM$. If $\vp(\overline{x}, w)$ is the formula $f(\overline{x})=w$ and $\overline{n} \in X$, $\cM \models \ex w f(\overline{m})=w$ in $X_{i+1}$ so $c_{\vp, n}$ satisfies $f(\overline{n}) = c_{\vp. n}$ 
+\end{pf}
