@@ -1,0 +1,64 @@
+
+\subsection{Compactness} 
+
+\begin{definition}
+    Let $(X, \cT)$ be a topological space. By an open cover of $X$ we mean a subset $\cC$ of $|cT$, ie. a family of open sets such that $\bigcup \{ \cO \in C\} = X$. By a subcover of $\cC$ we mean a subset $\cD$ of $\cC$ such that $\cD$ is a cover of $X$. 
+\end{definition}
+
+\begin{definition}
+    $(X, \cT)$ is said ot be compact if every open cover of $X$ has a finite subcover. 
+\end{definition}
+
+\begin{itemize}
+    \item $[0,1] \subseteq \bR$ is compact 
+    \item Heine - Borel Property: any bounded closed subset of $\bR^n$ is compact. 
+\end{itemize}
+
+\noindent
+Let $(X, \cT)$ be a topological space. Let $A$ be a subset of $X$, give $A$ the relative topology. Then $A$ is compact iff for any $\cC \subseteq \cT$ such that $\bigcup\{ \cO \in \cC\} = A$ there is a finite subcover $\cD$ of $\cC$ such that $\bigcup \{ \cO \in \cD\} \supseteq A$ 
+
+\begin{proposition}
+    Let $(X,\cT)$ be compact. If $A \subseteq X$ is closed, then $A$ is compact.
+\end{proposition}
+
+\begin{pf}
+    If $\cC \subseteq T$ such that $\bigcup \{ \cO \in \cC\} \supseteq A$, since $A$ closed, $A'$ open so $\cC \cup \{A'\}$ is an open cover of $X$. Since $X$ is compact, there is a finite subcover, $\cD$. If we remove $A'$ from $\cD$ (if $A' \in \cD$) we get a finite subcover $\cC$ covering $A$. 
+\end{pf}
+
+Any set with the indiscrete topology is compact band any subset of it is compact bu tnot necesarily closed. 
+
+\begin{proposition}
+    Given $(X, \cT)$ and $A \subseteq X$ compact. If $(X, \cT)$ is Hausdorff then for any $x \in X$, $x \not\in A$ there are disjoint open sets $U, V$ with $A \subseteq U$, $x \in V$ 
+\end{proposition}
+
+\begin{pf}
+    Fror any $a \in A$ ,by Hausdorff, ther are open sets $U_a, V_a$ disjoint with $a \in U_a, x \in V_a$. The collection of sets $\{U_a \, : \,  a \in A\}$ covers $A$. Since $A$ is compact ther is a finite subcover $U_{a_1}, \ldots, U_{a_n}$. Let $U= U_{a_1} \cup \cdots \cup U_{a_n} \supseteq A$, let $V = V_{a_1} \cap \cdots \cap V_{a_n}$ so we get $x \in V$, $U,V$ disjoint. 
+\end{pf}
+
+\begin{corollary}
+    Given $(X, \cT)$ Hausdorff, $A \subseteq X compact$, then $A$ is closed. 
+\end{corollary}
+
+\begin{pf}
+    $A'$ open since for $x \in A'$ can find open set containing $x$, disjoint from $A$. 
+\end{pf}
+
+\begin{theorem}
+    Given $(X, \cT)$ compact, and $f: X \to Y$ continuous, then $f(X)$ is compact. 
+\end{theorem}
+
+\begin{pf}
+    Let $\cC$ be an open cover of $f(X)$. Since for $\cO \in \cT^Y$, $f^{-1}(\cO) \in \cT^X$, then $\{f^{-1}(\cO)\, : \, \cO \in \cC\}$ is an open cover of $X$. Since $X$ is compact, there is a finite subcover $f^{-1}(\cO_1), \ldots, f^{-1}(\cO_n)$. Then $\cO_1, \ldots, \cO_n$ is an open cover of $f(X)$ 
+ \end{pf}
+
+ \begin{example}
+    Given $f: [0,1] \to \bR$ cotinuous, $f([0,1])$ is connectd, compact so is some $[a,b]$. So $f$ attains its suprenum = lub$\{f(t) \, : \, t \in [a,b]\}$ 
+ \end{example}
+
+ \begin{theorem}
+    Given $(X, \cT)$, $(Y, \cT)$, $f: X \to Y$ continuous, assume $f$ is continuous, one to one, onto, $X$ is compact, $Y$ is Hausdorff. Then $f$ is homoemorphism. 
+ \end{theorem}
+
+ \begin{proof}
+    Need to show $f^{-1}$ contniuous, so need $f(\cO) \in \cT^Y$ for $\cO \in \cT^Y$, equivalently, if $A$ is closed in $X$, then $f(A)$ is closed in $Y$. If $A$ closed, $A$ compact so $f(A)$ is compact, but $Y$ is Hausdorff so $f(A)$ is closed. 
+ \end{proof}
