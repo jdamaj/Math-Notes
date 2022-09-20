@@ -1,0 +1,59 @@
+
+\subsection{Operations on the Natural Numbers}
+
+\begin{theorem}
+    Let $A$ be a set, $a \in A$ and $F : A \to A$. Then there is a unique function $h: \omega \to A$ such that: 
+    \begin{enumerate}
+        \item $h(0)=a$ 
+        \item $h(n^+) = F(h(n))$ for all $n \in \omega$
+    \end{enumerate}
+\end{theorem}
+
+\begin{pf}
+    Let $h = \{ \langle n, b \rangle \in \omega \times A \, | \, \text{there is } g: n^+ \to A \text{ such that } g(0)=a, g(i^+)=F(g(i)) \wedge g(n)=b\}$ \\
+    Claim 1: For all $n$ there is a $g : \{0, \ldots, n\} \to A$ such that $g(0)=a$, $g(i^+)=F(g(i))$ \\
+    Claim 2: Such a $g$ is unique. 
+
+\begin{proof}[Proof of Claim 1]
+    Let $I = \{ n \in \omega \, | \, \text{ such a } g \text{ exists}\}$. Want to show that $I$ is inductive. 
+    \begin{enumerate}
+        \item $0 \in I$: let $g: \{0\} \to A$ be such that $g(0)=a$ eg. $g = \{ \langle 0, a \rangle \}$ 
+        \item Suppose $n \in I$, we know such a $g$ exists for $n$, $g: \{0, \ldots, n\} \to A$. We want $\tilde{g}: \{0, \ldots, n, n^+\} \to A$. Let $\tilde{g} = g \cup \{ \langle n^+, F(g(n)) \rangle \}$ 
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}[Proof of Claim 2]
+    Suppose $g, \tilde{g}: \{0, \ldots, n\} \to A$ such that $g(0) = a = \tilde{g}(0)$, $g(i^+) = F(g(i))$, $\tilde{g}(i^+) = F(\tilde{g}(i^+)), i < n$. We want to show $g(i) = \tilde{g}(i)$ $\fa i \le n$. $g(0) = \tilde{g}(0)$, $g(i^+) = F(g(i)) = F(\tilde{g}(i)) = \tilde{g}(i^+)$ \\
+    Can formally show this by induction using $I = \{ i \in \omega \, | \, i \in n^+ \wedge g(i) = \tilde{g}(i) \vee i \not\in n^+\}$
+\end{proof}
+
+\noindent
+Claim 3: $\fa n \in \omega$, $h(n^+) = F(H(n))$ 
+
+\end{pf} 
+
+\begin{definition}
+    Given $k \in \omega$, define $A_k :\omega \to \omega$ by $A_k(0)=k$, $A_k(n^+) = (A_k(n))^+$. Define $n+k = A_k(n)$ \\
+    Define $M_k: \omega \to \omega$ by $M_k(0)=0$, $M_k(n^+) = A_k(M_k(n))$, let $n \times k = M_k(n)$.\\
+    Let $m < n$ if $m \in n$
+\end{definition}
+
+\begin{theorem}
+    We can show the associativity of addition: $\fa a, b, v \in \omega ((a+b)+c = a + (b+c))$, commutativity of addition: $ \fa a, b \in \omega a+b=b+a$, etc. 
+\end{theorem}
+
+\subsection{Integers}
+
+Let $\sim$ be the following equivalence relation on $\omega \times \omega$ by $\langle a , b \rangle \sim \langle c , d \rangle \ifff a+d = b+c$ \\
+Define $\bZ = \omega \times \omega / \sim$. $0_{\bZ} = [\langle 0, 0 \rangle]$, $1_{\bZ} = [\langle 1, 0 \rangle]$ \\
+Let $[\langle a, b \rangle] +_{\bZ} [\langle c , d \rangle] = [\langle a + c, b+d \rangle]$. One needs to show this is well defined eg. if $\langle a, b \rangle \sim \langle a', b' \rangle$, $\langle c, d \rangle \sim \langle c', d' \rangle$ then $\langle a + c, b+d \rangle \sim \langle a' + c', b' + d' \rangle$/ \\
+Let $[ \langle a, b\rangle] \times_{\bZ} [\langle c, d \rangle] = [\langle ac + bd, ad+bc \rangle]$ \\
+Let $E: \omega \to \bZ$ by $E(n) = [\langle n, 0 \rangle]$ 
+
+\subsection{Rationals}
+
+Let $\sim$ be the following equivalence relation on $\bZ \times \bZ \setminus \{0\}$. $\langle a, b \rangle \sim \langle c , d \rangle \iff a \times_{\bZ} d = b \times_{\bZ} c$ \\
+Define $\bQ = \bZ \times \bZ \setminus \{0\} / \sim$. $0_{\bQ} = [\langle 0, 1 \rangle]$, $1_{\bQ} = [ \langle 1, 1, \rangle]$ \\
+Let $[\langle a, b \rangle] \times_{\bQ} [\langle c, d \rangle] = [\langle a \times c, b \times d \rangle]$ \\
+Let $[\langle a, b \rangle] +_{\bQ} [\langle c, d \rangle] = [\langle ad  +bc, bd \rangle]$ \\
+$E: \bZ \to \bQ$ by $E(z) = [\langle z, 1 \rangle]$ 
