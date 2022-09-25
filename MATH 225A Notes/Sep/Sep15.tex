@@ -1,0 +1,55 @@
+\subsection{Universal Axiomatizations} 
+
+\begin{example}
+    Consider $\cM = (\bZ, 0 , +)$, $\cN = (2\bZ, 0, +)$, $\cN \subset \cM$, $\cN \equiv \cM$ but $\cN \not\preceq \cM$. Consider $\vp(x) = \ex y (y+ y = z)$. $\cM \models \vp(2)$, $\cN \models \neg \vp(2)$. \\
+    We have $\text{Th}(\cM) = \text{Th}(\cN)$ but $\cN \not\models \diae(\cN)$. 
+\end{example}
+
+\begin{definition}
+    A universal formula is of the form $\fa x_1, \ldots, x_n \vp(x_1, \ldots, x_n, \overbrace{y})$ where $\psi$ is quantifier free. 
+\end{definition}
+
+\noindent
+Observation: If $\cM \subseteq \cN$ and $\vp(\overline{x})$ is a univeral formulas, $\overline{m} \in M$, if $\cN \models \vp(\overline{m})$, then $\cM \models \vp(\overline{n})$ 
+
+\begin{definition}
+    $T$ has a univeral axiomatization if there is a set of universal sentences $\Gamma$ such that $T \models \Gamma$ and $\Gamma \models T$ 
+\end{definition}
+
+\noindent
+Observation: If $T$ has a universalthen if $\cN \models \T$ and $\cM \subseteq \cN$, then $\cM \models T$ 
+
+\begin{example}
+    Group axioms, if $\cL = \{\cdot, e\}$, not universal, $(\bN, 0, +) \subseteq (\bZ, 0, +)$ but is not a group. \\
+    If we consdier $\cL = \{\cdot, e, (\cdot)^{-1\}$, universal, $\fa x (x \cdot x^{-1} = e \wedge x^{-1} \cdot x = e)$ 
+\end{example}
+
+\begin{theorem}
+    If $T$ is such that $\fa \cM \subseteq \cN (\cN \models T \to \cM \models T)$, then $T$ has a universal axiomatization. 
+\end{theorem}
+
+\begin{pf}
+    Let $\Gamma \{ \vp$ universal $\, | \, T \models \vp\}$. Clearly $T \models \Gamma$, want to show $\Gamma \models T$. Suppose $\cM \models \Gamma$, we want to show $\cM \models T$, We want $\cN \supseteq \cM$ such that $\cN \models T$. $\cN \supseteq \cM \ifff \cN \models \dia(\cM)$ so want $\dia(\cM) \cup T$ is satisfiable. \\
+    Claim: $T \cup \dia(\cM)$ is satisfiable.  \\
+    Let $\Delta \subseteq T \cup \dia(\cM)$ be finite. $\Delta = T_0 \cup \{\phi_1(\overline{c_m}), \ldots, \phi_k(\overline{c_m})$. Can assume only one formula $\phi$ (can take the conjugation) so $\phi$ is quantifier free such that $\cM \models \phi(\overline{c_m})$. $\cM \models \phi(\overline{m}) \to \cM \not\models \fa \overline{v} \neg \phi(\overline{v}) \to T \not\models \fa \overline{v} \neg \phi(\overline{v})$ so $T \cup \{\ex \overline{v} \phi(\overline{v})\}$ is satisfiable. Thus, $T \cup \{ \phi(\overline{c_m})\}$ is satisfiable since if $\cA \models \ex v \phi(v)$, for some $\overline{a} \in A$, $\cA \models \phi(\overline{a})$ so let $\overline{c_m} = \overline{a}$. ($\cA, \overline{c_m} \mapsto \overline{a}) \models \phi(\overline{c_m})$ 
+\end{pf}
+
+\begin{itemize}
+    \item If $\overline{c}$ does not occur in $T$, $\phi$, then $T \cup \{ \ex \overline{v} \phi(\overline{v})$ is satisfiable $\to$ $T \cup \phi(\overline{c})$ is satisfiable. Equivalently, $T \models \psi(\overline{c}) \to T \models \fa \overline{v} \psi(\overline{v})$
+\end{itemize}
+
+\noindent
+Suppose $(I, <)$ is a linear order. For each $i \in I$, $\cM_i$ is an $\cL$-structure, $\fa i < j$ $\cM_i \subseteq \cM_j$ is called a chain (elementary chain if $\cM_i \preceq \cM_j$). Let $\cM = \bigcup_{i\in} I\cM_i$, $M = \bigcup_{i \in I}M_i$, $f^{\cM} = \bigcup_{i\in I} f^{\cM_i}$ 
+
+\begin{proposition}
+    If $(\cM_i \, : \, i \in I)$ is an elementary chain, $\fa i \, \cM_i \preceq \cM$ 
+\end{proposition}
+
+\begin{pf}
+    Use induction on formulas $\phi(\overline{v})$ to show that $\fa i, \, \fa m \in \cM_i$, $\cM_i \models \phi(\overline{m}) \ifff \cM \models \phi(\overline{m})$ 
+    \begin{itemize}
+        \item $\phi$ quantifier free true since substructure 
+        \item $\phi$ is $\neg \psi, \psi_1 \wedge \psi_2$ clear by induction 
+        \item $\phi(\overline{x})$ is $\ex v \psi(\overline{x}, v)$ $\cM \models \ex v \psi(\overline{x}, v) \ifff$ $\ex n \im \cM_j$ for some $j \in I$ such that $\cM \models \psi(\overline{m}, n) \stackrel{\text{IH}}{\ifff} \cM_j \models \psi(\overline{x}, n) \ifff \cM_j \models \ex v \phi(\overline{x}, v) \ifff$
+    \end{itemize}
+\end{pf}

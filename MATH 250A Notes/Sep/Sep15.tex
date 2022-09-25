@@ -1,0 +1,70 @@
+
+\subsection{Normal Subgroups of $S_n$} 
+\begin{enumerate}
+    \item Trivial subgroup 
+    \item $S_n$ 
+    \item Alternating group $A_n$ of index 2. \\
+    Look at $\Delta(x_1, \ldots, x_n) = \prod_{i < j}(x_i-x_j)$. $S_n$ acts on polynomials by permuting $x_1, \ldots, x_n$. Takes $\Delta$ \to $\Delta$ or $-\Delta$. $A_n$=subgroup mapping $\Delta$ to $\Delta$. Index 2 in $S_n$ ($n>1$). 
+    \item $S_4$ has a normal subgroup $\bZ/2\bZ \times \bZ/2\bZ$ (weird exception). 
+\end{enumerate}
+
+\noindent
+No other normal subgroups. 
+
+\noindent
+Symmetries of Platonic Solids
+
+\begin{tabular}{c c c c}
+    & & Rotations & All Symmetries \\
+    4 & Tetrahedron & 12-$A_4$ & 24-$S_4$ \\
+    8, 6 & Octrahedron , Cube (Dual) & 24 - $S_4$ & 48-$S_4 \times \bZ/2\bZ$ \\
+    20, 12 & Icosahedron, Dodecahedron (Dual) & 60 - $A_5$ & 120-$60 \times \bZ/2\bZ$ 
+\end{tabular}
+
+\noindent
+Here dual means faces of one can be identifies with the vertices of the other \\
+
+\noindent
+$1 \to \bZ/2\bZ \times \bZ/2\bZ \to S_4 \to S_3 \to 1$ \\
+$S_4$- symmetries of octahedron, has 3 diagonals \\
+$S_3$ - permutations of 4 diagonals \\
+\begin{definition}
+    $G$ is solvable if $G$ is abelian or $G$ has normal subgroup with $N, G/N$ solvable. \\
+\end{definition}
+
+\noindent
+$1 \to N \to G \to G/N \to 1$ \\
+$1 = G_0 \subseteq G_1 \subseteq G_2 \subseteq \cdots \subseteq G_n = G$ such that $G_i$ normal in $G_{i+1}$, $G_{i+1}/G_i$ abelian. \\
+For $S_4$, $1 \underbrace{\subseteq}_{\bZ/2\bZ \times \bZ/2\bZ} \bZ/2\bZ \times \bZ/2\bZ \underbrace{ \subseteq}_{\bZ/3\bZ} A_4 \underbrace{\subseteq}_{\bZ/2\bZ} S_4$ $\to$ polynomial of degree 4 can be solvable with radicals. 
+
+\noindent
+\texbf{Order 27}=3^2, groups of order $p^3$ 
+
+\begin{example}
+    Abelian - $\bZ/p^3\bZ, \bZ/p^2\bZ \times \bZ/p\bZ, (\bZ/p\bZ)^3$ \\
+    Non abelian - $p=2$: $D_8 = \bZ/4\bZ \rtimes \bZ/2\bZ, Q_8$ \\
+    $p$ odd: $(\bZ/p^2\bZ) \rtimes \bZ/2\bZ$, $\begin{pmatrix} 1 & & * & * \\ & 1 & & * \\ 0 & & \ddots & \\ 0 & 0 & & 1 \end{pmatrix}$ in $\bZ/p\bZ$, all elements order $p$, nonabelian 
+\end{example}
+
+\noindent
+$M_n(\bR): \exp(A) = I = A + \frac{A^2}{2!} + \cdots$ \\
+\begin{itemize}
+    \item Converges: Norm($A$), $||A|| = \sup_{v} \frac{|A(v)|}{||v||}, v \in \bR^n$. $||Av|| \le ||A|| \, ||v||$ 
+    \item Properties: $\exp(A+B) = \exp(A)+ \exp(B)$ if $AB = BA$ 
+    \item Can define $\log(1+A) = A - A^2/2 + A^3/3 - \cdots$ defined for $||A|| < 1$ 
+\end{itemize}
+
+\noindent
+Define exp, og for matrices in $\bZ/p\bZ$ 
+\begin{enumerate}
+    \item Some do not converge 
+    \item terms of this sum are not even defined $\frac{A^p}{p!}, p! = 0$ in $\bZ/p\bZ$ 
+\end{enumerate}
+\begin{enumerate}
+    \item Ok if $A$ is nilpotent, $A^n=0$, $1 + A + \frac{A^2}{2!} + \cdots + \frac{A^{n-1}}{(n-1)!}$ 
+    \item Of if, $A^n=0$ $n < p$, $0!, 1!, \ldots, (p-1)!$ all nonzero mod $p$ 
+\end{enumerate}
+So we can we can define $\exp(A)$ over $bZ\p\bZ$ is $A^{p-1}=0$ \\
+$A = \begin{pmatrix} 1 & & * & * \\ & 1 & & * \\ 0 & & \ddots & \\ 0 & 0 & & 1 \end{pmatrix}$ strictly upper triangular $n \times n$ matrices over $\bZ/p\bZ$, $A^{n+1}=0$ so if $n < p$ can define $\exp(A), \log(A)$ \\
+$G = \begin{pmatrix} 1 & & * & * \\ & 1 & & * \\ 0 & & \ddots & \\ 0 & 0 & & 1 \end{pmatrix}$ matrices over $\bZ/p\bZ$. If $n<p$ all elements have order $p$. \\
+Note: If all elements have order $2 \to G$ abelian but all elements order $3 \not\to G$ abelian  
