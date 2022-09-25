@@ -17,11 +17,11 @@ Observation: If $\cM \subseteq \cN$ and $\vp(\overline{x})$ is a univeral formul
 \end{definition}
 
 \noindent
-Observation: If $T$ has a universalthen if $\cN \models \T$ and $\cM \subseteq \cN$, then $\cM \models T$ 
+Observation: If $T$ has a universalthen if $\cN \models T$ and $\cM \subseteq \cN$, then $\cM \models T$ 
 
 \begin{example}
     Group axioms, if $\cL = \{\cdot, e\}$, not universal, $(\bN, 0, +) \subseteq (\bZ, 0, +)$ but is not a group. \\
-    If we consdier $\cL = \{\cdot, e, (\cdot)^{-1\}$, universal, $\fa x (x \cdot x^{-1} = e \wedge x^{-1} \cdot x = e)$ 
+    If we consider $\cL = \{\cdot, e, (\cdot)^{-1}\}$, universal, $\fa x (x \cdot x^{-1} = e \wedge x^{-1} \cdot x = e)$ 
 \end{example}
 
 \begin{theorem}
@@ -50,6 +50,6 @@ Suppose $(I, <)$ is a linear order. For each $i \in I$, $\cM_i$ is an $\cL$-stru
     \begin{itemize}
         \item $\phi$ quantifier free true since substructure 
         \item $\phi$ is $\neg \psi, \psi_1 \wedge \psi_2$ clear by induction 
-        \item $\phi(\overline{x})$ is $\ex v \psi(\overline{x}, v)$ $\cM \models \ex v \psi(\overline{x}, v) \ifff$ $\ex n \im \cM_j$ for some $j \in I$ such that $\cM \models \psi(\overline{m}, n) \stackrel{\text{IH}}{\ifff} \cM_j \models \psi(\overline{x}, n) \ifff \cM_j \models \ex v \phi(\overline{x}, v) \ifff$
+        \item $\phi(\overline{x})$ is $\ex v \psi(\overline{x}, v)$ $\cM \models \ex v \psi(\overline{x}, v) \ifff$ $\ex n \in \cM_j$ for some $j \in I$ such that $\cM \models \psi(\overline{m}, n) \\ \stackrel{\text{IH}}{\ifff} \cM_j \models \psi(\overline{x}, n) \ifff \cM_j \models \ex v \phi(\overline{x}, v) \stackrel{M_i \preceq M_j}{\ifff} \cM_i \models \ex v \phi(\overline{m},v)$ 
     \end{itemize}
 \end{pf}
