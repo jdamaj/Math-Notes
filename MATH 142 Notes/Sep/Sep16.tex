@@ -1,0 +1,22 @@
+
+\subsection{Compactness}
+
+\begin{proposition}[The Tube Lemma]
+    Given $(X, \cT^X), (Y, \cT^Y)$ and assume $Y$ is compact. Given $x_0 \in X$ and some $\cO$ open set in $X \times Y$ such that $\{x_0\} \times Y$ is contained in $\cO$. Then there is an open neighborhood, $U$, of $x_0$ such that such that $U \times Y \subseteq \cO$, called the tube about $\{x_0\} \times Y$  
+\end{proposition}
+
+\begin{pf}
+    Note that $\{x_0\} \times Y$ is homeomorphic to $Y$ so $\{x_0\} \times Y$ is compact. For $y \in Y$, $(x_0, y) \in \cO$ si there is some $U_y \subseteq X, V_y \subseteq Y$ such that $(x_0, y) \in U_y \times V_y$. The $V_y$'s cover $Y$ so since $Y$ is compact there is a finnite subcover, $V_{y_1}, V_{y_2}, \ldots, V_{y-n}$. Then, let $U = \bigcap_{i=1}^n U_{y_i}$, $U$ is open and we claim $U \times Y \subseteq \cO$. Given $(x,y) \in U \times Y$, $\ex j$ such that $y \in V_j$ and $U_j \times V_j \subseteq \cO$ so $U \times V_j \subseteq \cO$ so $U \times Y \subseteq \cO$. 
+\end{pf}
+
+\begin{theorem}
+    If $(X, \cT^X)$ and $(Y, \cT^Y)$ are both compact then $X \times Y$ is compact. 
+\end{theorem}
+
+\begin{pf}
+    If $\cC$ is an open cover of $X \times Y$, for each $x$, $\cC$ covers $\{x\} \times Y$ so there is a finite cover $\cC_x$, take the union to get an open set $\cO_x$ containing $\{x\} \times Y$, so there is an open neighborhood $U_x \times Y$ such that $U_x \times Y \subseteq \cO$. The $U_x$'s form an open cover of $X$, since $X$ is compact there is a finite subcover $U_{x_1}, \ldots, U_{x_n}$. The $(U_{x_j} \times Y)$ cover $X \times Y$. $\cC_{x_j}$ is a cover of $(U_{x_j} \times Y)$ so $\bigcup_{j=1}^n\{ \cO \in C_{x_j}\}$ cover $X \times Y$.
+\end{pf}
+
+\noindent
+By induction, given $(X_1, \cT_1), (X_2, \cT_2), \ldots, (X_n, \cT_n)$ all compact, then $X_1 \times X_2 \times \cdots \times X_n$ is compact. \\
+Let $\cF$ is an infinite collection of topologies such that $(X_{\alpha}, \cT_{\alpha})$ ceach compact, then is $\prod X_{\alpha}$ compact? 

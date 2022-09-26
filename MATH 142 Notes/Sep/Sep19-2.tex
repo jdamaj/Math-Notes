@@ -1,0 +1,27 @@
+
+\subsection{Homotopy}
+
+\begin{definition}
+    Let $(X, \cT^X), (Y, \cT^Y)$. Let $f_0, f_1: X \to Y$ continuous, then $f_0$ and $f_1$ are homotopic if $F: X \times [0,1] \to Y$ continuous such that $F(x,0) = f_0(x), F(x,1)=f_1(x)$. $F$ is called a homotopy from $f_0$ to $f_1$. 
+\end{definition}
+
+\begin{proposition}
+    Homotopy is an equivalence relation on the set of continuous functions from $X$ to $Y$
+\end{proposition}
+
+\begin{pf}
+    \begin{enumerate}
+        \item $f \sim f$ by constant homotopy 
+        \item If $f_0 \sim f_1$, set $F'(x,t) = F(x,1-t)$, $f_1 \sim f_0$ 
+        \item $f \sim g$ and $g \sim h$ with homotopies $F, G$. Define $H : X \times [0,2] \to Y$. $H(x,t) = \begin{cases}
+            F(x,t) \quad t \in [0,1] \\ G(x,t-1) \quad t \in [1,2] \end{cases}$. If $t = 1$, $F(x,1) = g(x)$, $G(x, 1-1) = g(x)$
+    \end{enumerate}
+\end{pf}    
+
+\begin{lemma}[Pasting Lemma]
+    If $(X, \cT)$, $X = A \cup B$, $A, B$ closed and if $\vp: X \to Y$ and if $\vp|_A$ is continuous and if $\vp|_B$ is continous then $\vp$ on $X$ is continuous. 
+\end{lemma}
+
+\begin{pf}
+    If $C \subseteq X$ closed $\vp^{-1}(C) = (\vp|_A)^{-1}(C) \cup (\vp|_B)^{-1}(C)$. $(\vp|_B)^{-1}(C)$ closed in $B$ so closed in $X$. Similarly, for $(\vp|_A)^{-1}(C)$ so $\vp^{-1}(C)$ is closed. 
+\end{pf}

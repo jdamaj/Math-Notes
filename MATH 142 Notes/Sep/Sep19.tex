@@ -1,0 +1,27 @@
+
+\subsection{Compactness}
+
+If $X$ is any set, and if $\cC$ is a collection of closed subets of $X$, then $\bigcup \{ A \in \cC\} = X$ iff $\bigcap \{A' \, : \, A \in \cC\} = \vn$. So $(X, \cT)$ is compact if whenever $\cC$ is a colelction of subsets such that $\bigcap \{C \in \cC\} = \vn$ then there is a finite subset $\cF \subseteq \cC$ such taht $\bigcap\{A \in \cF\} \neq \vn$ 
+
+\begin{definition}
+    A collection $\cC$ of subsets of a set $X$ has the finite intersection property (FIP), if for any finite finite $\cF \subseteq \cC$ we ahve $\bigcap \{A \in \cF\} \neq \vn$ 
+\end{definition}
+
+\noindent
+Then $(X, \cT)$ is compact if for any collection $\cC$ of closed subsets with FIP, $\bigcap\{A \in \cC\} \neq \vn$ 
+
+\begin{definition}
+    $(X, \cT)$ is locally compact of each point $x\in X$ has a compact neighborhood, ie. $\cO, x \in \cO$ and $\overline{\cO}$ copmact. 
+\end{definition}
+
+\begin{itemize}
+    \item $\bR, \bR^n$ locally compact 
+\end{itemize}
+
+\begin{proposition}
+    Let $(X, \cT)$ be locally compact and Hausdorff. Then for any $x \in X$ and $\cO \in \cT$ with $x \in \cO$ there is $U \in \cT$, $x \in U$, $\overline{U} \subseteq \cO$ is compact. 
+\end{proposition}
+
+\begin{pf}
+    By local compactness, there is open $V$, $x \in V$, $\overline{V}$ compact. Then $V \cap \cO$ is open, $x \in V \cap \cO$ so we can replace $\cO$ with $V \cap \cO$, $\overline{V \cap \cO}$ is compact. Thus we can assume that $\overline{\cO}$ is compact. Let $C = \overline{\cO} \setminus \cO$, closed, compact, $x \not\in C$. By Hausdorff, $\ex U, V \in \cT$ disjoint $x \in U$, $C \subseteq V, U \subseteq \cO$, $C' \supseteq V'$, $U \subseteq V'$ closed so $\overline{U} \subseteq V'$ so $\overline{U} \cap V = \vn$ so $\overline{U} \cap C = \vn$ so $\overline{U} \subseteq \cO$ 
+\end{pf}

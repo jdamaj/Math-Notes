@@ -1,0 +1,32 @@
+
+\subsection{Path Homotopy}
+
+\begin{definition}
+    $(X,T)$ (usually path connected). Two paths $f,g:[0,1] \to X$ are path homotopiv if $f(0)=g(0), f(1)=g(1)$ and if they are homotopic via a homotopy $F: [0,1] \times [0,1] \to X$ with $F(t,0) = f(0), F(t,1)=f(1)$ for all $t$. 
+\end{definition}
+
+\noindent
+Path homotopy is an equivalence relation. 
+\begin{itemize}
+    \item Can compose equivalence classes. If $f$ and $g$ are paths, $f(1)=g(0)$ can compose them viewing $g$ as a path on $[1,2]$ (instead of $[0,1])$. Define $(f*g)$ on $[0,2]$ by $(f*g)(t) = \begin{cases} f(t) \quad t \in [0,1] \\ g(t) \quad t \in [1,2]\end{cases}$ 
+\end{itemize}
+
+\begin{proposition}
+    If $f \sim f'$, $g \sim g'$ then $f*g \sim f' *g'$
+\end{proposition}
+
+\begin{pf}
+    Show first that $f *g \sim f' *g$. If $F$ is a homotopy from $f$ to $f'$, let $\tilde{F}(r,t) = \begin{cases}
+        F(r,t) \quad t \in [0,1] \\ g(r) \quad t \in [1,2] \end{cases}$. Similarly, $f' *g \sim f' *g'$ 
+\end{pf}
+
+\begin{itemize}
+    \item let $\cG$ be the collection of path-homotopy classes of $X$. Then $*$ is a partially defined product. It is associative (when it makes sense). So for path-homotopic equivalence classes it is associative. 
+    \item Each $x \in X$ provides an equivalence class $e_x: [0,1] \to X$ by $e_x(t)=x$. If $F$ is a path from $x$ to $y$ then $e_x *f \sim f$, $f*e_y \sim f$ so have an identity element for $x \in X$ 
+    \item Each element has an inverse. Given $f$ from $x$ to $y$, let $f^{-1}(t) = f(1-t)$, $f^{-1}(0)=f(1)$, $f^{-1}(1)=f(0)$, $f * f^{-1} \sim e_x$, $f^{-1}*f \sim e_y$. So equivalence classes in $\cG$ has inverses. 
+    \item This is an example of a groupoid. $\cG$ path groupoid for $X$. In fact, $\cG$ is a topological groupoid. 
+\end{itemize}
+
+\noindent
+Given $x_0 \in X$, consider all paths rom $x_0$ to $x_0$. Path homotopic equivalence classes form a group $\pi_1(X, x_0$). This is the fundamental group of $X$ for the basepoint $x_0$. \\
+If we change base point from $x_0$ to $x_0'$, $f$ a path from $x_0$ to $x_0'$, from a loop $\alpha$ based at $x_0'$ $f * \alpha *f^{-1}$ is a loop based at $x_0$. This gives an isomorphism from $\pi_1(X, x_0')$ to $\pi_1(X, x_0)$. Isomorphism depends on $f$ up to homotopy. 
