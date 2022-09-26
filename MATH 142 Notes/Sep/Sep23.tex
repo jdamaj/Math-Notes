@@ -1,0 +1,27 @@
+
+\subsection{The Fundamental Group}
+
+By a pointed set (or space) we mean a set together with a selectes special point. \\
+$(X, x_0)$ path connected $x_0 \in X$, can attach to $(X, x_0)$ the group $\pi_1(X, x_0)$ (= the set of homotopy classes of loops on $X$ based at $x_0$) \\
+Given $(X, x_0)$ $(Y, y_0)$, $\vp: X \to Y$ continuous. Let $f$ be a path in $X$, then $f \circ \vp$ is a path in $Y$. If $\vp(x_0)=y_0$, we map loops based on $x_0$ to loops based at $y_0$ \\
+Let $F$ be a homotopy betwen a path $f$ and a path $g$ on $X$, then $\vp \circ F$ is a homotopy from $\vp \circ f$ to $\vp \circ g$. \\
+So $\vp: X \to Y$, $\vp(x_0)=y_0$ gives a function $\tilde{\vp}$ from homotopy classes of loops based at $x_0$ to homotopy classes of loops based at $y_0$. $\tilde{\vp}: \pi_1(X, x_0) \to \pi_1(Y, y_0)$ 
+
+\begin{theorem}
+    $\tilde{\vp}$ is a group homomorphism. 
+\end{theorem}
+
+\begin{pf}
+    Let $f$ and $g$ be paths in $X$. $f*g$, view $f$ as defined on $[0,1]$, $g$ as defined on $[1,2]$. $(f*g)(r) = \begin{cases} f(r) \quad r \in [0,1] \\ q(r-1) \quad r \in [1,2] \end{cases}$, then $(\vp \circ f)*(\vp \circ g)(r) = \begin{cases} vp \circ f(r) \quad r \in [0,1] \\ vp \circ q(r-1) \quad r \in [1,2] \end{cases} = \vp(f*g)$. Passes to homotopy classes. 
+\end{pf}
+
+\begin{theorem}
+    $(X, x_0), (Y, y_0), (Z, z_0)$, $X \stackrel{\vp}{\to} Y \stackrel{\psi}{\to} Z$, $\pi_1(X) \stackrel{\hat{\vp}}{\to} \pi_1(Y) \stackrel{\hat{\psi}}{\to} \pi_1(Z)$, we have $\hat{\psi} \circ \hat{\vp} = \widehat{\psi \circ \vp}$ 
+\end{theorem}
+
+\begin{pf}
+    If $f$ path on $X$, $(\hat{\psi} \circ \hat{\vp})(f) = \hat{\psi}(\vp \circ f) = \psi \circ (\vp \circ f) = (\psi \circ \vp) \circ f = (\widehat{\psi \circ \vp})(f)$ 
+\end{pf}
+
+\noindent
+$(X, x_0), (Y, y_0)$, $\vp: X \to Y$. Assume $\vp$ is a homoemorphism. $\vp^{-1} \circ \vp = \text{id}_X$, $\vp \circ \vp^{-1} = \text{id}_Y$. Then $\pi_1(\vp^{-1})\pi_1(\vp) = \pi_1(\text{id}_X) = \text{id}_{\pi_1(X)}$, $\pi_1(\vp)\pi_1(\vp^{-1}) = \pi_1(\text{id}_Y) = \text{id}_{\pi_1(Y)}$ ie, $\pi_1(\vp)$ is a group isomorphims of $\pi_1(X)$ and $\pi_1(Y)$. 
