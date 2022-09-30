@@ -1,0 +1,61 @@
+
+\subsection{Reals (Dedekind Cuts)}
+
+\begin{definition}
+    A dedekind cut is a subset $D \subseteq \bQ$ such that 
+    \begin{itemize}
+        \item $\vn \neq D \neq \bQ$ 
+        \item $D$ is closed downwards, if $d \in D$, $c < d \to c \in D$ 
+        \item $D$ has no greatest element. 
+    \end{itemize}
+\end{definition}
+
+\noindent
+Let $\bR = \{D \in \cP(\bQ) \, | \, D$ is a dedekind cut $\}$ \\
+$\sqrt{2} = \{q \in \bQ \, | \, q \times_{\bQ} q < 2\}$, $e = \{q \in \bQ \, | \, ex n \in \omega \, q <_{\bQ} (1 + \frac{1}{N})^N\}$ 
+For $r \in \bR$, $-r = \{q \in \bQ \, | \, -q \in r\} \setminus \{-\sup(r)\}$ \\
+For $r_1, r_2 \in \bR$, $r_1 \le_{\bR} r_2 \iff r_1 \subseteq r_2$ \\
+$r_1 \times r_2 = \{q \in \bQ \, | \, \ex q \le 0 \in r \ex b \le 0 \in r_2 \, q , a \times_{\bQ} b$ if $r_1, r_2 > 0, \ldots$ 
+
+\begin{theorem}
+    $(\bR, 0, 1, + , \times, \le)$ is an ordered field. 
+\end{theorem}
+
+\noindent
+$E: \bQ \to \bR$ is a field embedding. 
+
+\subsection{Cardinality}
+
+\begin{definition}
+    $A$ is equinumerous to $B$ (written $A \approx B$) if there is a bijection $f: A \to B$ 
+\end{definition}
+
+\begin{theorem}
+    For every $A, B, C$ 
+    \begin{itemize}
+        \item $A \approx A$ 
+        \item If $A \approx B$, $B \approx B$ 
+        \item If $A \approx B$, $B \approx C$ then $A \approx C$ 
+    \end{itemize}
+\end{theorem}
+
+\begin{lemma}
+    $\bZ \approx \omega$ 
+\end{lemma}
+
+\begin{pf}
+    For $z \in Z$, $f(z)  = \begin{cases} -2z \quad z \le 0 \\ 2z+1 \quad z > 0 \end{cases}$ 
+\end{pf}
+
+\begin{lemma}
+    $\bQ \approx \omega$ 
+\end{lemma}
+
+\begin{pf}
+    $f: \omega \to \bZ \times \bZ^+$, $\bQ = \bZ \times \bZ^+/\sim$ \\
+    $f': \omega \to \bQ$, $f'(n)=$ least $i \in \omega$ $g(i) \not\in \{f(1), \ldots, f(n-1)\}$ 
+\end{pf}
+
+\begin{lemma}
+    $\bR \approx (0,1)_{\bR}$ 
+\end{lemma}

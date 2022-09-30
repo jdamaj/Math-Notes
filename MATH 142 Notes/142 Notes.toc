@@ -1,0 +1,34 @@
+\contentsline {chapter}{\numberline {1}Topology}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}August 24}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}What is Algebraic Topology}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Continuity}{4}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}August 26}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Continuity}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Topology}{5}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}August 29}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Bases and Subbases}{5}{subsection.1.3.1}%
+\contentsline {section}{\numberline {1.4}August 31}{6}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Initial Topologies}{6}{subsection.1.4.1}%
+\contentsline {section}{\numberline {1.5}September 2}{7}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Quotient Topologies}{7}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.6}September 7}{8}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Group Actions on Topological Spaces}{8}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Connectedness}{8}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}September 9}{9}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Connectedness}{9}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Connected Components}{10}{subsection.1.7.2}%
+\contentsline {section}{\numberline {1.8}September 12}{10}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Connected Components}{10}{subsection.1.8.1}%
+\contentsline {section}{\numberline {1.9}September 14}{11}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Compactness}{11}{subsection.1.9.1}%
+\contentsline {section}{\numberline {1.10}September 16}{12}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}Compactness}{12}{subsection.1.10.1}%
+\contentsline {section}{\numberline {1.11}September 19}{12}{section.1.11}%
+\contentsline {subsection}{\numberline {1.11.1}Compactness}{12}{subsection.1.11.1}%
+\contentsline {chapter}{\numberline {2}Algebraic Topology}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}September 19}{14}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Homotopy}{14}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}September 21}{14}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Path Homotopy}{14}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}September 23}{15}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}The Fundamental Group}{15}{subsection.2.3.1}%

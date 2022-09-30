@@ -4,7 +4,7 @@
     \item Trivial subgroup 
     \item $S_n$ 
     \item Alternating group $A_n$ of index 2. \\
-    Look at $\Delta(x_1, \ldots, x_n) = \prod_{i < j}(x_i-x_j)$. $S_n$ acts on polynomials by permuting $x_1, \ldots, x_n$. Takes $\Delta$ \to $\Delta$ or $-\Delta$. $A_n$=subgroup mapping $\Delta$ to $\Delta$. Index 2 in $S_n$ ($n>1$). 
+    Look at $\Delta(x_1, \ldots, x_n) = \prod_{i < j}(x_i-x_j)$. $S_n$ acts on polynomials by permuting $x_1, \ldots, x_n$. Takes $\Delta \to \Delta$ or $-\Delta$. $A_n$=subgroup mapping $\Delta$ to $\Delta$. Index 2 in $S_n$ ($n>1$). 
     \item $S_4$ has a normal subgroup $\bZ/2\bZ \times \bZ/2\bZ$ (weird exception). 
 \end{enumerate}
 
@@ -38,7 +38,7 @@ $1 = G_0 \subseteq G_1 \subseteq G_2 \subseteq \cdots \subseteq G_n = G$ such th
 For $S_4$, $1 \underbrace{\subseteq}_{\bZ/2\bZ \times \bZ/2\bZ} \bZ/2\bZ \times \bZ/2\bZ \underbrace{ \subseteq}_{\bZ/3\bZ} A_4 \underbrace{\subseteq}_{\bZ/2\bZ} S_4$ $\to$ polynomial of degree 4 can be solvable with radicals. 
 
 \noindent
-\texbf{Order 27}=3^2, groups of order $p^3$ 
+\textbf{Order 27}=$3^3$, groups of order $p^3$ 
 
 \begin{example}
     Abelian - $\bZ/p^3\bZ, \bZ/p^2\bZ \times \bZ/p\bZ, (\bZ/p\bZ)^3$ \\
@@ -64,7 +64,62 @@ Define exp, og for matrices in $\bZ/p\bZ$
     \item Ok if $A$ is nilpotent, $A^n=0$, $1 + A + \frac{A^2}{2!} + \cdots + \frac{A^{n-1}}{(n-1)!}$ 
     \item Of if, $A^n=0$ $n < p$, $0!, 1!, \ldots, (p-1)!$ all nonzero mod $p$ 
 \end{enumerate}
-So we can we can define $\exp(A)$ over $bZ\p\bZ$ is $A^{p-1}=0$ \\
+So we can we can define $\exp(A)$ over $bZ/p\bZ$ is $A^{p-1}=0$ \\
 $A = \begin{pmatrix} 1 & & * & * \\ & 1 & & * \\ 0 & & \ddots & \\ 0 & 0 & & 1 \end{pmatrix}$ strictly upper triangular $n \times n$ matrices over $\bZ/p\bZ$, $A^{n+1}=0$ so if $n < p$ can define $\exp(A), \log(A)$ \\
 $G = \begin{pmatrix} 1 & & * & * \\ & 1 & & * \\ 0 & & \ddots & \\ 0 & 0 & & 1 \end{pmatrix}$ matrices over $\bZ/p\bZ$. If $n<p$ all elements have order $p$. \\
-Note: If all elements have order $2 \to G$ abelian but all elements order $3 \not\to G$ abelian  
+Note: If all elements have order $2 \to G$ abelian but all elements order $3 \not\to G$ abelian \\ 
+Groups of order $p^3$ are analogs of Heisenberg group
+Heisenberg group: Fuctions on $\bR$. $(1)$ translations $f(x) \to f(x + \lambda)$, (2) multiply by $e^{2\pi i x \mu }$ $f(x) \to f(x)e^{2 \pi i x \mu}$ \\
+Order they are applied in matters: $f(x) \to f(x + \lambda) \to f(x+\lambda)e^{2 \pi i x \mu}$ vs. $f(x) \to f(x)e^{2\pi i \mu x}\to f(x+ \lambda)e^{2 \pi i \mu(x + \lambda)}$. Differ by $e^{2 \pi i \mu \lambda}$, forms circle group. \\
+$1 \to S^1 \to$ Heisenberg $\to \bR \times \bR \to 1$ \\
+$p^3: 1 \to \bZ/p\bZ \to $(order $p^3) \to \bZ/p\bZ \times \bZ/p\bZ \to 1$ \\
+Order $2^5$: 51 groups, $2^{10}: 49487365421$ groups, $p^n : \sim p^{\frac{2}{27}n^2}$ \\
+Typical: $1 \to (\bZ/p\bZ)^a \to G \to (\bZ/p\bZ)^b \to 1$ \\
+Choose bases $u_1, \ldots, u_a$ and $v_1, \ldots, v_b$. $i < j$ $v_iv_jv_i^{-1}v_j^{-1}$ = something in $(\bZ/p\bZ)^a$ \\
+
+\noindent
+\textbf{Order 48}: Binary Dihedral \\
+\begin{example}
+    Prove all groups of order $<60$ are simmple (tricky cases: 30, 48, 56) 
+\end{example}
+
+\noindent
+$A_5$- first non solvable simple group. \\
+Any finite group can be built out of simple groups: $1 \subseteq G_0 \subseteq G_1 \subseteq \cdots$ $G_i$ normal in $G_{i+1}$, $G_{i+1}/G_i$ simple. 
+
+\noindent
+\textbf{Order 60}: Rotations of Tetrahedron $\cong A_5$ \\
+Show $A_5$ is simple 
+\begin{tabular}{cccc}
+    Conjugacy Classes & Order & Number &\\
+    (1) Trivial element & 1 & 1 & \\ 
+    (2) & 3 & 20 & (Faces) \\
+    (3) & 2 & 15 & (Edges/2) \\ 
+    (4) 1/5 rev & 5 & 12 & (\# vertices) \\
+    (5) 2/5 rev & 5 & 12 & (\# vertices) 
+\end{tabular}
+Warning: Conjugacy classes of $A_5$ not quite same as conjugacy classes of $S_n$ \\
+$(1 \, 2 \, 3 \, 4 \, 5)(2 \, 1 \, 3 \, 4 \, 5)$ conjugate in $S_5$ but not $A_5$ \\
+Let $H$ be a normal subgroup of $A_5$
+\begin{enumerate}
+    \item $H$ union of conjugacy classes 
+    \item So $H = 1 + $ ``subset'' of $\{12, 12, 15, 20\}$ 
+    \item $|H|$ divides 60 
+\end{enumerate}
+So only optiosn are $|H|=1$ or $|H|= 1 + 12 + 12 + 15 + 20=60$ \\
+So $A_5$, only normal subgroups of $S_5$ are $1, A_5, S_5$ since if $H$ normal in $S_5$, $H \cap A_5 = A_5$ or 1. If $A_5$, $H = A_5$. If $1, |H| \le 2, H = 1$. \\
+$A_n$ simple for $n \ge 5$ by induction on $n$. Idea: Consider $A_n \subseteq A_{n+1}$ $(n \ge 5)$. If $H$ is normal in $A_{n+1}$, $H \cap N$ normal in $A_n$ so $H \cap A_n = A_n$ or 1. \\
+
+\noindent
+\textbf{Order 120}: How do we build a group out of $\bZ/2\bZ, A5$? \\
+3 ways: 
+\begin{enumerate}
+    \item $A_5 \times \bZ/2\bZ$ \quad symmetries of Icosahedron
+    \item $S_5$ \quad normal $A_5$, quotient $\bZ/2\bZ$ \quad $1 \to A_5 \to S_5 \to \bZ/2\bZ \to 1$ 
+    \item Binary icosahedral \quad $1 \to \bZ/2\bZ \to \hat{A_5} \to A_5 \to 1$ 
+\end{enumerate} 
+(1), (2) have center of order 2. (3) has one element of order 2. \\
+
+\noindent
+Poncaire: Compact 3-manifold with trivial fundamental group is $S^3$ \\
+Poncaire Homotopy Sphere: $S^3/$(Binary Icosahedral). Fundamental group = binary icosahedral, $H_1$ aelianization of fundamental group $=\{1\}$ 
