@@ -1,0 +1,66 @@
+
+\subsection{Cardinals}
+
+\begin{definition}
+    Given carindals $\kappa$ and $\lambda$ let 
+    \begin{itemize}
+        \item $\kappa + \lambda = \card(K \cup L)$ where $K$ and $L$ are disjoint sets of carindality $\kappa$ and $\lambda$ 
+        \item $\kappa \cdot \lambda = \card ( K \times L)$ where $K$ and $L$ are sets of carindality $\kappa$ and $\lambda$ 
+        \item $\kappa^{\lambda} = \{ f$ function $L \to K\} = \card(\prescript{L}{}{K})$ were $K$ and $L$ are sets of carindality $\kappa$ and $\lambda$ 
+    \end{itemize}
+\end{definition}
+
+\noindent
+Notation: $\prescript{A}{}{B} = \{f \, : \, f$ is a function $A \to B\}$ 
+
+\begin{theorem}
+    Let $\kappa, \lambda, \mu$ be carindals 
+    \begin{itemize}
+        \item $\kappa + (\lambda + \mu) = (\kappa + \lambda) + \mu$ 
+        \begin{pf}
+            Let $K, L, M$ be disjoint sets of size $\kappa, \lambda, \mu$. $K \cup (L \cup M) = (K \cup L) \cup M$
+        \end{pf}
+        \item $\kappa + \lambda = \lambda + \kappa$
+        \item $\kappa \cdot (\lambda \cdot \mu) = (\kappa \cdot \lambda) \cdot \mu$ 
+        \begin{pf}
+            $(K \times L ) \times M \to K \times (L \times M)$ by $\langle \langle k, l \rangle, m \rangle \to \langle k, \langle l, m \rangle \rangle$ 
+        \end{pf}
+        \item $\kappa \cdot \lambda = \lambda \cdot \kappa$ 
+        \item $\kappa \cdot (\lambda + \mu) = \kappa \cdot \lambda + \kappa \cdot \mu$ 
+        \begin{pf}
+            $K \times (L \cup M) \approx (K \times L) \cup (K \times M)$ 
+        \end{pf}
+        \item $\kappa^{\lambda + \mu} = \kappa^{\lambda} \cdot \kappa^{\mu}$ 
+        \item $\kappa^{\lambda \cdot \mu} = (\kappa^{\lambda})^{\mu}$ 
+    \end{itemize}
+\end{theorem}
+
+\begin{pf}
+    $F: \prescript{L \times M}{}{K} \to \prescript{M}{}{\prescript{L}{}{K}}$, $f: \prescript{L \times M}{}{K}$, $F(g)=$ the function that maps $m$ to $g_m: L \to K$ where $g_m(l) = g(l,m)$ \\
+    $F^{-1}(h)$ with $h: M \to (\prescript{L}{}{K})$ is $g$ such that $g(l,m) = h(m)(l)$
+\end{pf}
+
+\begin{definition}
+    $A$ is dominated by $B$ (written $A \preceq B$) if there is a one to one function from $A \to B$
+\end{definition}
+
+\noindent
+$A \preceq B \iff \card(A) \le \card(B)$ 
+
+\begin{example}
+    \begin{itemize}
+        \item $A \subseteq B \iff A \preceq B$ 
+        \item $\bN \approx \bN \approx \bQ \preceq \bR \preceq \bC$ 
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    $\bR \approx (0,1)_{\bR} \preceq \prescript{\omega}{}{2} \preceq \bR$ 
+    \begin{itemize}
+        \item $(0,1)_{\bR} \preceq \prescript{\omega}{}{2}$. Given $r$, let $f_r: \omega \to \{0,1\}$ be $f_r(n)=n$th digit of binary representation of $r$ avoiding representations that end in all 1s. 
+        \item $\prescript{\omega}{}{2} \preceq \bR$, $f: \omega \to 2 \mapsto \sum_{i \in \omega}f(i) \cdot 10^{-1}$ 
+    \end{itemize}
+\end{example}
+
+\noindent
+Observation: $\prescript{2}{}{\omega} \approx \cP(\omega)$ $\card(\prescript{2}{}{\omega} ) = 2^{\aleph_0}$ 
