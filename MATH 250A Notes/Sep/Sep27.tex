@@ -1,0 +1,97 @@
+
+\subsection{Category Theory} 
+
+We answer one final question: If a morphism is an epimorphism and a monomorphism, is it an isomorphism \\
+Sets, Abelian groups: Yes \\ 
+Rings: No \quad $\bZ \hookrightarrow \bQ$, mono + epi, not isomorphism \\
+Top Spaces: $(\bR$, discrete $\to (\bR$, ususal$)$ 
+
+\subsection{Rings} 
+
+We can define a ring concretely as the set of endomorphisms of an abelian group 
+
+\begin{definition}
+    $A$ ring is a set $R$ with $+ , \times$ such that $R$ forms an abelian group under addition, $\times$ is associative, $+, \times$ satisfy left/right distributive laws. 
+\end{definition}
+
+\noindent
+Two ambiguities in definition: 
+\begin{itemize}
+    \item Ambiguity 1: Does it has multiplicative identity, 1? \\
+    Algebra: Yes, Analysis: No 
+    \item Basic 
+\end{itemize}
+
+\begin{example}[Basic Examples]
+    Field $\bR, \bC$. Integers $\bZ$, Gaussian Integers $\bZ[i]$ $m+ni$ with $i^2=1$. \\
+    Polynomials ring $R[x]$, matrices $M_n(\bR)$ $n \times n$ matrices (endomorphisms of vector space $\bR^n$). \\
+    Can form more generla $M_n$(ring). Algebraic Geometry: $\bC[x,y]/y^2 = x^2-ax+b$ 
+\end{example}
+
+\noindent
+Many things in group theory have an analog in rings 
+\begin{tabular}{c|c}
+    Groups & Rings \\ \hline 
+    Acts on Sets & Acts linearly on abelian groups \\ 
+    Symmetric Groups (all permutations of a set) & $M_n(R)$ all linear maps $R^n \to R^n$ \\ 
+    Permutation Representation & Linear Representation of a ring \\ 
+    $G$ acts on $A,B$, $G$ acts on $A \cup B$ & Ring acts on $M, N$. $R$ acts on $M \times N$ \\
+    $|A \cup B| = |A| + |B| + |A \cap B|$ & $R$=field, $\dim(M +N) = \dim M + \dim V - \dim(M \cap N)$
+\end{tabular}
+This fails for 3 vector spaces: $|A \cup B \cup C| = |A| + |B| + |V| - |A \cap B| - |B \cap C| - |A \cap C| + |A \cap B \cap C|$ but \\
+$\dim (L + M + N) \neq \dim L + \dim M + \dim N - \dim(L \cap M) - \dim(M \cap N) - \dim (N \cap L) + \dim(M \cap N \cap L)$ (Consider 1 dimensional subsets of $\bR^3$) \\
+
+\noindent
+Analog of Cayley's Theorem: Every ring = endomorphisms of some abelain group preserving some ``structure'' \\ 
+$R$ as an abelian group is acted on by $R$ on the right. Linear maps of $R$ preserving action on right = $R$ acting on left 
+
+\begin{definition}
+    A (left) module $M$ over $R$ is an abelian group acted on by $R$. \\
+    $R \times M \to M$ such that $r(m_1 + m_2) = rm_1 +rm_2$, $r(sm) = (rs)m$, $1m = m$, $(r_1 + r_2)m = r_1m + r_2m$ 
+\end{definition}
+
+\noindent
+Analog of group acting on a set. Can have left modules, right modules, and two-sided modules 
+
+\begin{example}[Burnside Ring of a Group]
+    Take $S_3$ looks at all ways $G$ acts on a finite set (up to iso). Make into ring. \\
+    $A +B = A \sqcup B$, $A \times B = A \times B$ (as sets) \\
+    Note: What about -? \\
+    If $G$ acts on $A$, $A = A_1 \cup A_2 \cup \cdots$ $A_i$ is an orbit of $A$, $G$ acts transitively on each $A_i$ \\
+    How can $S_3$ act on transitively on a set $A$. Subgroups of $S_3 \ifff$ transitive action on $A$ + point of $A$
+\end{example}
+
+\begin{tabular}{c c c}
+    $S_3$ subgroups & Action & \\ 
+    (1) & Acts on 6 points & \circled{1} \\ 
+    $(1\, 2)$, $(1 \, 3)$, $(2 \, 3)$ & Acts on 3 points & \circled{3} \\ 
+    $(1 \, 2 \, 3) \, (1 \, 3 \, 2)$ & Acts on 2 points & \circled{2} \\ 
+    $G$ & Acts on 1 point & \circled{1} 
+\end{tabular}
+
+\noindent
+Elements of $R$ are $a \circled{1} + b \circled{2} + c \circled{3} + d \circled{6}$. What about $\times$? Compute products of $\circled{1}, \circled{2}, \circled{3}, \circled{6}$ \\ 
+
+(Insert Figure) \\ 
+
+Problem: $R$ does not have $-$ \\
+$A$: Construction of Grothendeick Ring \\
+Idea: Start with $\bN$ (integers $\ge 0$), construct $\bZ$. pairs $(m,n)$ representing $m-n$, $(m_1, n_1) \equiv (m_2, n_2)$ if $m_1 + n_2 = m_2 + n_1$ \\
+Copy this idea to construct an abelian group from an abelian monoid. This does not work in general. \\
+Subtle Problem: If we have $m_1 - n_2 \equiv m_2 - n_2$ iff $m_1 + n_2 = m_2 + n_2$ this is not an $\equiv$ relation \\ 
+Suppose $m_1 - n_1 \equiv m_2 - n_2$, $m_2 - n2 \equiv m_3 - n_3$. Want to show $m_1 - n_1 \equiv m_3 - n_3$. $m_1 + n_2 = m_2 + n_1$, $m_2 + n_3 = m_3 + n_2$ so $m_1 + n_2 + n_3 = m_2 + n_1 + n_3 = n_1 + m_3 + n_2$. Need to cancel $n_2$. Can't do this in gneral, $x+y = x+z$ does not imply $y=z$ \\
+Fix: Define $\equiv$ by $m_1 - n_2 \equiv m_2 - n_2$ iff $m_1 + n_2 + x = m_2 +n_1 + x$ for some $x$ \\
+Check: This is an equivalence relation. We get an abelian group from the $\equiv$ classes. \\
+
+\noindent
+This gives us functors: Groups $\underset{G}{\overset{F}{\rightleftarrows}}$ Monoid where $G$ is the forgetful function, $F$ maps a monoid to its Grothendeick group. $G, F$ adjoint, eg. maps from $M$ $G(A)$ ``same as'' maps from $F(M)$ $A$ 
+
+\noindent
+Back to ring of $S_3$: elements of form $a \circled{1} + b \circled{2} + c \circled{3} + d \circled{6}$ $a,b,c \in \bZ$ possibly $<0$ 
+
+\begin{example}
+    Group ring of $G$ (over $R$). Ring ``generated'' by $G$ \\
+    Set of all formal elements $\sum_{g \in G}r_ig$ $r_i \in R$ almost alll 0. $+, \times$ on group ring ``obvious'' 
+\end{example}
+
+$G = \bZ/4\bZ$. group ring over $\bC$. Elements if $\bC[G]$ are of the form $a_0 + a_1g+a_2g^2+a_3g^3$ $a_i \in \bC$

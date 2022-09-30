@@ -1,0 +1,72 @@
+
+\subsection{Cardinality}
+
+\begin{lemma}
+    \begin{enumerate}
+        \item $\bN \not\approx \bR$ 
+        \item For any set $A$, $A \not\approx \cP(A)$
+    \end{enumerate}
+\end{lemma}
+
+\begin{pf}
+    \begin{enumerate}
+        \item Let $f: \omega \to \bR$, claim $f$ is not onto. Want $r \not\in \text{ran}(f)$, $\fa n \in \omega r \neq f(n)$. Choose $A_0$ such that $f(0) \not\in A_0$. Given $A_n$ such that $f(0), \ldots, f(n) \not\in A_n$. Divide $A_n$ by 2, take half that does not contain $f(n+1)$ to be $A_{n+1}$, then $A_0 \supset A_1 \supset A_2 \supset \cdots$, $\bigcap_{n \in \omega}A_n \neq \vn$ and for each $n$, $f(n) \not\in A_n$ so $f(n) \not\in \bigcap A_n$
+        \item let $f: A \to A$. Claim $f$ is not onto. Let $B = \{b \in A \, | \, b \not\in f(b)\}$. Claim $B \not\in \text{range}(f)$. Suppose for contradiction that $B=f(b)$ for $b \in A$, $b \in B \ifff b \not\in f(b) \iff b \not\in B$, contradiction.
+    \end{enumerate}
+\end{pf}
+
+\begin{definition}
+    A set $A$ is finite if $\ex n \in omega (A \approx n)$ eg. $\ex n \, ex f: n \to A$ bijection. $A = \{f(0), f(1), \ldots, f(n-1)\}$ 
+\end{definition}
+
+\begin{lemma}[Pigeonhole Principle]
+    No finite set is equinumerous to a finite subset of itself. 
+\end{lemma}
+
+\begin{lemma}
+    If $B$ is a proper subset of $n \in \omega$ ther is $m<n$ such that $B \approx m$
+\end{lemma}
+
+\begin{pf}
+    Use induction on $n$. Let $A = \{ n \in \omega \, | \, \fa B \in n \ex m \in n \, B \approx n\}$. \\
+    Claim $A$ is inductive. $0 \in A$ trivial, $1 \in A$. $B \subsetneq \{\vn\} \to B = \vn \to B \approx 0$. \\
+    Suppose $n \in A$, want to show $n^+ \in A$. Take $B \subsetneq n^+ = n \cup\{n\}$. If $n \in B$, $B \cap n \subseteq n$ so $\ex m < n \, B \cap n \approx m$ so $B \approx m^+ < n^+$. If $n \not\in B$, either $B \cap n = n$ so $B \approx n < n^+$ of $B \cap n \subsetneq n$ so $\ex m < n \, B = B \cap n \approx m$. 
+\end{pf}
+
+\begin{pf}[Pigeonhole Principle]
+    Take $n$, $B \subsetneq n$, $B \approx n$. THen $B \approx m$ for some $m < n$ so $m \approx n$. Let $A = \{n \, | \, A m < n \, m \not\approx n\}$. Claim $A$ is inductive. $0 \in A$, suppose $n \in A$, want to show $n^+ \in A$. Idea: turn a bijection for $n^+ \approx m^+$ so a bijection $n \approx m$/
+\end{pf}
+
+\begin{corollary}
+    \begin{itemize}
+        \item No finite set is equinumerous to a proper subset 
+        \item $\omgea$ is not finite $(\omega \approx \omega \setminus \{0\}$ by $n \mapsto n+1$)
+        \item Every finite set is equinumerous to a unique natural number. \\
+        We call that number the cardinality of $A$, $\card(A)$
+        \item A subset of a finite subset is finite
+    \end{itemize}
+\end{corollary}
+
+\begin{definition}
+    A set $\kappa$ is said to be a cardinal if 
+    \begin{itemize}
+        \item $\kappa$ is transitive (if $x \in a, a \in \kappa \to x \in \kappa$)
+        \item $\in$ is a linear order on $\kappa$ ($\fa x, y \, x \in y$ or $y \in x$ or $x=y$) 
+        \item $\fa x \in \kappa \, x \not\approx \kappa$
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    For every set $A$, there is a unique cardinal $\kappa$ such that $A \approx \kappa$. We call this $\kappa$ $\card(A)$
+\end{theorem}
+
+\begin{example}
+    \begin{itemize}
+        \item $n = \{0 \in 1 \in 2 \in \cdots \in n-1\}$ is a cardinal 
+        \item $\oemga = \{0 \in 1 \in 2 \in \cdot \}$ is a cardinal 
+        \item $\omega^+ = \{0, 1, 2, \ldots\} \cup \{\omega\} \approx \omega$ is not a carinal
+    \end{itemize}
+\end{example}
+
+\noindent
+Notation: $\omega - \aleph_0$, $\card(\bR) = 2^{\aleph_0}$, smallest cardinal greater than $\aleph_0 = \aleph_1$ 

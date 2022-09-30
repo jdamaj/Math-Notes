@@ -1,0 +1,78 @@
+
+\subsection{Categories}
+
+\begin{example}
+    \begin{tabular}{c c}
+        Objects & Morphisms \\
+        Groups: $G$, homomorphimss $G \stackrel{f}{\to} H$ \\
+        Sets: $S$, functions $S \stackrel{f}{\to} T$ \\
+        Topological spaces: $X$, continuous maps $X \stackrel{f}{\to} Y$ 
+    \end{tabular}
+\end{example}
+
+\noindent
+Axioms 
+\begin{itemize}
+    \item For any two objects we have a set of morphisms $A \to B$ Mor($A,B$). 
+    \item Can compose morphisms: $A \to B, B \to C$, we get a morphism $A \to C$ \\
+    \item Identity morphism: $I_A: A \to A$ satisfying $f: A \to B$, $I_bf = f$< $fI_A = f$ 
+    \item Function composition is associative
+\end{itemize}
+
+\begin{example}
+    RIngs, varities, and differentiable manifolds
+\end{example}
+
+\begin{example}
+    A group. Object: only 1 object. Morphisms: elements of group. Composition is group product. 
+\end{example}
+
+\begin{example}
+    A poset (partially order set). Set $S$ with $\le$. Category: objects = elements of $S$. Morphisms: morhpisms from $A$ to $B$, 1- morphism if $A \le B$, none if $A \not\le B$. 
+\end{example}
+
+\noindent
+Basic Theme: Ignore structure of objects, define everything using morphisms. \\
+epimorphisms: analogs of surjective maps. Normal definition of surjective uses internal structure of $T$. \\
+$f: S \to T$ is an epimorphism if whenever 2 morphisms $T \overset{g}{\underset{h}{\rightrightarrows}} U$ if $gf = hf \to g = h$ 
+
+\begin{example}
+    $f: S \to T$ ($S,T$ sets) $f$ surjective $\ifff f$ is an epimorphism 
+\end{example}
+
+\noindent
+Warning: Sometimes epimorphism $\neq$ surjection 
+
+\begin{example}
+    Look at category of rings (morphisms = homomorphims) \\
+    $f: \bZ \to \bQ$ not surjective but is an epimorphism of rings.  
+\end{example}
+
+\noindent
+Fawcett: In category of planar graphs 4 color theorem $\ifff$ epimorphisms are surjective. 
+
+\noindent
+Dual Concept: Dual of surjectivity is injectivity \\
+monomorphism: $f: S \to T$, if $R \overset{g}{\underset{h}{\rightrightarrows}} T$ $fg = gh \to g=h$ 
+
+\begin{example}
+    If $S, T$ subsets, $f: S \to T$ is injectivity $\ifff$ $f$ is monomorphism (also true for rings, groups, $\ldots$)
+\end{example}
+
+\subsection{Functors} 
+
+Original Idea: Category of topological spaces $\to$ category of abelian groups \\
+
+(Insert Figure) \\ 
+
+\noindent
+If $C, D$ categroies, a functor from $C$ to $D$ consist of 
+\begin{enumerate}
+    \item Object $F(X)$ for each object $X \in C$ 
+    \item Morphism $f: X \to Y$ $\to$ morphism $F(f): F(X) \to F(Y)$ 
+\end{enumerate}
+Axioms: Behaves in ``obvious'' way. $F(\text{id}_A) = \text{id}_{F(A)}$, $F(fg) = F(f)F(g)$ 
+
+\begin{example}
+    Forgetful Functor, (Category of Groups) $\to$ (Category of Sets) by $G \mapsto$ underlying set, $G \to H \mapsto G \to H$ 
+\end{example}
