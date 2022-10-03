@@ -1,0 +1,43 @@
+
+\subsection{Random Graphs}
+
+Let $cL = \{R\}$, $T = R$ is symmetric, irreflexive, $\{\psi_n \, : \, n \in \omega\}$ where $\psi_n$ is $\fa x_1 \cdots x_n \, \fa y_1 \cdots y_n(\bigwedge{i< j < n} x_i\neq x_j \wedge \ex z \bigwedge_{i \le n} x_iRz \wedge \bigwedge_{j \le n}x_j \notR z \wedge \bigwedge_{j \le n} x_j \neq z)$.  \\
+This theory is called the Rado graph or random graph. 
+
+\begin{theorem}
+    $T$ is satisfiable and $\aleph_0$ categorical. 
+\end{theorem}
+
+\begin{proof}
+    To construct a model we start with some finite set of points and at each step we add a new points for each finite subset, satisfying the axioms above. Take the union of all graphs generated in this way to get a graph which satisfies the theory. \\
+    Next, given two countable graphs we construct an isomorphism between step by step, ensuring all elements of one graph are in the domain and all elements are the other are in the range. For a given set of points, suppose we want to define the image of a new point. Since the points the new point is connected to is a finite subset, by the axioms of the graphs, there is another point in the other graph satisfying with the same connections.    
+\end{proof}
+
+\subsection{EhrerFeucht-Fraise Games} 
+
+Fix two structures $\cM, \cN$. We define a game $G_{\omega}(\cM, \cN)$. On move $i$, player I plays $m_i \in \cM$ or $n_i \in \cN$, player II responds with $n_i \in \cN$ or $m_i \in \cM$. If there is an $i \in \omega$, atomic formula $\vp(\overline{v})$ such that $\cM \models \vp(m_0 \cdots m_i) \not\ifff \cN \models \vp(n_0 \cdots n_i)$, player I wins. Otherwise player II wins. 
+
+\begin{example}
+    PI: $(\bZ + \bZ, < )$ PII: $(\bZ, <)$, \\
+    PI has a winning strategy by choosing $0_1$ then $0_2$. PII will repsond with two points in $\bZ$ that are only finitely far apart, but PI can still play infinitely many points between them.
+\end{example}
+
+\begin{theorem}
+    For a countable $\cM, \cN$, PII has a winning strategy iin $G_{\omega}(\cM, \cN) \ifff$ $\cM \cong \cN$ 
+\end{theorem}
+
+\begin{pf}
+    $\from)$ If $\cM \cong \cN$ say $f: \cM \cong \cN$. Play following $f$ \\
+    $\to)$ Play the game such that PI makes sure to play all $m \in M$, all $n \in N$. PII responds with winning strategy. 
+\end{pf}
+
+\noindent
+$G_n(\cM, \cN)$ is the same game, but with only $n$ moves. 
+
+\begin{theorem}
+    If $\cL$ is a finite language with no function symbols, $\fa n \in \omega$ PII has a winning strategy in $G_n(\cM, \cN) \ifff \cM \equiv \cN$ 
+\end{theorem}
+
+\begin{pf}
+    $\to)$ Suppose that $\cM \not\equiv \cN$. Suppose $s$ is a strategy in $G_n(\cM, \cN)$. We want to play as PI and win. We know there is some $\vp$ true in $\cM$ and not true in $\cN$. Can assume WLOG starts with a quantifier 
+\end{pf}
