@@ -1,0 +1,20 @@
+
+\subsection{Path Liftings}
+
+\begin{lemma}[The Path Lifting Lemma]
+    Let $E \stackrel{p}{\to} B$ be a covering, let $f: [0,1] \to B$, a path in $B$. Let $e_0 \in E$ with $p(e_0) = f(0)$, then there is a lifting, $\hat{f}$, of $f$ to $E$ with $\hat{f}(0) = e_0$. ($\hat{f}$ is unique). 
+\end{lemma}
+
+\begin{pf}
+    Let $J = \{ r \in [0,1] \, : \,$ there is a lift of $f|_{[0,1]}$ starting at $e_0 \}$. Let $r_*$ = lub $(J)$. Can $r_*=0$. Let $U$ be an open neighborhood of $f(0)$, that is evenly covered, $e_0 \in p^{-1}(U)$, $p^{-1}(U)$ is a disjoint union of open slices. Choose a slice $V$ with $e_0 \in V$, $p: V \cong U$ $p(e_0) = f(0)$. $f^{-1}(U)$ is open so it contains an interval $[0,s)$. Define $\hat{f}: [0,s)$ by $\hat{f}(1) = (p|_V)^{-1}(f(r))$. Thus $r_* \ge 0$. \\
+    Can we have $r_* < 1$. Choose an open set $U$ in $B$ that contains $f(r_*)$ and is evenly covered. $f^{-1}(U)$ open contains $r_*$ so $f^{-1}(U)$ contains some $(r_* - \ve, r_* + \ve)$. Choose some $s$ with $r_* - \ve < s < r_*$, so $\hat{f}_s$ defined on $[0,s]$. Choose a slice $V$ of $p^{-1}(s)$, $\hat{f}_s \in V$. Choose $t$ with $r_* < t < r_* - \ve$. Define $\hat{f}$ on $[0,t]$ by $\hat{f}_s$ on $[0,s]$ and $\hat{f}(w) = (p|_V)^{-1}(f(w))$ for $w \in [s,t]$ so $\hat{f}$ defined on $[0,t]$. Thus can't have $r^* < 1$ \\
+    If $r_* = 1$, then $\hat{f}$ defined on $[0,r]$ for any $r < 1$. Choose a neighborhood $U$ of $f(1)$ that is evenly covered. $f^{-1}(U) \supset (s,1]$, choose $s < t < 1$ and $\hat{f}_{t}$ defined on $[0,t]$ and can extend it to $[0,1]$ in the same way as above. 
+\end{pf}
+
+\begin{theorem}[Homotopy Lifting Theorem]
+    Let $E \stackrel{p}{\to} B$ be a covering. Let $X$ be a topological space, let $F: X \times [0,1] \to B$ Assume we have $g: X \to E$ such that $p \circ g(x) = F(x,0)$, ie. $g$ is a lift of $x \mapsto F(x,0)$. Then there is a lift, $\hat{F}$, of $F$ to $E$ ie. $\hat{F}: X \times [0,1] \to E$ with $\hat{F}(x,0) = g(x)$ for all $x$ (Unique)
+\end{theorem}
+
+\begin{pf}
+    For each $x$, $t \mapsto F(x,t)$ is a path in $B$, so we can lift to $\hat{F}(x,t)$ with $F(x,0) = g(x)$. Thus $\hat{F}$ is uniquely determined. Why is $\hat{F}$ continuous?  
+\end{pf}

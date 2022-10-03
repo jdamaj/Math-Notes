@@ -1,0 +1,25 @@
+
+\begin{proposition}
+    If $E_1 \stackrel{p_1}{\to} B_1$ and $E_2 \stackrel{p_2}{\to} B_2$ are covering spaces. Then $E_1 \times E_2 \stackrel{p_1 \times p_2}{\to} B_1 \times B_2$ is a covering space. 
+\end{proposition}
+
+\begin{definition}
+    Given $Y \stackrel{p}{\to} Z$ topological spaces, suppose $X$ is a topological space $f: X \to Z$ continuous. By a lifting of $f$ to $Y$ we mean a function $g: X \to Y$ such that $p \circ g = f$ 
+\end{definition}
+
+\begin{proposition}
+    Let $X, Y$ be topological spaces, let $g, h: X \to Y$ continuous, then $\{x \, : \, g(x)=h(x)\}$ is a closed subset of $X$. 
+\end{proposition}
+
+\begin{pf}
+    We show the complement is open. Let $x \in X$ and $g(x) \neq h(x)$ then there are open $U,V$ disjoint with $g(x) \in U$, $h(x) \in V$. Then $g^{-1}(U), h^{-1}(V)$ open , $x \in g^{-1}(U) \cap h^{-1}(V)$ open and for $x_1 \in g^{-1}(U) \cap h^{-1}(V)$ $g(x_1) \in U$, $h(x_1) \in V$ disjoint so $g(x_1) \neq h(x_1)$
+\end{pf}
+
+
+\begin{proposition}
+    Let $E \stackrel{p}{\to} B$ be a covering. Let $X$ is a topological space, $f: X \to B$, assume $X$ is connected. Let $g,h$ be liftings of $f$ to $E$, if there is a point $x_0$ such that $g(x_0)=h(x_0)$, then $g=h$. (Uniqueness of Lifitng) 
+\end{proposition}
+
+\begin{pf}
+    Let $J = \{x \, : \, g(x)=h(x)\}$. Know $J$ is closed in $X$, not empty since $x_0 \in J$. Need to show that $J$ is open. Let $x_0 \in J$ such that $g(x) = h(x)$. Choose an open neighborhood $\cO$ of $f(x)$ that is evenly covered. Choose a slice $V$ of $E$ covering $\cO$, with $g(x) \in V$ then $p: V \cong \cO$ homomorphism. Since $V$ is open $g^{-1}(V)$ is open in $X$, $h^{-1}(V)$ is open in $X$. $g^{-1}(V) \cap h^{-1}(V)$ is open, contains 0. For any $y \in g^{-1}(V) \cap h^{-1}(V)$, $p(g(y)) = f(y) = p(h(y))$ but on $V$, $p$ is one to one so $g(y)=h(y)$ for all $y \in g^{-1}(V) \cap h^{-1}(V)$ 
+\end{pf}

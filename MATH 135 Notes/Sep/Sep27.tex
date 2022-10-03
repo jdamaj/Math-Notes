@@ -1,0 +1,38 @@
+
+\subsection{Schroder-Bernstein Theorem}
+
+\begin{example}
+    Show that $\bR \cup \{*\}$ and $\bR$ are equinumerous. \\
+    We define $f$ by $f(*)=0$, $f(r) = \begin{cases} r+1 \quad r \in \bN \\ r \quad r \in \bR \setminus \bN \end{cases}$
+\end{example}
+
+\begin{lemma}
+    If $A$ is finite, then $\omega \preceq A$ 
+\end{lemma}
+
+\begin{pf}
+    $A \neq 0$ so $\ex a_0 \in A$. Let $f(0) = a_0$, $A \setminus \{a_0\} \neq \vn$ since $A \not\approx 1$ so $a_1 \in A \setminus \{a_1\}$ Let $f(1)=a_1$.\\
+     We want $G: \{$finite subsets of $A \} \to A$ such that $G(F) \in A \setminus F$. Let $R =\{ \langle F, a \rangle | F$ finite $a \in A \setminus F\}$ \\
+     Observation: dom$(R)$= all finite subsets of $A$. Since $A$ is not finite $A \setminus F \neq \vn$ for all finite sets, $F \subseteq A$. Use AC to get a function $G \subseteq R$ such that dom $(G)$ = dom($R$). \\
+     Define $f : \omega \to A$ by recusrion. $f(0)=a_0$, $f(n) = G(\{f(0), \ldots, f(n-1)\}) \in A \setminus \{f(0), \ldots, f(n-1)\}$.   
+\end{pf}
+
+\begin{corollary}
+    A set $A$ is infinite $\ifff$ $A$ is equinumerous to some proper subset of itself. 
+\end{corollary}
+
+\noindent
+If $A$ is infinite, there is 1 to 1 $f: \omega \to A$. We define a bijection $h: A \to A\{f(0)\}$ by $h(a) = \begin{cases}a \quad a \not\in \text{dom}(f) \\ f(n+1) \quad a=f(n) \end{cases}$
+
+\begin{theorem}[SChroder Bernstein Theorem]
+    If $A \preceq B$, $B \preceq A$, then $A \approx B$ 
+\end{theorem}
+
+\begin{pf}
+    Let $f: A \to B$ 1 to 1, $g: A \to B$ 1 to 1. We want $h: A \to B$ bijection. \\
+    Let $C_0 = A \setminus \text{ran}(g)$, let $D_0 = f \llbracket C_0 \rrbracket$, $C_1 \llbracket D_0 \rrbracket$. $C_0 \cap C_1 = \vn$ because $C_0 = A \setminus \text{ran} g$ and $C_1 \subseteq \text{ran}(g)$. We recursivley define $C+{n+1} = g \llbracket D_n \rrbracket$, $D_{n+1} = \llbracket C_{n+1} \rrbracket$. We see that $C_n$ disjoint, $D_n$ disjoint. Define $h(a) = \begin{cases} g(a) \quad a \in \bigcup_{n \in \omega}C_n \\ g^{-1} \quad a \in A \setminus \bigcup_{n \in \omega}C_n\end{cases}$. $f \rightharpoonup \bigcup_{n \in \omega}$ is a bijection $\bigcup C_n \to \bigcup D_n$. $g\rightharpoonup \bigcup_{n \in \omega}D_n$ is a bijection $B \setminus \bigcup_{n \in \omega}D_n \to A \setminus A \setminus \bigcup_{n \in \omega}C_n$
+\end{pf}
+
+\begin{itemize}
+    \item Follows that $\bR \approx \cP(\omega)$ 
+\end{itemize}

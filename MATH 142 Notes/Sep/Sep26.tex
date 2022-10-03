@@ -1,0 +1,37 @@
+
+
+Let $\cC$ be the category of pointed path connected topological spaces (Hausdorff) where morphisms are continuous pointed functions. Then $\pi_1$ is a functor from $\cC$ to the cateogry of groups. 
+
+\subsection{Calculations}
+
+\begin{definition}
+    Let $V$ be a vector space, and let $C$ be a subset of $V$. $C$ is said to be convex if for any two points $v, w \in C$ the line segment between them is contained in $C$ ie. $\{tv + (1-t)w \, : t \in [0,1]\}$ 
+\end{definition}
+
+\noindent
+$C$ is convex and path connected. What is $\pi_1 (C)$? \\
+If $f,g$ paths in $C$ defined on $[0,1]$, then set $F(r,t) = tf(r) + (1-t)g(r)$, a homotopy from $f$ to $g$. If $f(0)=g(0)$, $f(1) = g(1)$ then $F$ preserves endpoints so all paths with same endpoints are homotopic so $\pi_1(C) = $one element group = 0. \\
+Constant loop $v_* \in C$, every loop homotopic to constant loop at $f(0)$. \\
+A loop is called null homotopic if it is homotopic to the constant loop. \\
+$pi_1(C)$ does not imply space is convex. $pi_1$ of 2 dimensional sphere in $\bR^3$ is 0. \\
+If $C \subseteq V$ is ``star shaped'' ie. there is some points such that for all points the path between them lies in $C$, then $\pi_1(C)=0$ \\ 
+
+\noindent
+What is $\pi_1$(circle)? \\
+Take advantage of $\bR \stackrel{p}{\to}$ circle, $p(r) = e^{2 \pi i r} \in \bC$ 
+
+\begin{definition}
+    Let $E,B$ be topological spaces, $p: E \to B$ be continuous, surjective. For $b \in B$, we say $b$ is evenly covered by $p$ if there is an open neighborhood $\cO \subseteq B$ with $b \in \cO$ such that $p^{-1}(\cO)$ is the disjoint union of open subsets of $E$ such that for each of the open sets $V$, $p: V \to \cO$ is a homoemorphism so for each $v \subseteq p^{-1}(\cO)$ is clopen in $p^{-1}(\cO)$ 
+\end{definition}
+
+\begin{definition}
+    Given $E \stackrel{p}{\to} B$, continuous, surjective $(E,p)$ is a covering space of $B$ if for every $b \in B$ is evenly covered by $E \stackrel{p}{\to} B$  
+\end{definition}
+
+\begin{definition}
+    $E \stackrel{p}{\to} B$ is a local homoemorphism if each point of $E$ has a an open neighborhood $U$ such that $p: U \to p(u)$ is a homoemorphism. 
+\end{definition}
+
+\noindent
+Every covering is a local homomorphism but not conversely. \\
+$E$ = circle. Put $p(z) = z^5$ for $z \in$ circle $ \in \bC$, $|z|=1$. Can be thought of as covering the circle 5 times over. More generally, $p(z)=z^n$ covering of circle for all $n$, even negative. 

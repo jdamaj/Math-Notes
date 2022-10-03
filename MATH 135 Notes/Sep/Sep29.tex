@@ -1,0 +1,41 @@
+
+\subsection{Zorn's Lemma}
+
+\begin{theorem}
+    For every $A , B$ either $A \preceq B$ or $B \preceq A$.
+\end{theorem}
+
+\textbf{Zorn's Lemma}: Let $\cA$ be a collection of sets such that for every chain $\cC \subseteq \cA$, $\bigcup \cC \in \cA$. Then $\cA$ has a maximal element. 
+
+\begin{definition}
+    $\cC$ is a chain if for every $C, D \in \cC$ either $C \subseteq D$ or $D \subseteq C$ \\
+    $B \in \cA$ is maximal if ther is no $C \in \cA$ with $B \subsetneq C$ 
+\end{definition}
+
+\noindent
+We prove the following theorem to get some practice with Zorn's Lemma
+
+\begin{theorem}
+    Every vector space has a basis.
+\end{theorem}
+
+\begin{pf}
+    Let $V$ be a vector space over a field $k$. $B \subseteq V$ is linearly independent if for every $v_1, \ldots, v_n \in B$, distinct, $k_1, \ldots, k_n$ such that $\sum k_iv_i = 0$, $k_1 = k_2 = \cdots = 0$. $B$ is a basis if $B$ is linearly indpendent and $\langle B \rangle = V$ where $\langle B \rangle = \{\sum_{i=1}^n k_iv_i \, | \, v_1, \ldots, v_n \in B, \, k_1, \ldots, k_n \in k\}$ \\
+    Let $\cA = \{B \subseteq V \, | \, B$ is linearly independent$\}$. W need to showt that if $\cC \subseteq \cA$ is a chain then $\bigcup \cC \in \cA$. Consider a chain $\cC$ consisting of linearly independent sets. To prove that $\bigcup \cC$ is linearly independent assume we have $v_1, \ldots, v_n \in \bigcup \cC$, $k_1, \ldots, k_n \in k$ with $\sum_{i=1}^n v_ik_i = 0$. For each $v_i$, there is $C_i \in \cC$ with $v_i \in C_i$. One $C_i$ contains all the others, say $C_{i_0}$. $v_1, \ldots, v_n \in C_{i_0}$. $C_{i_0}$ is linearly independent so all $k_i = 0$. Now we apply Zorns Lemma to get a maximal element $B \in \cA$. $B$ is a maximal linearly independent set in $V$. $\langle B \rangle = V$ since if there is some $v \in V \setminus \langle B \rangle$ then $B \cup \{v\}$ is linearly indpendent, contradicting the maximality of $B$. 
+\end{pf}
+
+\begin{lemma}
+    Let $\cC$ be a collection of functions. Then 
+    \begin{enumerate}[label = (\roman*)]
+        \item $\bigcup \cC$ is a function 
+        \item $\dom(\bigcup \cC) = \bigcup \{\dom f \, : \, f \in \cC\}$ 
+        \item $\ran(\bigcup \cC) = \bigcup \{\ran f \, : \, f \in \cC\}$ 
+        \item if all functions in $\cC$ are 1 to 1, then $\bigcup \cC$ is one to one. 
+    \end{enumerate}
+\end{lemma}
+
+\begin{pf}
+(ii): $\dom(\bigcup \cC) = \{a \, | \, \ex b \, \langle a , b \rangle \in \bigcup \cC\} = \{a \, | \, \ex b \, \ex f\in \cC \, \langle a , b \rangle \in f \} = \{a \, | \, \ex f (\ex b \langle a, b \rangle \in f) \} = \{a \, | \, \ex f \in \cC \, a \in \dom f\} = \bigcup \{\dom f \, : \, f \in \cC\}$ \\
+(i): $\bigcup \cC$ is a relation. Want to show it is a function. Suppose $\langle a, b \rangle \in \bigcup \cC$ and $\langle a, c \rangle \in \bigcup \cC$. $\ex f \in \cC$, $\langle a , b \rangle \in f$, $\ex g \in \cC$ $\langle a, c \rangle \in g$. Since $\cC$ a chain, either $f \subseteq g$ or $g \subseteq f$. If $f \subseteq g$, $\langle a , b \rangle, \langle a, c \rangle \in g$, a function, $b=c$. \\
+(iv): $\bigcup \cC$ is a function. Want to show it is one to one. Suppose $\langle a, b \rangle \in \bigcup \cC$ and $\langle c, b \rangle \in \bigcup \cC$. $\ex f \in \cC$, $\langle a , b \rangle \in f$, $\ex g \in \cC$ $\langle c, b \rangle \in g$. Since $\cC$ a chain, either $f \subseteq g$ or $g \subseteq f$. If $f \subseteq g$, $\langle a , b \rangle, \langle c, b \rangle \in g$, a one to one, $a=c$.
+\end{pf}
