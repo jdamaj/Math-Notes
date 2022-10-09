@@ -94,4 +94,30 @@ Back to ring of $S_3$: elements of form $a \circled{1} + b \circled{2} + c \circ
     Set of all formal elements $\sum_{g \in G}r_ig$ $r_i \in R$ almost alll 0. $+, \times$ on group ring ``obvious'' 
 \end{example}
 
-$G = \bZ/4\bZ$. group ring over $\bC$. Elements if $\bC[G]$ are of the form $a_0 + a_1g+a_2g^2+a_3g^3$ $a_i \in \bC$
+$G = \bZ/4\bZ$. group ring over $\bC$. Elements if $\bC[G]$ are of the form $a_0 + a_1g+a_2g^2+a_3g^3$ $a_i \in \bC$ = vector space over $\bC$ of dimension 4. \\
+$\bC[G]$ splits as a product of rings. \\
+Product of $R, S$ is $R \times S$ with ``obvious'' $\times, +$ \\ 
+
+\noindent
+Products in Categories: If $R, S$ objects, $R \times S$ object such that: 
+\begin{itemize}
+    \item We have morphisms (Insert Figure)
+    \item $R \times S$ is the best possible object like this. (Insert Figure) 
+\end{itemize}
+
+\noindent
+Suppose $R \times S$ product of $R, S$. How do we recover $R, S$ from $R \times S$? \\
+Look at $u_1 = (1,0)$, $u_2 = (0,1)$, $u_1^2 = u_1$, $u_2^2=u_1$< $u_1u_2 = u_2u_1$, $u_1 + u_2 = 1$ ($u$ such that $u^2=u$ is called idempodent) \\
+1 = sum of commuting irreducibles. Then we can recover $R$ from $R \times S$ by $(R \times S)(u_1)$ \\
+To break up $\bC[G]$ we want to write 1 as sum of idempotents 
+
+\begin{example}
+    $G = \bZ/2\bZ = \{a + bg\}, g^2=1$. $(a+bg)^2 = a+bg \to a^2 = 2abg + b^2g = a+bg$ so $a^2+b^2 = a$, $2ab=b$. $a = \frac{1}{2}, b=0 \to \frac{1 + g}{2}, \frac{1-g}{2}$ so $\bC[G] = \frac{1 + g}{2}\bC[G] + \frac{1-g}{2}\bC[G] \cong \bC + \bC$ \\
+    For $G = \bZ/4\bZ$, $\frac{1 + g + g^2 + g^3}{4}, \frac{1 - g + g^2 - g^3}{4}, \frac{1 + ig +-g^2 -ig^3}{4}, \frac{1 - g - g^2 + ig^3}{4}$ all idempodent, $\bC[G] \cong \bC \times \bC \times \bC \times \bC$ 
+\end{example}
+
+\begin{example}
+    Monoid ring. Monoid = integers $\ge 0$ under $x$. Allow infinite sums. \\
+    ``infinite'' \\ 
+    $\left\( \sum \frac{a_m}{m^2} \right\) \left\( \sum \frac{b_m}{m^2} \right\) = \sum \frac{c_m}{m^s}$ $c_1 = a_1b_1, c_2 = a_2b_1 $ 
+\end{example}

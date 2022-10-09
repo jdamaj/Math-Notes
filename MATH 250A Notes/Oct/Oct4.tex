@@ -1,0 +1,111 @@
+
+\subsection{Representation Theory} 
+
+A representation of a group $G$ is something acted on by $G$ \\
+Problem: Given $G$, find all Representations 
+\begin{itemize}
+    \item Sets: permutation representations
+    \item Vector space: linear representation - over $\bC$: complex representation, over finite fields: modular representation, Abelian group: integral
+\end{itemize}
+
+\begin{example}
+    $G$ = icosahedral group = order 60 \\
+    permutation representations: 20 faces, 12 vertices, 1 point (trivially), $G$ (regular representation) \\
+    linear representations: 
+    \begin{enumerate}
+        \item Trivial action on $\bC$ ($G$ acts trivially) 
+        \item 3-dim rep \quad icosahedron $\subseteq \bR^3 \subseteq \bC^3$ 
+        \item Permuation representaiton $\to$ linear representation by taking element as a basis for vector space 
+        \item Regular represenation: $V$ has basis $G$ 
+    \end{enumerate}
+\end{example}
+
+\noindent
+How can we classify permutations representations? \\
+Any permutation representation = disjoint union of transisitive sets so it is enough to classify transitive permutations. They correspond to conjugacy classes of subgroups of $H$, $G$ acts on $G/H$. Subgroups are hard to classify. \\
+
+\noindent 
+Primitive Representations \\
+Suppose $G$ acts on points, points grouped into boxes. $G$ acts on boxes. \\
+\begin{example}
+    $K \subseteq H \subseteq G$, $G$ acts on $\underset{\text{``points''}}{H/K} \to \underset{\text{``boxes''}}{G/K}$. This happends when $H$ is not maixmal. Maximal subgroups $\ifff$ prime representation. 
+\end{example}
+
+\noindent
+Analog for linear representations \\
+Suppose $v, W$ reps of $G$, so is $V \oplus W$ \\
+A representaiton is called decomposable if it can be written as $\oplus$ of nonzero representations. Representations that are not decomposable are called indecomposable. \\
+Suppose $W$ is a representaiton of $G$ containing a representation $V$, $0 \neq V, W$, $0 \subseteq V \subseteq W$. $W$ is reducible. If no such $V$ exists, $W$ is called irreducible (analogous to primitive permutation representations) \\
+Decomposable $\to$ reducable 
+
+\noindent
+Fundamental counterexample to everything: $\begin{pmatrix} 1 & * \\ 0 & 1 \end{pmatrix}$ \\
+Representation of $\bZ$  on $\bC$ by $n \mapsto \begin{pmatrix} 1 & n \\ 0 & 1 \end{pmatrix}$. \\
+$V = \begin{pmatrix} * \\ 0 \end{pmatrix}$, also a representation of $\bZ$. $\bZ$ acts trivially on $V$ and $W/V$ but not on $W$. \\
+$0 \to V \to W \to W/V \to 0$ does not split. \\
+If $W = V \oplus U$, $\bZ$ acts trivially on $V, U$ so trivially on $W$. \\
+$W$ indecomposable ubt not irreducible. 
+
+\noindent
+Classify complex representations of $\bZ/2\bZ$. Element $g, g^2=1$ \\
+$G$ acts on vector space $W$ over $\bC$. Take eigenvalues of $g$. $g^2=1$ so eigenvalues $\pm 1$. \\
+$W = W^+ \oplus W^-$, $v = \frac{v + g(v)}{2} + \frac{v - g(v)}{2}$. $W^+$ sum of 1 dimensional subspaces with $g=1$. $W^-$ sum of 1 dimensional subspaces with $g=-1$. 2 indecomposable reps $\bC^+ : g=1$, $\bC^-: -1$ 1 dimensional. \\
+What about representations of $\bZ/2\bZ$ on a vector space over $\bF_2$ (Can't divide by 2) \\
+Get other indecomposable rep: $g$ acts as $\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ on $(\bF_2)^2$ 
+
+\noindent
+Representations of group $\bZ \ifff$ invertible linear transformations. \\
+Want to classify representations up to isomorphism \\
+Complex linear represenations of $G \ifff$ modules over group rings $\bC[G]$ \\
+Classify finitely generated modules over Euclidean ring: \\
+THey are all $\sum$ of modules of the form $R/p^n$, $p$ prime. \\
+\textbf{Proof}: Copy proof for $\bZ$ \\
+$\bC[x]$ is Euclidean, almost group ring of $\bZ$, $\bC[x, x^{-1}]$ \\
+Finitely generated modules over $\bC[x]$ all have form $\bigoplus \bC[x]/p^n$, $p = 0$, prime (irreducible poly $x-\alpha$ \\
+Any finitely generated module over $\bC$ is $\oplus$ of 
+\begin{enumerate}
+    \item $\bC[x] = \bC[x]/(0)$ \quad $(\infty$ dimensional so we don't consider it) 
+    \item $\bC[x]/(x-\alpha)^n, \alpha \in \bC$, $n \ge 1, n \in \bZ, \alpha \neq 0$ \\
+    This consists of transformations $ \begin{pmatrix} \alpha & 1 & & 0 \\ & \ddots & \ddots & \\ & & \ddots & 1 \\ 0 & & & \alpha \end{pmatrix}$. Basis $1, (x-\alpha), \ldots, (x-\alpha)^{n-1}$ so every linear transformation of vectors on $\bC$ is conjugate to 
+    \[\begin{pmatrix} \begin{pmatrix} \alpha & 1 & & 0 \\ & \ddots & \ddots & \\ & & \ddots & 1 \\ 0 & & & \alpha \end{pmatrix} & & 0 \\ & \begin{pmatrix} \beta & 1 & & 0 \\ & \ddots & \ddots & \\ & & \ddots & 1 \\ 0 & & & \beta \end{pmatrix} & & \\ & & \ddots & \\ 0 & & & \end{pmatrix} \] 
+    indecomposable: $\alpha, n$ $\left. \begin{pmatrix} \alpha & 1 & & 0 \\ & \ddots & \ddots & \\ & & \ddots & 1 \\ 0 & & & \alpha \end{pmatrix} \right \} n$, irreducible $\ifff n=1$ 
+\end{enumerate} 
+
+\noindent
+When are all indecomposable maps irreducible? \\
+Holds for finite groups over $\bC$, compact groups over $\bC$, finite dimensional semi-simple Lie groups. \\
+Fails for: finite groups over finite fields, representions of $\bZ$ over $\bC$ \\
+(Finite Dimensional) Complex representations of finite groups are completeley reducible $\to$ $\bigoplus$ irreducible representations. \\
+Key point: Suppose $V \subseteq W$ ($V, W$ finite dimensional represenations of $G$) Can we write $W = V \oplus U$? $U$ invariant under $G$. \\
+Why not take $U = V^{\perp}$ (orthogonal complement)? Problem: $V^{\perp}$ might not ber invariant under $G$ $\begin{pmatrix} 1 & * \\ 0 & 1 \end{pmatrix}$ \\
+When does $G$ perserve orthogonal complement? Does if $f$ preseves the innter product. $(u, v) = (gu, gv)$ eg. $g$ is unitary, $g^{-1} = \overbrace{g^t}$ \\
+Recall $V$ has a hermetian $(\, , \, )$. Linear in first slot, antilinear in second, $(u, v) = \overline(v,u)$, $(u,u)>0$ if $u \neq 0$ \\
+How to make inner prodyct over $G$? Take average over $G$. \\
+Define new $(\, , \, )$ by $( \, , \, )^G = \sum_{g \in G}(gu, gv)$, hermetian, invariant under $g$. \\
+Vital key point: $( \, , \, )^G$ not degenerate: $(u, v)=0$ for all $v \to u=0$. $(u, u)^G >0$ if $(u \neq 0)$ \\
+Fails if we try to copy this for finite fields $\bF_p$ 
+
+\begin{example}
+    $G = S_3$, order 6 \\
+    Indecomposable representations? 
+    \begin{enumerate}
+        \item Tivial representaion on $\bC$ 
+        \item $S_3 \to \bZ/2\bZ$ so every representation of $\bZ/2\bZ$ representation of $S_3$ 
+        \item 2 dimensional reprsentation, $S_3$ acts on triangle $\subseteq \bR^2$ 
+    \end{enumerate}
+    Other representations: $S_3$ acts on 3 points: 1, 2, 3. Permutation representation $\to$ linear representation of $S_3$ on $\bC^3$, reducible. Consider $v_1 + v_2 + v_3$ preserved by $S_3$ so $\bC^3 = \bC^+ \oplus $(2 dimensional representation)
+\end{example}
+
+\noindent
+How to describe representations? \\
+We could give a matrix for every element of $G$: (1) Tiresome, (2) Hard to see if 2 representations equivalent \\
+Frobenius: enough to give the trace of elements of $G$. $\tr(ghg^{-1} = \tr(h))$ so enough to give trace on each conjugacy class of $G$. 
+
+\begin{example}
+    $G=\bZ/2\bZ$: \begin{tabular}{c | c c|} 1 & $g$ \\ \hline $\chi_0$ & 1 & 1 \\ $\chi_1$ & 1 & -1 \end{tabular} \\
+    $G=S_3$:  \begin{tabular}{c | c c c|} 1 & $\stackrel{(1 \, 2)}{\stackrel{(2 \, 3)}{\stackrel{(3 \, 1)}{}}}$ & \stackrel{(1 \, 2 \, 3)}{\stackrel{(1 \, 3 \, 2)}{}}\\ \hline $\chi_0$ & 1 & 1 & 1 \\ $\chi_1$ & 1 & -1, 1 \\ $\chi_2$ & 2 & 0 & -1 \end{tabular} \\
+\end{example}
+
+\noindent
+Representation theory can help prove difficult theorems about groups. \\
+Burnsides $p^aq^b$: Groups of order $p^aq^b$ are solvable. 
