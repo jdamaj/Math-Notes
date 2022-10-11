@@ -23,7 +23,7 @@ $\Hom(G, \bC^*) \ifff \Hom(\bZ/n_1\bZ, \bC^*) \times \Hom(\bZ/n_2\bZ, \bC^*) \ti
 \noindent
 Typical character tables: \\
 $\bZ/5\bZ$: 
-\begin{tabular}{ | c c c c|}
+\begin{tabular}{ | c c c c c|}
     1 & 5 & 5 & 5 & 5 \\ 
     1 & 1 & 1 & 1 & 1 \\ \hline 
     1 & $z$ & $z^2$ & $z^3$ & $z^4$ \\ 
@@ -43,7 +43,7 @@ $\bZ/2\bZ \times \bZ/2\bZ$:
 
 \noindent
 Vector spaces: $V \cong V^*$ not canonical, $V \cong V^**$ canonical, $v \in V, v^* \in V^*$ $v(v^*) = v^*(v)$ \\
-$G$ finite abelian, $G \cong \hat{G}$ not canonical, $G \cong \hat{\hat{G}}$ canonical: $g \in G, \hat{g} \in \hat{G}$ homomorphism by $\hat{G} \to G$ by $g(g{\hat}) \to \hat{g}(g)$ 
+$G$ finite abelian, $G \cong \hat{G}$ not canonical, $G \cong \hat{\hat{G}}$ canonical: $g \in G, \hat{g} \in \hat{G}$ homomorphism by $\hat{G} \to G$ by $g(\hat{g}) \to \hat{g}(g)$ 
 
 \noindent
 Check Properties of character tables: 
@@ -87,7 +87,8 @@ What happens if field is not $\bC$?
 \noindent
 Application: Dirichlet's Theorem: Given arithmetic progression $an+b$, $(a,b)=1$ contains $\infty$ primes. \\
 Ex: $\infty$ primes of the form $4n+1$. We consider the character table of $(\bZ/a\bZ)^*$ \\
-$a = 4$: $\begin{tabular}{c | c c |} & 1 & 3 \\ \hline  \chi_0 & 1 & 1 \\ \chi_1 & 1 & -1  \end{tabular}$ \\
+$a = 4$: \begin{tabular}{| c c c |} & 1 & 3 \\ \hline  $\chi_0$ & 1 & 1 \\ $\chi_1$ & 1 & -1  \end{tabular} \\
 Dirichlet $L$-series: $\sum_{n} \frac{\chi(n)}{n}: \frac{1}{1^s} + \frac{1}{3^s} + \frac{1}{5^s} + \frac{1}{7^s} + \cdots$, $\frac{1}{1^s} - \frac{1}{3^s} + \frac{1}{5^s} - \frac{1}{7^s} + \cdots$ \\ 
-$\sum_{n} \frac{\chi(n)}{n} = \prod_p \frac{1}{1 - \chi(p)p^s}$ so $\log \left\( \sum \frac{\chi(n)}{n} \right\) = \sum_{n.p} \frac{\chi(p^n)}{p^{ns}n}$ so we get  $ \frac{1}{3^s} + \frac{1}{5^s} + \frac{1}{7^s} + \frac{1}{2 \cdot 9^s}+ \cdots$, infinite at $s=1$, $ - \frac{1}{3^s} + \frac{1}{5^s} - \frac{1}{7^s} + \frac{1}{2 \cdot 9^s} + \cdots$ finite at $s=1$, nonzero since series converges to $\frac{\pi}{4} \neq 0$ \\ 
-Define $f=1$ if $n \equiv 1 \mod 4$, 0 otherwise. Function on $(\bZ/4\bZ)^*$ = \linear combinations of $\chi_0, \chi_1$ = $\frac{1}{2}(\chi_0 + \chi_1)$. $\frac{1}{2}$ sum if $\frac{1}{5^s} + \frac{1}{2 \cdot 9^s} + \frac{1}{13^2} + \cdots = \sum_{n,p \equiv 1 \mod 4} \frac{1}{p^{ns}n}$ is infinite on $s=1$. Sum of terms $\frac{1}{np^{ns}}$ $n \ge 2$ is finite so $\sum_{p \equiv 1 \mod 4} \frac{1}{p} = \infty$ 
+$\sum_{n} \frac{\chi(n)}{n} = \prod_p \frac{1}{1 - \chi(p)p^s}$ so $\log \left( \sum \frac{\chi(n)}{n} \right) = \sum_{n.p} \frac{\chi(p^n)}{p^{ns}n}$ so we get  $ \frac{1}{3^s} + \frac{1}{5^s} + \frac{1}{7^s} + \frac{1}{2 \cdot 9^s}+ \cdots$, infinite at $s=1$, $ - \frac{1}{3^s} + \frac{1}{5^s} - \frac{1}{7^s} + \frac{1}{2 \cdot 9^s} + \cdots$ finite at $s=1$, nonzero since series converges to $\frac{\pi}{4} \neq 0$ \\ 
+Define $f=1$ if $n \equiv 1 \mod 4$, 0 otherwise. Function on $(\bZ/4\bZ)^*$ = linear combinations of $\chi_0, \chi_1$ = $\frac{1}{2}(\chi_0 + \chi_1)$. $\frac{1}{2}$ sum if $\frac{1}{5^s} + \frac{1}{2 \cdot 9^s} + \frac{1}{13^2} + \cdots = \sum_{n,p \equiv 1 \mod 4} \frac{1}{p^{ns}n}$ is infinite on $s=1$. Sum of terms $\frac{1}{np^{ns}}$ $n \ge 2$ is finite so $\sum_{p \equiv 1 \mod 4} \frac{1}{p} = \infty$ \\
+Key point: $\sum \frac{\chi(n)}{n^s} \neq 0$ at $s=1$ (if $\chi \neq $ trivial) \quad hard step 
