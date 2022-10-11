@@ -39,5 +39,7 @@ $G_n(\cM, \cN)$ is the same game, but with only $n$ moves.
 \end{theorem}
 
 \begin{pf}
-    $\to)$ Suppose that $\cM \not\equiv \cN$. Suppose $s$ is a strategy in $G_n(\cM, \cN)$. We want to play as PI and win. We know there is some $\vp$ true in $\cM$ and not true in $\cN$. Can assume WLOG starts with a quantifier 
+    $\to)$ Suppose that $\cM \not\equiv \cN$. Suppose $s$ is a strategy in $G_n(\cM, \cN)$. We want to play as PI and win. We know there is some $\vp$ true in $\cM$ and not true in $\cN$. Can assume WLOG starts with a quantifier (for a disjunction, $\cM, \cN$ must disagree on one of the disjuncts and for negations $\cM, \cN$ will still disagree on the formula without the negation). If $\cM \models \fa x \psi(x), \cN \models \ex x \neg \psi(x)$ choose $n_1$ such that $\cN \models \neg \psi(n_1)$. PI plays $n_1$, suppose PII plays $m_1$ then $\cM \models \psi(m_1)$, For the other case, if $\cM \models \ex x \psi(x)$, $\cN \models \fa x \neg \psi(x)$ choose $m_1$ sch that $\cM \models \psi(m_1)$. PII plays $n_2$, $\cN \models \neg \psi(n_2)$. Now, given $\psi(x)$ we can again assume we have a formula $\theta(x)$ that starts with a quantifier and we repeat the steps above. We continue in this fashion till we get an atomic formula that is true in one model but not the other. So we take $n$= quantifier depth of $\vp$ to make this work. \\
+    $\from)$ Follows from: \\
+    \textbf{Lemma}: PII has a winning strategy in $G_n(\cM, \cN) \ifff \cM \equiv_n \cN$ (sentences of quantifier depth $\le n$)
 \end{pf}

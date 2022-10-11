@@ -1,0 +1,96 @@
+
+\subsection{Quantifier Elimination}
+
+Sometimes formulas with quantifiers are equivalent to ones without quantifiers
+$\bR \models \ex x (ux^2 + vx + w=0) \ifff (v^2 - 4ac \ge 0 \wedge u \neq 0) \vee (u = 0 \wedge (w=0 \vee v \neq 0))$ \\
+$\bC \models \ex x (ux^2 + vx + w=0) \ifff (u \neq 0 \vee v \neq 0 \vee w=0)$ \\
+
+No always possible though. In $\bN$, there are polynomials $p(x, \overline{v})$ such taht $\{n \, | \, \bN \models \ex \overline{v} p(n, \overline{v})\}$ is not computable. 
+
+\begin{definition}
+    $T$ has quantifier elimination if for every formula $\phi(\overline{v})$ ther is a quantifier free $\vp(\overline{v})$ such that $T \models \fa \overline{v} (\phi(\overline{v}) \ifff \vp(\overline{v}))$ 
+\end{definition}
+
+\noindent
+Note: we allow quantifier free formulas for true and false. \\
+
+\begin{example}
+    Theories with quantifier elimination 
+    \begin{itemize}
+        \item DLO - dense linear orders 
+        \item Th(Rado Graph)
+        \item DAG - torsion free divisible abelian groups 
+        \item ODAG - ordered divisble abelian groups 
+        \item Presburger Arithmetic - Th$(\bZ, + , - , 0, 1, <)$ adding preducates $P_n(x) \ifff \ex y(n \cdot y = x)$
+        \item Algebraically closed fields - Th$(\bC, +, \times)$
+        \item Real closed fields Th$(\bR, 0, 1, + , \times, < )$ 
+    \end{itemize}
+\end{example}
+
+\begin{theorem}
+    DLO has quantifier elimination
+\end{theorem}
+
+\begin{pf}
+    Let $\phi(\overline{v})$ be a formula, $\cL = \{\le \}$ 
+\end{pf}
+
+
+\subsection{Quantifier Elimination}
+
+Sometimes formulas with quantifiers are equivalent to ones without quantifiers
+$\bR \models \ex x (ux^2 + vx + w=0) \ifff (v^2 - 4ac \ge 0 \wedge u \neq 0) \vee (u = 0 \wedge (w=0 \vee v \neq 0))$ \\
+$\bC \models \ex x (ux^2 + vx + w=0) \ifff (u \neq 0 \vee v \neq 0 \vee w=0)$ \\
+
+No always possible though. In $\bN$, there are polynomials $p(x, \overline{v})$ such taht $\{n \, | \, \bN \models \ex \overline{v} p(n, \overline{v})\}$ is not computable. 
+
+\begin{definition}
+    $T$ has quantifier elimination if for every formula $\phi(\overline{v})$ ther is a quantifier free $\vp(\overline{v})$ such that $T \models \fa \overline{v} (\phi(\overline{v}) \ifff \vp(\overline{v}))$ 
+\end{definition}
+
+\noindent
+Note: we allow quantifier free formulas for true and false. \\
+
+\begin{example}
+    Theories with quantifier elimination 
+    \begin{itemize}
+        \item DLO - dense linear orders 
+        \item Th(Rado Graph)
+        \item DAG - torsion free divisible abelian groups 
+        \item ODAG - ordered divisble abelian groups 
+        \item Presburger Arithmetic - Th$(\bZ, + , - , 0, 1, <)$ adding preducates $P_n(x) \ifff \ex y(n \cdot y = x)$
+        \item Algebraically closed fields - Th$(\bC, +, \times)$
+        \item Real closed fields Th$(\bR, 0, 1, + , \times, < )$ 
+    \end{itemize}
+\end{example}
+
+\begin{theorem}
+    DLO has quantifier elimination
+\end{theorem}
+
+\begin{pf}
+    Let $\phi(\overline{v})$ be a formula, $\cL = \{\le \}$ \\
+    If $\phi$ is a sentence, then since DLO is complete either DLO $\models \phi \ifff \top$ or DLO $\models \phi \iff \bot$ \\
+    Suppose $\phi$ not a sentence, $\overline{v} = v_1, \ldots, v_n$. Given $\sigma: \{(i,j) \, : \, i < j < n\} \to \{0,1,2\}$ define $\chi_{\sigma}(\overline{v}) = \left( \bigwedge_{\substack{1 < j < n \\ \sigma(i, j)=0}} v_i = v_j \right) \wedge \left( \bigwedge_{\substack{1 < j < n \\ \sigma(i, j)=1}} v_i < v_j \right) \wedge \left( \bigwedge_{\substack{1 < j < n \\ \sigma(i, j)=2}} v_i > v_j \right) $ \\
+    Observation: If $\overline{a}, \overline{b} \in \bQ$, $\sigma$, and $\bQ \models \chi_{\sigma}(\overline{a}), \chi_{\sigma}(\overline{b}) \to (\bQ, \overline{a}) \cong (\bQ, \overline{b}) \to \bQ(a) \ifff \bQ(b)$. Let $\Lambda_{\phi} = \{ \sigma \, | \, \fa x(\chi_{\sigma}(\overline{x}) \to \phi(\overline{x}))\}$. Let $\psi(\overline{v}) = \bigvee_{\sigma \in \Lambda_{\phi}} \chi_{\sigma}(\overline{v})$. Claim: DLO $\models \fa v \phi(\overline{v}) \ifff \psi(v)$ 
+\end{pf}
+
+\begin{lemma}
+    Suppose that for every quantifier free formula $\phi(\overline{v}, w)$ there is a quantifier free formula $\psi(\overline{v})$ such that $T \models \fa \overline{v} (\ex w \phi(\overline{v}, w) \ifff \psi(\overline{v}))$ then $T$ has quantifier elimination. 
+\end{lemma}
+
+\begin{pf}
+    Idea: We can construc the quantifier free formula by working from the inside out, eliminating one quantifier at a time. 
+\end{pf}
+
+\begin{theorem}
+    For $T$, an $\cL$ theory, $\phi(\overline{v})$ a formula the following are equivalent
+    \begin{enumerate}[label = (\roman*)]
+        \item There is a quantifier free formula $\vp(\overline{v})$ such that $T \models \fa \overline{v}(\phi(\overline{v}) \ifff \vp(\overline{v}))$ 
+        \item For every $\cM, \cN, \cA, \overline{a} \in A$ with $\cM, \cN \models T$, $\cA \subseteq \cM, \cN$ We have $\cM \models \phi(\overline{a}) \ifff \cN \models \phi(\overline{a})$
+    \end{enumerate}
+\end{theorem}
+
+\begin{pf}
+    (i) $\to$ (ii): $\cM \models \phi(\overline{a}) \ifff \cM \models \psi(\overline{a}) \ifff \cA \models \psi(\overline{a}) \iff \cN \models \psi(\overline{a}) \ifff \cN \models \phi(\overline{a})$ 
+\end{pf}
