@@ -1,0 +1,61 @@
+
+\subsection{Quantifier Elimination}
+
+\begin{lemma}
+    Let $G$ be a TFAG. There is DAG $H \supseteq G$ (called the divisble hull of $G$) such that for all DAG $H' \supseteq G$ there is an embedding $h: H \to H'$ with $h \upharpoonright G$ = id. 
+\end{lemma}
+
+\begin{pf}
+    Let $H = \{(g,n) \, : \, g \in G, n \in \bN\}/\sim$ where $(g,n) \sim (g', n') \ifff \underbrace{g + \cdots + g}_{n'} = \underbrace{g' + \cdots + g'}_{n}$ then $[(g,n)]+_H [(h,m)] = [(m \cdot g + n \cdot h, mn)]$. We need to show if $(g,n) \sim (g',n')$ $(h,m) \sim (h', m')$ then $(m \cdot g + n \cdot h, mn) \sim (m' \cdot g' + n' \cdot h', n'm')$ \\
+    Let $i: G \to H$ by $i(g)=(g/1)$ \\
+    Given DAG $H' \supseteq G$, we define $h: H \to H'$ by $[(g, n)] = \frac{g}{n}$ in $H'$ 
+\end{pf}
+
+\begin{theorem}
+    DAG has quantifier elimination. 
+\end{theorem}
+
+\begin{pf}
+    Let $\theta(\overline{v},w)$ be quantifier free. $G \subseteq G_1, G_2$, $\overline{a} \in G$. We want to show $G_1 \models \ex \theta(\overline{a},w) \ifff G_2 \models \ex \theta(\overline{a}, w)$ \\
+    Observation: $G$ is a TFAG \\
+    Let $H$ be the hull of $G$. $G_1 \models \ex w \theta(\overline{a},w) \ifff H \models \ex w \theta(\overline{a},w) \ifff G_2 \models ex w \theta(\overline{a},w)$ 
+\end{pf}
+
+\begin{definition}
+    Given $T$, let $T_{\fa} \{ \vp \fa$-sentence  : $T \models \vp\}$ 
+\end{definition}
+
+\noindent
+Claim: $\text{DAG}_{\fa}$=TFAG, $\text{ACF}_{\fa}$ = integral domains, $\text{RCF}_{\fa}$ = ordered integral domains 
+
+\begin{lemma}
+    $\cA \models T_{\fa} \ifff \ex \cM \supseteq \cA, \cM \models T$ 
+\end{lemma}
+
+\begin{pf}
+    $\to )$ $\cM \models T$, $\cA \supseteq \cM$ and $\vp \in T_{\fa}$, $T \models \vp \to \cM \models \vp \to \cA \models \vp$ \\
+    $\from )$ Given $\cA \models T_{\fa}$. We want to show $T \cup \dia(\cA)$ is satisfiable. If $T \cup \dia(\cA)$ is not satisfiable  is not satisfiable then there are $\psi_1(\overline{a}), \ldots, \psi_k(\overline{a})$ such that $T \models \neg(\psi_1(\overline{a}) \wedge \cdots \wedge \psi_k(\overline{a}))$ so $T \models \neg \psi(\overline{a})$ for $\psi(\overline{a}) \in \dia(\cA)$. Then $T \models \fa \overline{x} \neg \psi(\overline{x})$ so $\fa x \neg \psi(\overline{x}) \in T_{\fa}$ so $\cA \models \fa \overline{x} \neg \psi(\overline{x})$ contradicting $\cA \models \psi(\overline{a})$ 
+\end{pf}
+
+\noindent
+Claim follows since $G \models$ TFAG $\ifff$ there is $H \supseteq G$, $H \models$ DAG $\ifff G \models \text{DAG}_{\fa}$ 
+
+\begin{definition}
+    $T$ has algebraically prime models if for every $\cA \models T_{\fa}$ there is an $\cM \supseteq \cA, \cM \models T$ such that if $\cM' \supseteq \cA$, $\cM' \models T$ then there is an embedding $h: \cM \to \cM'$ with $h \upharpoonright \cA = \text{id}_{\cA}$. 
+\end{definition}
+
+\noindent
+DAG has prime models. Also true for ACF, RCF. 
+
+\begin{definition}
+    $\cM \supseteq \cN$, we say that $\cM$ is simply closed $\cN$ $(\cM \preceq_S \cN)$ if for every quantifier free formula $\theta(\overline{v}, w)$ and $\overline{a} \in M$ if $\cN \models \ex w \theta(\overline{a},w)$ then $\ex m \in M$, $\cN \models \theta(\overline{a},m)$ 
+\end{definition}
+
+\begin{theorem}
+    For $T$ an $\cL$-theory if 
+    \begin{enumerate}[label = (\roman*)]
+        \item $T$ has algebraically prime models 
+        \item For all $\cM, \cN \models T$, $\cM \subseteq \cN \to \cM \preceq_S \cN$ 
+    \end{enumerate}
+    Then $T$ has quantifier elimination. 
+\end{theorem}
