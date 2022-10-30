@@ -1,0 +1,82 @@
+
+\subsection{Power Series} 
+
+Recall: holomorphic functions $\bC \to \bC$ can be written as power series: $a_0 + a_1z + a_2z^2 + \cdots$ \\
+can add and multiply in obvious way $(a_0 + a_1z + a_2z^2 + \cdots)(b_0 + b_1z + b_2z^2) = a_0b_0 + (a_0b_1 + a_1b_0)z + \cdots$ \\
+Formal power series $\bC [[z]] = $ all series $a_0 + a_1 + a_2z^2 + \cdots$ dont worry about convergence \\ 
+Works over any ring $R$: we get $R[[z]]$, check this is a ring\\
+Can repeat: $R[[x]][[y]] = R[[x,y]] = a_{0 \, 0} + a_{0 \, 1}x + a_{1 \, 0}y + a_{1 \, 1}x^2 _ \cdots$. Contains polynomials in $R[x,y]$ \\
+
+\noindent
+Basic Properties:  \\ 
+$k$ field. Look at $k[[x]]$. Find ideals of ring (For polynomials $k[x]$ all principle: $(f)$ $f$ is some poly) \\ 
+Find units of $k[[x]]$ (for $k[x]$, units just $k^*$). $1 + x$ unit in $k[[x]]$ (not in $k[x]$) $(1 + x)(1-x+x^2 -x^3 + \cdots) = 1$. \\
+If $a_0 + a_1x + a_2x^2 + \cdots \in k[[x]]$, $a_0 \neq 0$ then it is a unit. Take $a_0 = 1$, then $f$ is $1 + A$ where $A = a_1x_1 + a_2x_2 + \cdots$ $(1 + A)^{-1} = 1 - A + A^2 - A^3 + \cdots$, well defined power series since $A$ has no constant. \\
+
+\noindent
+Ideals of $k[[x]]$ are $(0), (x), (x^2), (x^3), \ldots$ PID \\
+Suppose $I$ is an ideal $\neq 0$, $f \in I$, $a_nx^n + a_{n-1}x^{n-1} + \cdots$ $n$ minimal such that $a_n \neq 0$. $f = x^n(\underbrace{a_n + a_{n+1}x + \cdots}_{\text{unit}})$ so $(f) = I$, all elements divisble by $x^n$ \\
+
+\noindent
+$k[[x]]$ is a UFD. Only prime up to unit is $x$. Any element = $x^n \times$ unit \\
+Polynmial ring $k[x_1, \ldots, x_n]$ is Noetherian, UFD. Is same true for $k[[x_1, \ldots, x_n]]$? \\ 
+Try to copy proof of polynomial ring ie, prove if $R$ is Noetherian, so is $R[[x]]$ \\
+Problem: The proof for $R[x]$ uses leading coefficients, fails for power series. \\
+Idea: Instead of looking at leading coefficent, deifne $I_0 \subseteq I_1 \subseteq I_2 \subseteq \cdots$ where $I_0$ is the set of constant terms of elements of $I$, $I_1$ set of $a_1$ in terms of form $a_1x + a_2x^2 + \cdots$. Then ideal of $R$, $I_n \subseteq I_{n+1}$ (if $a_nx^n + \cdots \in I_n$, $a_nx^{n+1} + \cdots = x(a_nx^n + \cdots) \in I_{n+1})$. This terminates $I_n = I_{n+1} = I_{n+2} = \cdots$ for some $n$. \\
+Generators for $I$: finite set of power series whose constant terms generate $I_0$, finite set of power sereis $a_1x + \cdots$ such that $a_1$ generate $I_1, \cdots$ continue through $I_n$. This gives a finite set of generators for $I$ \\
+Ex: What does the proof that $R[[x]]$ is noetherian not work for polynomial rings. \\
+
+\noindent
+If $f$ power series in $k[[x_1, \ldots, x_n]]$ then $f$ is a unit $\ifff$ constant term $\neq 0$. Ideals very complicated for $n \ge 2$ \\
+Is $k[[x_1, \ldots, x_n]]$ a UFD? yes. Easy for $n=1$. Try to copy proof that $k[x_1, \ldots, x_n]$ is a UFD. \\
+$R$ UFD $\to$ $R[x]$ UFD. $R$ UFD does not imply that $R[[x]]$ is a UFD. \\ 
+Proof fails since we used content. If $R$ ring, $Q$ field of quotients of $R$, a polynomial $\Q[x]$ $a_0 + a_1 + a_2x^2 + \cdots + a_nx^n$ can be written as $c(b_0 + b_1 x + \cdots + b_nx^n)$ with $b_i \in R$, $c$ called content of $f$. \\
+Content for formal power series is not well defined. $R = \bZ$, $Q = \bQ$ $1 + \frac{x}{2} + \frac{x}{2^2}  +\cdots \neq (\text{rationals}) \times$ element of $\bZ[x]$ \\
+
+\noindent
+Weierstrass Preparation Theorem: Formal power series in several variables over a field \\ 
+Idea: we can write formal power series as polynomial of one of variables \\ 
+More precisely, given power series $f \in k[[x, y, z, \ldots]]$, containing $x$, $f = y^* r(x^n + a_{n-1}x^{n-1} + \cdots + a_0)$, $a_i$ power series in $y_1, y_2, \ldots$ with 0 constant term. 
+
+\begin{pf}
+    Do case of $k[[x,y]]$. Draw picture of $f$ 
+    \[ \begin{tabular}{| c c}
+        $\circled{a_{n \, 0}x^n}$ & \\ 
+        $\vdots$ & \\ 
+        \begin{tabular}{c}
+            a_{2 \, 0}x^2 \\ a_{1 \, 0}x \\ a_{0 \, 0}
+        \end{tabular} & 
+        \begin{tabular}{c c}
+            \hline \\ 
+            & \\ 
+            $a_{1 \, 1}xy$ & \\ 
+            $a_{0 \, 1}y$ & $a_{0 \, n}y^2$ 
+        \end{tabular}
+    \end{tabular} \]
+    Want to keep $x^n$ but make all coefficients outside the box 0. \\
+    Problem: multiply $f$ by some unit to acheive this \\
+    Step 1: pick smallest coefficent of $x^n \neq 0$ (if not smallest, $f$ is divisble by $y$ so look at $f/y$). Can assume $f(x) = x^n + \cdots$ no terms in $x^i$, $i < n$. We have $x^n + a_{n+1 \, 0}x^{n+1} + \cdots$ multiply by $(1 - a_{n+1 \, 0})$, unit, to get $(x^n + 0x^{n+1} + \cdots)$. Can repeat this, multiplying by $(1 - *x)(1 - *x^2)(1 - *x^3) \cdots$ well defined power series. \\
+    Now, look at $x^n + *x^ny + \cdots $ multiply by $(1 -*y)$ to get rid of $y$ term. Repeating this, move up columns, multiply by infinite products of units to make all above line 0. So we can write $f = y^* \times \text{ unit } \times (x^n + a_{n-1}x^{n-1} + \cdots)$, decomposition is unique. 
+\end{pf} 
+
+\noindent
+Application: Use Weierstrass to show that $k[[x,y]]$ is a UFD. \\
+Key step: If $f$, is irreducible, $f$ is prime. \\
+Suppose $f$ is irreducible, $f|gh$. By using Weierstrass preparation, can assume $f,g,h$ polynomials in $x$. We know $fr = gh$ for some $r$, $r$ must be polynomial in $x$. So $f,g,h$ polynomials in $k[[y]][x]$ this is a UFD, so $f|g$ or $f|h$ since $f$ is irreducible in $k[[y]][x]$ \\
+
+\noindent
+Warning: If $f,g$ are polynomials in $R[[x]]$ abd $f|g$ in $R[[x]]$ this does not imply that $f|g$ in $R[x]$, consider $f = 1+x, g=1$ in $R[[x]]$ \\
+
+\noindent
+Warning: Irreducible polynomials in $k[x,y]$ need not be irreducible in $k[[x,y]]$ 
+
+\begin{example}
+    $y^2-x^2-x^3$, easy to check that irreducible in $k[x,y]$. Factors as $(y + x\sqrt{1+x})(y - x \sqrt{1-x})$, $\sqrt{1-x} \in \bC[[x]]$, since $y^2 - x^2 - x^3 = y^2 - (x^2 - x^3) = y^2 - (x\sqrt{1+x})^2$ 
+\end{example}
+
+\noindent
+Warning: Ring of convergent power series of $\bC$ is not a UFD, despite being contained between 2 UFDs: $\bC[x] \subseteq$ convergent power series $\subseteq \bC[[z]]$. \\
+$\sin(x)$, zeros: $0, \pm \pi, \pm 2 \pi$ $ = x(x-\pi)(x + \pi)(x - 2\pi)(x + 2 \pi) \cdots$ cant be expressed as finite product. \\
+Both $\bC[z], \bC[[z]]$ Noetherian but ring of convergent power series not noetherian. \\ 
+$I$ = all holomorphic functions vanishing at all but finite $\#$ of integers ideal but not finitely generated. \\
+Can also find $I_0 \subseteq I_1 \subseteq I_2 \subseteq $,  vanishing on $\bZ \subseteq $ vanishing on $\bZ \setminus \{0\} \subseteq$ vanishing on $\bZ \setminus \{0,1\} \subseteq \cdots$  

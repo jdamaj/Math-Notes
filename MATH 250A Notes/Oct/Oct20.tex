@@ -1,0 +1,44 @@
+
+\subsection{Polynomials} 
+
+Eisenstein: Id $f(x)= x^n + a_{n-1}x^{n-1} + \cdots + a_0 \in \bZ[x]$, $a_i$ divisble by $p$, $a_0$ not divisible by $p^2$, then $f(x)$ is irreducible. 
+
+\begin{pf}
+    Suppose $f = gh$ with $g = x^m + b_{m-1}x^{m-1} + \cdots + b_0$, $h = x^[n-m] + \cdots + c_0$, $b_0c_0 = a_0$ so exactly one is divisble by $p$. Suppose $p|b_0$, $b_i, \ldots, b_0$ divisible by $p$, $b_{i+1}$ not, coefficient of $x^{i+1}$ in $gh$ is $b_{i+1}c_0 + b_ic_i + \cdots $ not divisible by $p$ a contradiction, so $f$ irreducible. 
+\end{pf}    
+
+\noindent
+Applications: 
+\begin{enumerate}
+    \item Easiest way to write down high degree irreducible polynomials (eg. $x^11 - 4x+2)$ 
+    \item $p$th roots of 1: roots of $x^p-1$, $1, z, z^2, \ldots, $ $z = e^{2 \pi i/p}$. \\
+    What is irreducible polynomial with $z$ as a root? $x^p-1 = (x-1)(x^{p-1} + x^{p-2} + \cdots + 1)$. \\
+    To show irreducible, let $y = x-1$, $\frac{(y+1)^p-1}{(y+1)-1} = y^{p-1} + \binom{p}{1}y^{p-2} + \cdots + \binom{p}{2}y + \binom{p}{1}$ irreducible by Eisenstein. \\
+    Ex: $z^{p^n}=1$, $\frac{x^{p^n}=1}{x^{p^n-1} - 1}$ is irreducible. 
+\end{enumerate}
+
+\noindent
+Eisenstein polynomials come from totally ramified extensions. \\
+$\bZ \subseteq \bZ[i]$, $z = (1+i)^2 \times $ unit  = (prime$)^2 \times$ unit, 2 degree extension: totally ramified. \\
+$\bZ \subseteq \bZ[z]$, $z = e^{2 \pi i /p}$, how does $z$ factorize in $\bZ[x]$? \\
+$p = (1 -z)(1-z^2) \cdots (1-z^{p-1})$, $(1-z^i)=$ unit $\times (1-z)$, $(1-z^i) = (1-z)(1 + z + z^2 + \cdots)$, $(1-z) = (1-z^i)(1 + z^i + z^{2i} + \cdots)$ so $p = (1-z)^{p-1} \times $unit - totally ramified.  \\
+$\bZ \subset \bZ[\alpha]$ algebraic number, $p = (\beta)^n \times$ unit, $\beta$ satisfies Eisenstein polynomial 
+
+\noindent
+Fast Factorization of polynomials over finite fields \\
+Special case: For finite $\bZ/p\bZ$, $p$ odd prime. Factor $f(x) \in \bZ/p\bZ[x]$. We will find linear factors $(x-\alpha)$ (roots of $f$). \\
+Key idea: consider $x^p-x = (x-1)(x-2) \cdots (x-p-1)$ all possible linear factors. \\
+Take $\gcd(f , x^p-x)$ in $\bZ/p\bZ[x] = \prod (x-a)$, $(x-a)|f$ \\
+How do we find $\gcd(f, x^p-x)$ fast? Russian Peasant Algorithm. 
+\begin{itemize}
+    \item Fast multiplication: to find $m \times n$, write $m$ in binary $m = 2^{a_0} + 2^{a+1} + \cdots$, compute $n, 2n , 4n, 8n, \ldots$ 
+    \item For $a^b  \mod p$, for some $a,b,p$, $a \times a \times \cdots$ $|b|$ steps too slow. $b = 2^{b_0} + 2^{b_1} + \cdots$, $a, a^2, a^4, \ldots \mod p$ $a^b = (a^{2^{b_0}}) \times a^{2^{b_1}} \cdots )$ 
+    \item For $(f, x^p-x)$, $p$ large. $x^p-x = qf + r$ find $x^p-x \mod f(x)$, calculate using Russian Peasant algorithm. 
+\end{itemize}
+Now, assume $f$ only distinct linear factors, $(x-a)$. Problem: find $a_i$ \\
+$f | (x^p-x)$, $x(x^{p-1}-1) = x(x^{\frac{p-1}{2}}-1)(x^{\frac{p+1}{2}}+1)$ so $(f,x^p-x) = (f,x^{\frac{p-1}{2}}-1 )(f, x^{\frac{p+1}{2}}+1) \times x$ unless all roots are roots of $x^{\frac{p-1}{2}}-1$ or $x^{\frac{p+1}{2}}+1$ \\ 
+What if this doesn't break $f$ into the product of smaller polynomails. Change $f$ to $f(x-a)$, try again 
+
+
+\noindent
+\subsection{Polynomials over Noetherian Rings} 

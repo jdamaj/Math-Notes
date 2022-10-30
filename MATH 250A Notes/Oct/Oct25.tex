@@ -1,0 +1,48 @@
+
+\subsection{Symmetric polynomials} 
+
+
+Symmetric group on $\{1, \ldots, n\}$ so acts on $x_1, \ldots, x_n$ so acts on $k[x_1, \ldots, x_n]$ ($k$ field). A symmetric polynomial is a polynomial fixed by $S_n$ 
+
+\begin{example}
+    \begin{enumerate}
+        \item $x_1 + x_2  + \cdots + x_n$ 
+        \item $x_1 x_2 \cdots x_n$ 
+        \item $x_1x_2 + x_1x_3 + \cdots = \sum_{i < j}x_ix_j$ 
+        \item $e_k = \sum_{i_1 < i_2 < \cdots < i_k}x_{i_1} x_{i_2} \cdots x_{i_k}$ - elementary symmetric functions \\
+        Can think of these as coefficents of a polynomial: $f(z) = (z-x_1)(z-x_2) \cdots (z-x_n) = z^n - e_1z^{n-1} + \cdots \pm e_n$ 
+        \item $h_k = \sum_{i_1 \le i_2 \le \cdots}x_{i_1}x_{i_2}$, $h_2 = x_1^2 + x_1x_2 + \cdots + x_2^2 + \cdots$ 
+        \item $p_k = x_1^k + x_2^k + \cdots x_n^k$ 
+        \item Schur polynomials: Ex - ($x_1^5x_2^2x_3 - x_1^5x_3^2x_2 + x_2^5x_3^2x_1 + \cdots) = \sum_{\sigma \in S_n} \text{sign}(\sigma) \sigma(x_1)^5 \sigma(x_2)^3\sigma(x_3)$. Not symmetric since changes sign with odd permutations, so dividde by $\prod_{i < j}(x_i - x_j)$ 
+    \end{enumerate}
+\end{example}
+
+\noindent
+Special Case of invariant theory: $G$ acts on a set $X$ - look at polynomials in elements of $X$ invariant under $G$ \\ 
+Problem: Describe ring of invariants 
+
+\noindent
+Main Theorem: Symmetric polynomials = polynomial ring in $e_1, \ldots, e_n$, $k[e_1, \ldots, e_n]$ \\
+Need to show: 
+\begin{enumerate}
+    \item Any symmetric polynomial is a polynomial in $e_1, \ldots, e_n$ 
+    \item No relations between $e_1, \ldots, e_n$ 
+\end{enumerate}
+Key idea: Choose order on monomials: Many ways to do this. \\
+Order by: 
+\begin{enumerate}
+    \item Total degree: ($X_1^{n_1}X_2^{n_2} \cdots$ has total degree $n_1 + n_2 + \cdots$ ) 
+    \item Lexographic ordering: $x_1^{n_1}x_2^{n_2} \cdots < x_1^{m_1} x_2^{m_2} \cdots$ if $n_1 < m_1$ or $n_1 = m_1$ and $n_2 < m_2, \ldots$ 
+\end{enumerate}
+Suppose $f(x_1, \ldots, x_n)$ is a polynomial, look at largest monomial in it $cx_1^{n_1} x_2^{n_2}x_3^{n_3} \cdots$ get rid of it by subtracting monomial in $e_1, e_2, \ldots, e_n$. Subtract $c(x_1 + x_2 + x_3 + \cdots)^{n_1-n_2} (x_1x_2 + \cdots)^{n_2-n_3}(x_1x_2x_3 \cdots)^{n_3 - n_4} \cdots = ce_1^{n_1 - n_2}e_2^{n_2 - n_3}e_3^{n_3  -n_4} \cdots$. This eliminates the largest monomials in $f$ so get a ``smaller'' polynomial. Ordering on monomials has same order type as the integers so by induction can reduce $f$ to 0 by monomials in $e_1, \ldots, e_n$. \\
+Problem: We did not use the fact that $f$ is symmetric and seem to have proved every polynomial can be expressed in $e_1, \ldots, e_n$ 
+\begin{itemize}
+    \item Want to ensure that in the above sum $n_i - n_{i+1} \ge 0$, follows that $n_1 \ge n_2 \ge n_3$ since $f$ symmetric
+\end{itemize}
+So we get a basis for the symmetric polynomials: $e_1^{n_1}e_2^{n_2} \cdots$ $0 \le n_1 n_2 \ldots$ \\ 
+Many different bases: $h_1^{n_1}h_2^{n_2}$, schur polynomials, $p_1^{n_1}p_2^{n_2}  \cdots$ \\
+How do we convert between other bases? \\ 
+
+\begin{example}
+    Express polynomials $p_k$ in terms of $e_1, \ldots, e_n$.     
+\end{example}
