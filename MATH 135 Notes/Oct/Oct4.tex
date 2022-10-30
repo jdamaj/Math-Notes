@@ -1,0 +1,31 @@
+
+\subsection{Axiom of Choice}
+
+\begin{theorem}
+    For all set $C$ and $D$, we have $C \preceq D$ or $D \preceq C$ 
+\end{theorem}
+
+\begin{pf}
+    Let $\cA = \{ f \subseteq C \times D \, | \, f$ is a one to one function $\}$. If $\cC \subseteq A$ is a chain $\bigcup \cC$ is a function with $\dom (\bigcup \cC) = \bigcup \{ \dom f \, : \, f \in \cC\} \subseteq C$, $\ran (\bigcup \cC) = \bigcup \{ \ran f \, : \, f \in \cC\} \subseteq D$ so $\bigcup \cC \in \cA$. By Zorn's lemma, $\cA$ has a maximal element, call it $F$, a one to one function with $\dom F \subseteq C$, $\ran F \subseteq D$ \\
+    Claim $\dom F = C$ or $\ran F = D$. If not there is $c \in C \setminus \dom F$ and $d \in D \setminus \ran F$. Let $G = F \cup \{ \langle c, d \rangle \}$. We see that $G$ is a one to one function, $G \subseteq C \times D$ so $G \in \cA$, $F \subsetneq G$, contradicting the maximality of $F$. \\
+    If $\dom F = C$, we have $F: C \to D$ and $C \preceq D$. \\
+    If $\dom F = D$, we have $F: D \to C$ and $D \preceq C$ 
+\end{pf}
+
+\begin{theorem}
+    The following are equivalent: 
+    \begin{enumerate}
+        \item For any relation $R$, there is a function $F \subseteq R$ and $\dom F = \dom R$ 
+        \item If $H$ is a function, $I = \dom H$, $\fa i \in I \, H(i) \neq \vn$, then $\vartimes_{i \in I}H(i) \neq \vn$
+        \item For every set $A$ ther eis a function $F: \cP(A) \setminus \{\vn\} \to A $ such that $\fa B \subseteq A$, $F(B) \in B$ 
+        \item For every set $\cA$ of nonempty disjoint sets, there is a set $C$ such that $\fa A \in \cA$, \text{ord}$(C \cap A) = 1$ 
+        \item Cardinal comparibility: For any sets $C, D$, $C \preceq D$ or $D \preceq C$ 
+        \item Zorn's Lemma
+    \end{enumerate}
+\end{theorem}
+
+\begin{pf}
+    $1 \to 2)$ Let $H$ be a function such that $\fa i \in I$, $H(i) \neq \vn$. Let $R = \{ \langle i, h \rangle \in I \times \bigcup H(i) \, \ \, i \in I, h \in H(I)\}$. By (1) there is a function $F \subseteq R$ with $\dom F = \dom R = I$. $\fa i \in I$, $\langle i, F(i) \rangle \in F \subseteq R \to F(i) \in H(i)$ so $F \in \vartimes_{i \in I}H(i)$ \\
+    $2 \to 4)$ We have a colleciton $\cA$ of disjoint nonempty subsets. We want to define $H$ such that $H(A)$ is nonempty for $A \in \cA$. Let $I = \cA$, for $A \in I, H(A)=A$. Then $\vartimes_{A \in I}H(A) = \vartimes_{A \in \cA}A$, by (2) there is $f \in \vartimes_{A \in \cA}A$. We claim that $C = \ran f$ is as wanted. For all $A \in \cA$, $f(A) \in A$ and if $A' \neq A$, $F(A') \in A'$ disjoint from $A$ so $\ran (f) \cap A = \{f(A)\}$ \\ 
+    $6 \to 1)$ Let $R$ be a relation. Let $\cA = \{ f \subseteq R \, | \, f$ is a function $\}$. $\cA \neq \vn$ since $\vn \in \cA$. If $\cC \subseteq \cA$ is chain, $\bigcup \cC$ is a function, $\bigcup \cC \subseteq R$ so $\bigcup \cC \in \cA$. By (6) there is a maximal $F \in \cA$, $F \subseteq R$ is a function. Claim $\dom F = \dom R$. If not, then there is $d \in \dom R \setminus \dom F$.Let $r$ be such taht $\langle d, r \rangle \in R$. Then $F \cup \{ \langle d, r \rangle \}\in \cA$, $F \subsetneq F \cup \{ \langle d, r \rangle\}$, contradicting maximalilty. 
+\end{pf}
