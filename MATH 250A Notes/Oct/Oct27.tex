@@ -5,7 +5,7 @@ Recall: holomorphic functions $\bC \to \bC$ can be written as power series: $a_0
 can add and multiply in obvious way $(a_0 + a_1z + a_2z^2 + \cdots)(b_0 + b_1z + b_2z^2) = a_0b_0 + (a_0b_1 + a_1b_0)z + \cdots$ \\
 Formal power series $\bC [[z]] = $ all series $a_0 + a_1 + a_2z^2 + \cdots$ dont worry about convergence \\ 
 Works over any ring $R$: we get $R[[z]]$, check this is a ring\\
-Can repeat: $R[[x]][[y]] = R[[x,y]] = a_{0 \, 0} + a_{0 \, 1}x + a_{1 \, 0}y + a_{1 \, 1}x^2 _ \cdots$. Contains polynomials in $R[x,y]$ \\
+Can repeat: $R[[x]][[y]] = R[[x,y]] = a_{0 \, 0} + a_{0 \, 1}x + a_{1 \, 0}y + a_{1 \, 1}x^2 \cdots$. Contains polynomials in $R[x,y]$ \\
 
 \noindent
 Basic Properties:  \\ 
@@ -30,7 +30,7 @@ Ex: What does the proof that $R[[x]]$ is noetherian not work for polynomial ring
 If $f$ power series in $k[[x_1, \ldots, x_n]]$ then $f$ is a unit $\ifff$ constant term $\neq 0$. Ideals very complicated for $n \ge 2$ \\
 Is $k[[x_1, \ldots, x_n]]$ a UFD? yes. Easy for $n=1$. Try to copy proof that $k[x_1, \ldots, x_n]$ is a UFD. \\
 $R$ UFD $\to$ $R[x]$ UFD. $R$ UFD does not imply that $R[[x]]$ is a UFD. \\ 
-Proof fails since we used content. If $R$ ring, $Q$ field of quotients of $R$, a polynomial $\Q[x]$ $a_0 + a_1 + a_2x^2 + \cdots + a_nx^n$ can be written as $c(b_0 + b_1 x + \cdots + b_nx^n)$ with $b_i \in R$, $c$ called content of $f$. \\
+Proof fails since we used content. If $R$ ring, $Q$ field of quotients of $R$, a polynomial $\bQ[x]$ $a_0 + a_1 + a_2x^2 + \cdots + a_nx^n$ can be written as $c(b_0 + b_1 x + \cdots + b_nx^n)$ with $b_i \in R$, $c$ called content of $f$. \\
 Content for formal power series is not well defined. $R = \bZ$, $Q = \bQ$ $1 + \frac{x}{2} + \frac{x}{2^2}  +\cdots \neq (\text{rationals}) \times$ element of $\bZ[x]$ \\
 
 \noindent
@@ -41,10 +41,10 @@ More precisely, given power series $f \in k[[x, y, z, \ldots]]$, containing $x$,
 \begin{pf}
     Do case of $k[[x,y]]$. Draw picture of $f$ 
     \[ \begin{tabular}{| c c}
-        $\circled{a_{n \, 0}x^n}$ & \\ 
+        $\boxed{a_{n \, 0}x^n}$ & \\ 
         $\vdots$ & \\ 
         \begin{tabular}{c}
-            a_{2 \, 0}x^2 \\ a_{1 \, 0}x \\ a_{0 \, 0}
+           $ a_{2 \, 0}x^2$ \\ $a_{1 \, 0}x$ \\ $a_{0 \, 0}$
         \end{tabular} & 
         \begin{tabular}{c c}
             \hline \\ 
