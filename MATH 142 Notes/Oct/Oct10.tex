@@ -1,0 +1,40 @@
+
+\subsection{Fundamental Group of $S^1$ }
+
+\begin{theorem}
+    If $F: I \times I \to G$ is a path homotopy, (between $r \mapsto F(r,0)$, $r \mapsto F(r,1))$ and $G$ is a lift of $F$, then $G$ is a path homotopy. 
+\end{theorem}
+
+\begin{pf}
+    Have $F(0,t) = b_0$ for all $t$, $F(1,t) =b_1$ for all $t$, then $G(0,0) \in p^{-1}(b_0)$ for all $t$ so $G(0,t)$ is some $e_0 \in p^{-1}(b_0)$. A similar statement is true for $G(1,t)$ 
+\end{pf}    
+
+\begin{corollary}
+    Let $f,g$ be loops in $B$ based at $b_0$ and assume that $F$ is a path homotopgy from $f$ to $g$. Fix $e_0 \in p^{-1}(b_0)$ and let $\hat{f}$ and $\hat{g}$ be lifts of $f$ and $g$ begining at $e_0$. Then $\hat{f}$ and $\hat{g}$ are path homotopic and end at the same point in $p^{-1}(b_0)$ (which might not be $e_0$). For a given choice of $e_0$, this given a function $\phi_{e_0}$ from $\pi_1(B, b_0)$ into $p^{-1}(b_0)$. This $\phi_{e_0}$ is called the lifting correspondence. 
+\end{corollary}
+
+\begin{proposition}
+    If $E$ is path connected, then $\phi_{e_0}$ is surjective. 
+\end{proposition}
+
+\begin{pf}
+    Let $e_1 \in p^{-1}(b_0)$, then let $h$ be a path in $E$ from $e_0$ to $e_1$. Then let $f = p \circ h$. This $f$ is a loop at $b_0$ and $h$ is a lift of it startingat $e_0$ and ending at $e_1$, so $\phi_{e_0}([f])=e_1$ 
+\end{pf}
+
+\begin{definition}
+    A space $X$ is simply connecetd if it is path connect and $\pi_1(X, x_*) = 0$ (has 1 element) ie. any loop is homotopic to a constant loop, ie. any two paths that start at the same point and end at the same point are path homotopic. 
+\end{definition}
+
+\noindent
+Any convex subset of a vector space is simply connected. 
+
+\noindent
+If $E$ is simply connected then $\phi_{e_0}$ is one to one since if $f$ and $g$ are loops in $B$ such that $\phi_{e_0}([f]) = \phi_{e_0}([g])$, then if $\hat{f}$ and $\hat{g}$ are lifts starting at $e_0$, they and at the same point so $\hat{f}$ and $\hat{g}$ are homotopic. Compose this homotopy with $p$ to see that $f$ and $g$ are homotopic so $[f] = [g]$ \\
+
+\noindent
+$B = S^1 = \{z \in \bC, |z| = 1\}$, $E = \bR$, $p(r)= e^{2 \pi i r}$, $\bR$ is simply connected and path connected so $\phi_{e_0}: \pi_1(S^1) \to p^{-1}(z_0)$ is a bijection. Let $e_0 = t_0 \in \bR$ with $e^{2 \pi t_0} = z_0$, $p^{-1}(z_0) = \{t_0 + n \, :  \, n \in \bZ\}$. Choose $1 \in S^1$ as a base ppoint, then $p^{-1}(1) = \bZ$,  then $\phi_1: \pi_1(S^1, z) \to bZ$ is a group homomorphism. 
+
+\begin{pf}
+    We already now it is a bijection so suffices to show it is a homomorphism. Let $m, n \in \bZ$, let $h,k$ be paths in $\bR$, $k$ a path from $0$ to $m$ and $h$ a path from $0$ to $n$. $f = p \circ h$, $h = p \circ k$ are loops in $S^1$. We can translate $h$ to a path $h'$ from $m$ to $n+m$, then $k*h'$ is a lift of $f*g$ so $\phi(f*g) = n+m$. 
+\end{pf}
+

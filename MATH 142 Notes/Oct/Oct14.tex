@@ -1,0 +1,30 @@
+
+\subsection{The Funamental Theorem of Algebra}
+
+\begin{theorem}[The Fundamental Theorem of Algebra]
+    Let $p = a_nz^n + a_{n-1}z^{n-1} + \cdots + a_0$ be a polynomial of $\deg \ge 1$ with coeffecients $a_j \in \bC$, then $p$ has a root in $\bR$ ie. $\ex z_0$ with $p(z_0)=0$
+\end{theorem}
+
+\begin{pf}
+    Suppose that $p$ has no root in $\bC$. By dividing by $a_n$ we can assume that $p(z) = z^n + a_{n-1}z^n + \cdots + a_0$. For any $r>0$, $z \mapsto p(rz)$ will have no root in $\bC$, $p(rz) = r^nz^m + a_{n-1}r^{n-1}z^{n-1} + \cdots + a_0$, dividing by $r^n$, we see that $z + \frac{a_{n-1}}{r}z^{n-1} + \cdots + \frac{a_0}{r^n}$ has no roots in $\bC$. We can choose $r$ large enough that $\left| \frac{a_{n-1}}{r} \right| + \left| \frac{a_{n-2}}{r^2} \right| + \cdots + \left| \frac{a_0}{r^n} \right| < 1$. For that choice of $r$, we get a polynomial $p(z) = z^n + a_nz^{n-1} + \cdots + a_0$ such that $|a_{n-1}| + |a_{n-2}| +  \cdots + |a_0| < 1$, with no roots in $\bC$. Restrict $p$ to $S^1 = \{ z \, : |z| = 1\}$, then $p(S^1)$ is a loop in $\bC \{0\}$ but we have $p: B^1 \to \bC\{0\}$ by $F(z,t) = p(tz)$ for $t \in [0,1]$. $F$ is equal to $p$ on $S^1$ and since $B^1$ contractible, $p$ is null homotopic. We also define $G(z,t) = z^n + (1-t)(a_{n-1}z^{n-1} + \cdots + a_0)$ $t \in [0,1]$. For $|z| < 1$, $t \in [0,1]$, $G(z,t) \in \bC \setminus \{0\}$ since $|a_{n-1}z^{n-1} + \cdots a_0| < 1$. $G$ is a homotopy between $p(S^1)$ and $z \mapsto z^n$ so $z \mapsto z^n$ is null homotopic in $S^1$, but by the lifting correspondence, the loop $z \mapsto z^n$ goes to $n$, a contradiction. 
+\end{pf}
+
+\subsection{Homotopy Equivalence}
+
+\begin{definition}
+    Take $X,Y$ path connected. We say that $X$ and $Y$ are homotopy equivalent if there exists continuous $\vp: X \to Y$ and $\psi: Y \to X$ such that $\psi \circ \vp: X \to X$ is homotopic to $I_X$ and $\vp \circ \psi: Y \to Y$ is hommotopic to $I_Y$. 
+\end{definition}
+
+\noindent
+If $X,Y$ are homotopy equivalent, then $\pi_1(X) \cong \pi_1(Y)$ but $\cong$ depends on the homotopy. \\
+
+\noindent
+Consider $X,Y$, and if $\vp: X \to Y$ and $\psi: X \to Y$ with $\vp$ homotopic to $\psi$. choose a basepoint $x_* \in X$, set $y_1 = \vp(x_*), y_2 = \psi(x_*)$. For a path $g$ from $y_1$ to $y_2$ the following diagram commutes. 
+
+\[ \begin{tikzcd}
+    \pi_1(X, x_*) \arrow[r, "\pi_1(\vp)"] \arrow[rd, "\pi_1(\psi)"] & \pi_1(Y, y_1) \arrow[d, "\hat{g}"]\\ 
+        & \pi_1(Y, y_2)  
+\end{tikzcd}\]
+
+
+

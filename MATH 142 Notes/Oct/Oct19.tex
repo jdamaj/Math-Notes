@@ -1,0 +1,30 @@
+
+\subsection{Homotopy Equivalence}
+
+\begin{pf}[Proof (cont.)]
+    For a loop $f$, want $g*(\psi \circ f) \sim (\vp \circ f) \sim g$. Define $G \times I \to Y$ by $G(r,t) = F(f(r),r)$, so $G(r,0) = F(f(r),0) = \vp(f(r))$, $G(r,1) = F(f(r),1) = \psi(f(r))$. $G(0,t) = F(f(0),t) = F(x_*, t) = g(t)$, and $G(1,t) = F(f(1),t) = F(x_*, t) = g(t)$. Now, the following square gives us a homotopy from $(\vp \circ f) *g$ to $g*(\psi \circ f)$. \\
+    (Insert Figure)
+\end{pf}
+
+\begin{theorem}
+    If $X,Y$ (path connected) are homotopy equivalent, then $\pi_1(X, x_*) \cong \pi_1(Y, y_*)$ 
+\end{theorem}
+
+\begin{pf}
+    Let $\vp: X \to Y$, $\psi: Y \to X$ be a homotopy equivalence, ie. $\psi \circ \vp: X \to X$ is homotopic to $I_X$ and $\vp \circ \psi: Y \to Y$ is homotopic to $I_Y$. By the previous result, we get the following commutative diagrams: 
+    \[ \begin{tikzcd}
+        \pi_1(X, x_*) \arrow[r, "\pi_1(\psi \circ \vp)"] \arrow[rd, "\pi_1(I_X)"] & \pi_1(X, \psi(\vp(x_*))) \arrow[d, "\hat{g}"]\\ 
+        & \pi_1(X, x_*)  
+    \end{tikzcd} 
+    \qquad  
+    \begin{tikzcd}
+        \pi_1(X, x_*) \arrow[r, "\pi_1(\vp)"] \arrow[rrd, "\pi_1(I_X)"] & \pi_1(X, \vp(x_*)) \arrow[r, "\pi_1(\psi)"] & \pi_1(X, \psi(\vp(x_*))) \arrow[d, "\hat{g}"] \\ 
+        & & \pi_1(X, x_*)  
+    \end{tikzcd} 
+    \]
+    So we see that $\pi_1(\vp)$ is injtive and $\pi_1(\psi)$ is surjective. Using $\vp \circ \psi: Y \to Y$ we get $\pi_1(\vp)$ is surjective, $\pi_1(\psi)$ is injective so $\pi_1(\vp)$ and $\pi_1(\psi)$ are $\cong$. 
+\end{pf}
+
+\noindent
+Next, we want to look at spaces $U \cup V$, where $U,V$ open, and $U \cap V$ path connected. Want to determine the fundamental group of such spaces. eg. sphere and figure 8: \\
+(Insert Figure) 

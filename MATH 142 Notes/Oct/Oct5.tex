@@ -1,0 +1,13 @@
+
+\subsection{The Homotopy Lifting Theorem}
+
+\begin{theorem}[Homotopy Lifting Theorem]
+    Let $E \stackrel{p}{\to} B$ be a covering space, given $X$, $F: X \times I \to B$, and given a lift $g: X \to E$ of $x \mapsto F(x,0)$, then there is a lift $G: X \times I \to E$ such taht $G(x,0)=g(x)$ 
+\end{theorem}
+
+\begin{pf}
+    For each $x \in X$, $r \mapsto F(x,r)$ is a path in $B$ which has a unique lift, $\hat{f}_x(r)$, to $E$ with begining at $g(x)$ 
+    Define $G(x,r) = \hat{f}_x(r)$. Why is $G$ continuous? \\
+    For continuity, show continuity at some point $(x_0, t_0)$. For each $t$, thre is an open neighborhood, $\cO_t$ of $F(x_0, t_0)$ that is evenly covered by $p$. So there is an open $U_t$ in $X \times I$, neighborhood of $(x_0, t)$ with $F(U_t) \subseteq \cO_t$. So there is $x_0 \in V_t \subseteq X$ open, interval $I_t$ containing $t$ with $V_t \times I_t \subseteq U_t$. The $I_t$ form an open cover of $I$ so there is some finite subcover $I_{t_1}, \ldots, I_{t_n}$. Let $W_t = V_{t_1} \cap \cdots \cap V_{t_n}$, so $x_0 \in W$, open. Then $W \times I$ is a nieghborhodd of $(x_0, t)$ for all $t$, and $W$ has the property that there is a funite number of intervals $I_1, \ldots, I_n$ such that $I = \bigcup_{i=1}^n I_j$ and for each $j$, $F(W \times I_j)$ is contained in an open set in $B$ that is evernly covered by $p$. \\ 
+    We can assume $X$ has the above property. Let $s_* = \text{lub}\{ s \in I \, : \, G$ is continuous on $X \times [0,1]\}$. Show that $s_* \not\in (0,1)$. If $s \in (0,1)$ thee is a $j$ such that $s \in I_j$, then there is $\ve \ge 0$ such that $(s_* - \ve, s* + \ve) \subseteq I_j$, $F(X \times (s_* - \ve, s_* + \ve)) \subseteq \cO \subseteq B$ is evenly covered. Choose $t$ with $s_* - \ve < t < s$. Then $G$ is continuous on $G \times [0,t]$, $p^{-1}(\cO)$ = disjoint union of open sets in $E$ $\{V_\alpha\}$ and $p: V_{\alpha} \to \cO$ is a homomorphism. Let $W_k = G^{-1}(V_k) \subseteq X \times I$. The $W_k$ are open disjoint, union is $X \times I_j$. $G: W_k \times [0,t]$ is continuous. For $r \in (s_* - \ve, s_* + \ve)$, $G(x,r) = p^{-1}(F(x,r))$ is continuous. 
+\end{pf}

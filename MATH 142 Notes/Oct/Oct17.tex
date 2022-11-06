@@ -1,0 +1,22 @@
+
+\subsection{Homotopy Eququivalence}
+
+If $A \subseteq X$, and $A$ is a deformation retraction of $X$ then $A$ and $X$ are homotopy equivalent becuase if $F:X \times I \to A$ is a deformation retract to $A$, ie. $F(a,t)=a$, $F(x,0)=x$ for all $x$, then we have $F( \cdot, 1) : X \to A$, $i: A \to X$ with $F( \cdot, 1) \circ i = I_A$, $i \circ F(\cdot, 1) = F(\cdot, 1) \sim F(\cdot, 0) = I_X$. \\
+
+Consdier the disk with 2 holes. This can be retracted in two ways: \\
+Insert Figure \\
+
+\noindent
+Let $\vp, \psi: X \to Y$, path connected, and suppose $\vp, \psi$ are homotopic, ie. $\ex F: X \times I \to Y$ such that $F(x,0) = \vp(x)$, $F(x,1) = \psi$. Can choose $x_*$ but $\vp(x_*)$ and $\psi(x_*)$ can be different. Let $g(t) = F(x_*, t)$, $g(0) = F(x_*,0) = \vp(x_*)$, $g(1) = F(x_*,1 ) = \psi(i)$ so $g$ is a path from $\vp(x_*)$ to $\psi(x_*)$. Have $\hat{g}: \pi_1(Y, \vp(x_*)) \to \pi_1(Y, \psi(x_*))$. For a loop $h$ in $Y$ based at $\vp(x_*)$, $\hat{g}([h]) = [g*h^{-1}*g]$ 
+
+\begin{theorem}
+    With notation as above, $\hat{g} \circ \pi_1(\vp) = \pi_1(\psi)$, or equivalently, the following diagram commutes: 
+    \[ \begin{tikzcd}
+        \pi_1(X, x_*) \arrow[r, "\pi_1(\vp)"] \arrow[rd, "\pi_1(\psi)"] & \pi_1(Y, y_1) \arrow[d, "\hat{g}"]\\ 
+        & \pi_1(Y, y_2) 
+    \end{tikzcd}\]
+\end{theorem}
+
+\begin{pf}
+    Must show that for $f$ a loop at $x_*$ in $X$, $\hat{g}(\pi_1(\vp)([f])) = \pi_1(\psi)([f])$. $\hat{g}(\pi_1(\vp)([f])) = \hat{g}([\vp \circ f]) = [g^{-1} * (\vp \circ f) * g]$ and $\pi_1(\psi)([f]) = [\psi \circ f]$ so we want to show that $g^{-1} * (\vp \circ f) *g \sim \psi \circ f$, or equivalently, $( \vp \circ f)*g \sim g * (\psi \circ f)$ 
+\end{pf}

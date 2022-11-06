@@ -1,0 +1,47 @@
+
+\subsection{Rectractions}
+
+\begin{definition}
+    Given $X$, $A \subseteq X$, by a retraction of $X$ onto $A$ we mean a contiuous function $\rho: X \to A$ such that $\rho(a) = a$ for $a \in A$. 
+\end{definition}
+
+\noindent
+Given any $x_0 \in X$ we have a trivial retraction of $X$ onto $\{x_0\}$
+
+\begin{proposition}
+    With $X,A$ as above, pick $a_* \in A$ as a base point for both $A$ and $X$. We have $A \stackrel{i}{\to} X \stackrel{\rho}{\to}A$ which induces $\pi_1(A, a_*) \stackrel{\pi_1(i)}{\to} \pi_1(X, a_*) \stackrel{\pi_1(\rho)}{\to} \pi_1(A, a_*)$ but $\rho \circ i = \text{id}_A$ so $\pi_1(\rho) \circ \pi_1(i) = \pi_1(\text{id}_A)$ so $\pi_1(i)$ is one to one, $\pi_1(\rho)$ is onto. 
+\end{proposition}
+
+\begin{proposition}
+    There is not retraction of $B^2$ = closed unit ball in $\bR^2$ onto $S^1$. 
+\end{proposition}
+
+\begin{pf}
+    $\pi_1(B^2)=0$, so if $\rho$ were a retraction of $B^2$ onto $S^1$ then $\pi_1(i): \pi_1(S^1) \to \pi_1(B^2)$ would be injective, but $\pi_1(S^1) =\bZ$ so this map can't be injective. 
+\end{pf}
+
+\begin{theorem}[Brower's Fixed Point Theorem (for $B^2$)]
+    If $f: B^2 \to B^2$ is continuous, then it has a fixed point, ie. $x+0 \in B^2$ such that $f(x_0)=x_0$
+\end{theorem}
+
+\begin{pf}
+    Assume $f$ has no fixed point, then define $\rho: B^2 \to B^2$ by $\rho(x)$ is the point on $S^1$ which the half line starting at $f(x)$, going through $x$ meets $S^1$. For $x \in S^1$, $\rho(x)=x$, contradicting the fact there is not retraction from $B^2$ to $S^1$. 
+\end{pf}
+
+\noindent
+This result is true for any $X$ homeomorphic to $B^2$. 
+
+\begin{definition}
+    $X, A \subseteq X$. By a deformation retract from $X$ to $A$ we mean a homotopy $H$ $H(x,1) \in A$ for all $x$, $H(a,t) = a$ for all $a \in A$. 
+\end{definition}
+
+\begin{example}
+    $X = \bR^2 \setminus \{0\}$, $A = S^1 \subseteq \bR^2 \setminus \{0\}$. $S^1$ is a deformation retaract of $\bR^2 \setminus \{0\}$. $H(v,t) = (1-t)v + t \frac{v}{||v||}$ for $v \in \bR^2$. 
+\end{example}
+
+\noindent
+Not every retraction is a deformation retract eg. retraction of a circle onto a single point. \\
+
+\noindent
+For a deformation retract: $\pi_1(A, a_*) \stackrel{\pi_1(i)}{\to} \pi_1(X, a_*) \stackrel{\pi_1(H( \cdot, t))}{\to} \pi_1(A, a_*)$. $\pi_1(i)$ is injective. If $f$ is a loop in $X$ based at $a_*$, then each $g_t: r \mapsto H(f(r),t)$ is a loop in $X$ basd at $a_*$. For $t=0$, $g_t = f$, for $t=1$, $g_t$ is a loop in $A$. So every loop in $X$ is homotopic to a loop in $A$ and hence $\pi_1(i)$ is an isomorphism. \\
+By above, we see that $\pi_1(\bR \setminus\{0\}) = \bZ$. 

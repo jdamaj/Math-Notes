@@ -1,0 +1,17 @@
+
+\subsection{Homotopy Lifting Theorem}
+
+\begin{pf}
+    Reduce to $X$ having open intervals $I_1, \ldots, I_n$, $I = [0,1]$, $I = \bigcup I_j$ and for each $j$ there is an open $\cO_j \subseteq B$ evenly covered by $F(X \times I) \subseteq \cO_j$. Let $I_1'$ be an open interval contaning 0, so $ I_1' = [0,t)$. Find $I_2'$ with $I_2' = (t_1, s_2)$ with $t_1 < t$. Let $I_1'' = [0,t_1]$, $\tilde{I_2}' = [t_1, s_2]$, so can continue this to get $t_0 = 0 < t_1 < t_2 < \cdots < t_n = 1$. Now let $I_j = [t_{j-1}, t_j]$. For each $j$, there is $\cO_j \subseteq B$ evenly covered, $F(X \times I_j) \subseteq \cO_j$. Let $K_j = \bigcup_{i=1}^j I_i = [0, t_j]$. Want to show for each $j$, $G|_{X \times K_j}$ is continuous by induction on $j$. \\
+    Case $j=1$: Let $\cO_1$ be such that $F(X \times I_1) \subseteq \cO_1$, evenly covered. $p^{-1}(\cO_l) = \{V_l\}$ each $V_l \stackrel{p}{\cong} \cO$, $p(g(x)) = F(x,0)$ so $g(x)$ in some $V$ so define $\tilde{G}_1$ on $X \times I_1$ by $\tilde{G}_!(x, t) = (p|_{v_1})^{-1}(F(x,t))$. Since this agrees with $G|_{X \times I_1}$, $\tilde{G}_1 = G|_{X \times I_1}$ continuous on $X \times I_1$ \\
+    Suppose $G$ is continuous on $X \times K_j$. Want to show it is contiuous on $X \times K_{j+1}$. $K_{j+1} = K_j \cup I_{j+1}$, $K_j \cap I_j = \{t_j\}$. There is an $\cO_j$, evenly covered, with $G(X \times I_{j+1}) \subseteq \cO_{j+1}$, $p^{-1}(\cO_{j+1}) = \{V_l\}$. $F(X \times \{t_j\}) \subseteq \cO_{j+1}$. $G(X \times \{t_j\}) \subseteq V_{j+1}$, $p: V_{j+1} \cong \cO_{j+1}$. Define $\tilde{G}_{j+1}(x,t) = \begin{cases} G(x,t) \quad t \le t_{j} \\ p^{-1}(F(x,t)) \quad t_{j} \le t \le t_{j+1}
+    \end{cases}$ Continuous by the pasting lemma. 
+\end{pf}
+
+\begin{corollary}
+    Let $F: I \times I \to B$. Choose $e_0 \in p^{-1}(F(0,0))$, then $\ex G: I \times I \to E$ with $G(0,0)=e_0$.
+\end{corollary}
+
+\begin{theorem}
+    Let $r \mapsto g(r)$ ne the lift of $r \mapsto F(r,0)$ that begins at $e_0$, given by the path lifting theorem. If $F: I \times I \to B$ is a path homotopy, then so is $G$ as above.   
+\end{theorem}
