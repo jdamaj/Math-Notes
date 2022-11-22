@@ -1,0 +1,43 @@
+
+\subsection{Zorn's Lemma}
+
+\begin{theorem}
+    The following are equivalent 
+    \begin{enumerate}
+        \item For every relation $R$, there is a function $F \subseteq R$, $\dom F \subseteq \dom R$
+        \setcounter{enumi}{2}
+        \item For every set $A$, there is a function $F: \cP(A) \setminus \{\vn\} \to A$. $\fa B \subseteq A$, $F(B) \in B$ 
+        \setcounter{enumi}{4}
+        \item For any sets $C,D$ either $C \preceq D$ or $D \preceq C$ 
+        \item Zorn's Lemma
+        \item For every set $A$ there is a relation $\triangleleft$ on $A$ such that $(A, \triangleleft)$ is well ordered. 
+    \end{enumerate}
+\end{theorem}
+
+\begin{pf}
+    CC $\to$ WO) Take a set $A$, Use Hartog's Lemma to get $\alpha \not\preceq A$. By CC, $A \preceq \alpha$ so there is a one to one function $f: A \to \alpha$. Define $\triangleleft$ on $A$ by $a \triangleleft b \ifff f(a) \in f(b)$. Then $(A, \triangleleft) \cong (f\llbracket A \rrbracket, \in )$ . \\
+    WO $\to$ 3) Take $A$, by WO, there is a well ordering $\triangleleft$ on $A$. Define $F: \cP(A) \setminus \{\vn\} \to A$ by $F = \{ \langle B, b \rangle \in (\cP(A) \setminus \{\vn\}) \times A \, : \, b$ is the $\triangleleft$-least element of $B\}$ \\ 
+    1 $\to$ 6) Consider such an $\cA$. Suppose that $\cA$ has no maximal element. For any set $A \in \cA$, let $F(A)$ be a set in $\cA$, $A \subsetneq F(A)$. The definition of $F$ using (1) is given by $R = \{ \langle A, B \rangle \in \cA \times \cA \, : \, A \subsetneq B\}$ since $\cA$ has no maximal element, $\dom(R) = \cA$. Use (1) to get a function $F \subseteq R$, $\dom(F) = \cA$, $\fa A \in \cA$ $F(A) \supsetneq A$. \\
+    Now, use Hartog's theorem to get an ordinal $\alpha \not\preceq \cA$. We define a function $h: \alpha \to \cA$ by transfinite recursion. For $\beta \in \cA$, define $H(\beta)$ using $H \upharpoonright_{\seg \beta}$. We split into 3 cases: 
+    \begin{itemize}
+        \item $\beta = 0$. $H(0) = A_0$ (since $\cA \neq \vn$)
+        \item $\beta = \gamma^+$, $H(\beta) = F(H(\gamma))$ 
+        \item $\beta$ limit, $H(\beta) = \bigcup_{\gamma \in \beta} H(\gamma) \in \cA$ because $\{ H(\gamma) \, : \, \gamma \in \beta\}$ is a chain. 
+    \end{itemize}
+    Now, $\fa \gamma \in \beta \in \alpha$, $H(\gamma) \subsetneq H(\beta)$ so $H$ is a one to one function, contradicting $\alpha \not\preceq \cA$. 
+\end{pf}
+
+\begin{theorem}
+    For every set $A$, there is a unique cardinal $\kappa$ such that $\kappa \approx A$
+\end{theorem}
+
+\noindent
+Observation: If $\kappa_1$ and $\kappa_2$ are cardinals and $\kappa_1 \approx \kappa_2$, then $\kappa_1 = \kappa_2$ 
+
+\begin{pf}
+    BY WO, there is a well ordering $\triangleleft$ on $A$. Let $\alpha$ be the $\in$ image of $(A, \triangleleft)$. $\alpha$ is an ordinal, $\alpha \cong A$. Let $\kappa$ be the least ordinal $\cong A$. 
+\end{pf}
+
+\noindent
+Let $\gamma$ be a formula such that $\ex$ ordinal $\alpha$, $\gamma(\alpha)$. Claim: there is a least ordinal satisfying $\gamma$. \\
+Let $G = \{\beta \in \alpha^+ \, : \, \gamma(\beta)\}$, $\alpha \in G$, $G \subseteq \alpha^+$ so $G$ has a least element. 

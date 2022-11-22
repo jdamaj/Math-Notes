@@ -1,0 +1,79 @@
+
+\subsection{Ordinals}
+
+\begin{theorem}
+    For $s, t \in A$, $s \triangleleft t \ifff E(s) \in E(t)$ 
+\end{theorem}
+
+\begin{theorem}
+    \begin{itemize}
+        \item $\fa t \in A$, $E(t) \not\in E(t)$ 
+        \item $E$ is one to one 
+        \item $\alpha$ is transitive. 
+    \end{itemize}
+\end{theorem}
+
+\noindent
+It follows that $E$ is an isomorphism $(A, \triangleleft) \to (\alpha, \in_{\alpha})$ 
+
+\begin{theorem}
+    Given well orderings $(A, \triangleleft_A)$ and $(B, \triangleleft_B)$ with $\ve$ images $\alpha$ and $\beta$, $(A, \triangleleft_A) \cong (B, \triangleleft_B) \ifff \alpha = \beta$. 
+\end{theorem}
+
+\begin{pf}
+    $\from)$ If $\alpha = \beta$ then $(A, \triangleleft_A) \cong (\alpha, \in_{\alpha}) = (\beta, \in_{\beta}) \cong (B, \triangleleft_B)$ \\
+    $\to)$ Suppose $f:A \to B$ is an isomorphism. $E_A: A \to \alpha$, $E_B: B \to \beta$. Claim $\fa t\in A$, $E_A(t) = E_B(f(t))$. \\
+    Use transfinite induction. Let $T = \{t \in A \, | \, E_A(t) = E_B(f(t))\}$, want to show $T = A$. It is enough to prove that $\fa t \in A (\seg t \subseteq T \to t \in T )$. $E_A(t) = \{E_A(s) \, : \, s \in A, s\triangleleft t\} = \{E_B(f(s)) \, : \, s \in A, s\triangleleft t\} = \{E_B(s) \, : \, s \in B \, s \triangleleft_B f(t) \} = E_B(f(t))$. 
+\end{pf}
+
+\begin{definition}
+    $\alpha$ is an ordinal it is the $\ve$ image of some well ordering. 
+\end{definition}
+
+\begin{theorem}
+    If $\alpha$ is transitive, well ordered by $\in$, then $\alpha$ is the $\ve$ image of some well ordering. 
+\end{theorem}
+
+\begin{pf}
+    If $\alpha$ is transitive, $(\alpha, \in_{\alpha})$ is a well ordering, then we claim $\alpha$ is the $\in$-image of itself, ie. the map $E: \alpha \to \alpha$ is the identity. Use transfinite induction to show that $\fa t \in \alpha$ $E(t)=t$. $E(t) = \{E(s) \, | \, s \in \alpha,\, s \in \seg t\} = \{E(s) \, : \, s \in t\} = \{s \, | \, s \in t \} = t$ 
+\end{pf}
+
+\begin{theorem}
+    Given well orderings $(A, \triangleleft_A)$ and $(B, \triangleleft_B)$ either 
+    \begin{itemize}
+        \item $(A, \triangleleft_A) \cong (B, \triangleleft_B)$ 
+        \item $\ex a \in A$ $(\seg a, \triangleleft_A) \cong (B, \triangleleft_B)$ 
+        \item $\ex b \in B$ $(A, \triangleleft_A) \cong (\seg b, \triangleleft_B)$
+    \end{itemize}
+\end{theorem}
+
+\begin{pf}
+    Define $f: A \to B$, $f(a) = \min(B \setminus \ran(f \upharpoonright_{\seg a})) = \min \{b \in B \, | \, \fa s \triangleleft_A a, f(s) \neq b \}$. $f$ is order preserving and one to one. If $B \setminus \ran (f)$ is nonempty, then it has minimal element $b$ and $f$ is an isomorphism from $(A, \triangleleft_A)$ to $(\seg b , \triangleleft_B)$. If $B \setminus \ran(f)$ is empty, $\dom f = A$, then $A \cong B$. If $f$ is not longer defined for some $a \in A$, then it is defined on $\seg a$ so $(\seg a , \triangleleft_A) \cong (B, \triangleleft_B)$ 
+\end{pf}
+
+\begin{theorem}
+    For any ordinals $\alpha, \beta, \gamma$ 
+    \begin{itemize}
+        \item Every memeber of $\alpha$ is an ordinal \\
+        If $\alpha = \ran E_A$, $a \in \alpha$ then $a = E(t)$ for some $t \in A$ so $a = \ran (E \upharpoonright_{\seg t})$ so $a$ is the $\in$ image of $\seg t$ 
+        \item $\alpha \in \beta \in \gamma \to \alpha \in \gamma$ 
+        \item $\alpha \not\in \alpha$ 
+        \item Exactly one of the following holds: $\alpha \in \beta$ or $\alpha = \beta$ or $\beta \in \alpha$ 
+        \item Every nonempty set of ordinals has a $\in$ least element 
+        \begin{pf}
+            If $S$ is a nonepty set of ordinals take $\alpha \in S$, $S \cap \alpha \subseteq \alpha$ has a least element if nonempty. If it has a least element, then such an element is the least element of $S$. If it is empty, then $\alpha$ is the least element of $S$. 
+        \end{pf}
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}[Burali-Forti Paradox]
+    There is not set that contains all ordinals. 
+\end{theorem}
+
+\noindent
+Observation: 
+\begin{itemize}
+    \item $\vn$ is an ordinal, $n \in \omega$ and $\omega$ are ordinals. 
+    \item If $\alpha$ is an ordinal so is $\alpha^+ = \alpha \cup \{ \alpha \}$ 
+    \item If $S$ is a set of ordinals, then $\bigcup S$ is an ordinal. 
+\end{itemize}

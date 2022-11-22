@@ -1,0 +1,36 @@
+
+\subsection{Induction and Recursion} 
+
+Notation: For $t \in A$, $\seg t = \{s \in A \, | \, s < t \}$ 
+
+\begin{theorem}[Transfinite Induction Principle]
+    Let $(A, <)$ be a well ordering. Let $B \subseteq A$. If $\fa t \in a [\fa s < t(s \in B) \to t \in B]$ then $B = A$.
+\end{theorem}
+
+\begin{pf}
+    Take $B \subseteq A$, suppose $\fa t \in a [\seg t \subseteq B \to t \in B]$. We want to show $B = A$. If not $A \setminus B$ is nonempty so it has a least element $b$. Since $b$ is least in $A \setminus B$, $\fa s < b \, s \in B$ so $\seg b \subseteq B$ so $b \in B$, a contradiction. 
+\end{pf}
+
+\begin{example}
+    If $A = \omega \times \omega, <_{\text{lex}}$. Want to define $F: \omega \times \omega \to \bR$, $F(n,m) = \sup\{F(a,b) + 2^{-b} \, : \, (a,b) < (n,m)\}$. We get $F(0,0)-=0, F(0,1)=1, F(0,2) = \frac{3}{2}, F(0, 3) = \frac{7}{4}, \ldots, F(1,0)=2, F(1,1)=3, \cdots, F(2,0)=4, \cdots$ 
+\end{example}
+
+\begin{theorem}[Transfinite Recursion Principle]
+    Let $(A, <)$ be a well ordering. Given $\prescript{<A}{}{B \to B}$ there is a unique function $F: A \to B$ such that $\fa t \in A \, F(t) = G(F\upharpoonright_{\seg t})$ 
+\end{theorem}
+
+\begin{itemize}
+    \item We define $\prescript{<A}{}{B} = \{f \, | \, f$ is a function, $\dom(f) = \seg t$ for some $t \in A$, $\ran f \subseteq B\}$ 
+\end{itemize}
+
+\noindent
+Let $A = \omega + \omega$, $0,1,2 \cdots, \omega, \omega + 1, \omega + 2, \cdots$ \\\
+$V_0 = \vn, \cdots, V_{n+1} = \cP(V_n), \cdots, \bigcup_{n \in \omega}V_n = V_{\omega}, \ldots, V_{\omega + n + 1} = \cP(V_{\omega + n})$, ie $V_{\alpha} = \bigcup \{\cP(V_{\beta}) \, : \, \beta < \alpha\}$. 
+
+\begin{axiom}[Replacement Axiom]
+    For each first order formula $\vp(x,y)$ if $\vp(x,y)$ is function like on a set $A$ then there is a set $B$ such that $\fa y (y \in B \ifff \ex x \in A \vp(x,y))$ 
+\end{axiom}
+
+\begin{definition}
+    $\vp(x,y)$ is function like on $A$ if $\fa x \in A \, \ex ! y \, \vp(x,y)$
+\end{definition}

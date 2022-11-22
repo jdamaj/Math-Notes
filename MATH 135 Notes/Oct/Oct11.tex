@@ -1,0 +1,39 @@
+
+\subsection{Countable Sets}
+
+\begin{definition}
+    A set is countable if $A \preceq \omega \ifff$ either $A = \vn$ or there is an onto function $f: \omega \to A$, ie. $A = \{f(0), f(1), f(2), \cdots\}$ 
+\end{definition}
+
+\noindent
+Observation: $\omega \times \omega \approx \omega \sqcup \omega \approx \omega$ 
+
+\begin{theorem}
+    let $\cA$ be a countable collection of countable sets. Then $\bigcup \cA$ is countable. 
+\end{theorem}
+
+\begin{pf}
+    We want to define an onto function $\omega \times \omega \to \bigcup \cA$. Since $\cA$ is countable there is a function $g: \omega \to \cA$. For each $A \in \cA$, there is an onto function $f_A : \omega \to A$. Want $F: \cA \to $ functions from $\omega$ to $\bigcup \cA$ , $A \to f_A$, such that $f_A: \omega \to A$ is onto. $R = \{ \langle A, f \rangle \, | \, A \in \cA$ $f$ onto function $\omega \to A\}$ for each $A \in \cA$ we know there is at least one $f$ such that $\langle A, f \rangle \in R$ because $A$ is countable so $\dom(R) = \cA$. By (AC1) there is a function $F \subseteq R$, $\dom(F) = \dom(R) = \cA$. Define $H: \omega\times \omega \to \bigcup \cA$ by $H(n,m) =  f_{g(n)}(m) = F(g(n))(m) \in \bigcup \cA$ 
+\end{pf}
+
+\noindent
+Observation: If $A$ is countable $A^{< \omega} = A^1 \cup A^2 \cup A^3 \cup \cdots$ is countable 
+
+\begin{itemize}
+    \item $r \in \bR$ is algebraic if it sis the root of a polynomial in $\bZ[X]$ $\{r \in \bR$ : algebraic $\}$ is countable. 
+\end{itemize}
+
+\begin{theorem}
+    For every infinite cardinal $\kappa$, $\kappa + \kappa = \kappa$
+\end{theorem}
+
+\begin{pf}
+    Let $K$ have size $\kappa$. Let $\cA = \{ f \in \cP(\kappa \sqcup \kappa) \times \kappa \, | \, f$ is a function and there is $A \subseteq \kappa$, $\dom(f) = A \sqcup A$, $\dom(f) = A$, $f$ is one to one $\}$. To check the conditions for Zorn's Lemma, take a chain $\cC \subseteq \cA$. By the lemma, $\bigcup \cC$ is a one to tone function, $\dom(\bigcup \cC) = \bigcup \{ \dom f \, : \, f \in \cC\} = \bigcup \{\ran f \sqcup \ran f \, : \, f \in \cC\} = \bigcup \{ \ran f \, : \, f \in \cC\} \cup \bigcup \{\ran f \sqcup \ran f \, : \, f \in \cC\} = \ran(\bigcup \cC) \sqcup \ran(\bigcup \cC)$ so $\bigcup \cC \in \cA$. \\
+    By Zorn's lemma, there is a maximal $F \in \cA$. For this $F$ there is $A \subseteq \kappa$, $\dom (F) - A \sqcup A$, $\ran(F) = A$. 
+    \begin{itemize}
+        \item If $\kappa \setminus A$ is finite, $\card(\kappa) = \card(A)$ and $F: A \sqcup A$ is a bijection, using a bijection $\kappa \to A$, we can build a bijection $\kappa \sqcup \kappa \to \kappa$. 
+        \item If $\kappa \setminus A$ is infinite, let $D \subseteq \kappa \setminus A$ be a countable set, let $h: D \sqcup D \to D$ be a bijection. Let $G: (A \cup D) \sqcup (A \cup D) \to A \cup D$, $G \upharpoonright_{A \sqcup A} = F$, $G \upharpoonright_{D \sqcup D} = h$. $F \subsetneq G$ contradicitng that $F$ was maximal. 
+    \end{itemize}
+\end{pf}
+
+

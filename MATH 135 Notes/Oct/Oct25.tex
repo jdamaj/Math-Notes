@@ -1,0 +1,51 @@
+
+\subsection{Orderings}
+
+\begin{definition}
+    A partial ordering is a pair $p = (D , <)$ where $< \subseteq D \times D$ and satisfies transitivity and irreflexivity. ie $\fa a, b,c \in D$ $a < b \wedge b < c \to c < a$ and $\fa a \not< a$  
+\end{definition}
+
+\begin{example}
+    \begin{itemize}
+        \item $(\cP(C), \subset)$ 
+        \item $(\bN, |)$ $a|b$ if $a$ divides $b$ and $a \neq b$
+        \item $(\bR, <)$ 
+        \item $(\bN, \triangleleft)$ where $m \triangleleft n \ifff \begin{cases} m \text{ even } n \text{ odd} \\ m,n \text{ odd } m <_{\bN} N \\ m, n \text{ even } m <_{\bN} n \end{cases}$ \\
+        $(0 \triangleleft 2 \triangleleft 3 \triangleleft \cdots) \triangleleft (1 \triangleleft 3 \triangleleft \cdots)$
+    \end{itemize}
+\end{example}
+
+\begin{definition}
+    A well ordering is a linear ordering $\langle A, < \rangle$ such that every nonempty set has a leasat element. 
+\end{definition}
+
+\begin{example}
+    \begin{itemize}
+        \item $(\bN, <)$ well ordering 
+        \item $(\bN \times \bN, <_{\text{lex}})$ $(a,b) <_{\text{lex}} (c,d) \ifff a < c$ or $a = c$ and $b < d$ is well ordered. 
+        \begin{pf}
+            Take $B \subseteq \bN \times \bN$ nonempty. Want to show $B$ has $<_{\text{lex}}$ least element. Take $B_0 = \{ a \, | \, \ex b \, \langle a , b \rangle \in B \} \subseteq \bN$. Let $a_0 =$ least in $B_0$. Let $B_1 = \{b \, | \, \langle a_0, b \rangle \in B\}$.  Let $b_0$ be least in $B_1$. $\langle a,b \rangle$ $<_{\text{lex}}$ least in $B$. 
+        \end{pf}
+        \item $(\bZ, <)$ not well ordering 
+        \item $(\bN, <) + (\bZ, <)$ has least element but is not a well ordering since $\bZ$ has no least element. 
+        \item $[0,1] \cap \bQ$ not well ordering since $\{1/n \, : \, n \in \bN\}$ has no least element.
+        \item $A = \{a, b, \cdots, z\}$, consider $(A^{<}, <_{\text{lex}})$. Not a well ordering  
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    $\bN[x]$ the set of polynomials with coeffecients in $\bN$, $p(x) \triangleleft q(x)$ if $lim_{x \to \infty}p(x) - q(x) >0$ is a well ordering
+\end{example}
+
+\begin{lemma}
+    Let $(A, \le)$ be a linear ordering. The following are equivalent. 
+    \begin{enumerate}
+        \item Every nonempty subset has a least element 
+        \item There is no infinite decreasing sequence ie. no $a_0 > a_1 > a_2 > \cdots \in A$ 
+    \end{enumerate}
+\end{lemma}
+
+\begin{pf}
+    $1 \to 2)$ If (2) is false, and there is a sequence $a_0 > a_1 > a_2 > \cdots \in A$ $\{a_0, a_1, a_2, \cdots \}$ has no least element so (1) is false. \\
+    $2 \to 1)$ If (1) is false, there is nonempty $B \subseteq A$ wit on least element. Let $b_0 \in B$ since $b_0$ is not hte least element, have $b_1 \in B$ with $b_1 < b_0$, $b_2 \in B$ with $b_2 < b_1 < b_0$, $\cdots$ end up with $b_0 > b_1 > b_2 > \cdots$ 
+\end{pf}

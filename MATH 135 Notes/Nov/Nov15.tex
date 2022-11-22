@@ -1,0 +1,38 @@
+
+\subsection{Ordinals}
+
+Let $\omega_1$ be the set of all countable ordinals. Why is this a set? \\
+Consider $W = \{ (A, R) \in (\omega + 1) \times \cP(\omega \times \omega) \, | \, (A, R)$ is a well ordering $\}$, a set by subset axiom. For each $R \in W$ there is a unique cardinal $\alpha$, $(A, R) \cong (\alpha, \in_{\alpha})$, namely the $\in$ image of $(A, R)$. If $\alpha$ is a countable ordinal, (say infinite), there is a bijection $f: \omega \to \alpha$. Define $R = \{ \langle a, b \rangle \, | \, f(a) \in_{\alpha} f(b)\}$, we get the $\ve$ image of $(\omega, R)$ is $\alpha$. 
+
+\begin{itemize}
+    \item If $\alpha \in \beta \in \omega_1$, $\alpha$ is an ordinal, countable because $\alpha \subseteq \beta$ so $\alpha \in \omega_1$
+    \item If $\alpha, \beta \in \omega_1$, since $\alpha, \beta$ are ordinals $\alpha \in \beta$ or $\beta \in \alpha$ or $\alpha = \beta$ so $\in$ is a linear ordering. 
+\end{itemize}
+It follows that $\omega_1$ is an ordinal and $\omega_1 \not\in \omega_1$ so $\omega_1$ is not countable. For any ordinal $\gamma$, either $\gamma \in \omega_1$ so $\gamma$ is countable or $\omega_1 \in \gamma$, $\omega_1 \subseteq \gamma$ so $\gamma$ is uncountable so $\omega_1$ is the least uncountable ordinal. 
+
+\begin{theorem}[Hartog's Lemma]
+    For any set $A$ there is an ordinal $\alpha$ such that $\alpha \not\preceq A$ 
+\end{theorem}
+
+\begin{pf}
+    Consider $\alpha = \{ \beta \, \ \, \beta$ carindal, $\beta \preceq A\}$. this is a set because the set of $\in$ images of $W = \{ (B, R) \in \cP(A) \times \cP(A \times A) \, | \, (B,R)$ is a well ordering$\}$ is a set by replacement
+    \begin{itemize}
+        \item $\alpha$ is an ordinal since if $\beta \in \alpha$, $\beta$ is an ordinal, if $\gamma \in \beta \in \alpha$, $\gamma$ is an ordinal, $\gamma \subseteq \beta \preceq A$ so $\alpha$ is transitive, $\in_{\alpha}$ is a linear order to $\alpha$ is an ordinal 
+        \item $\alpha \not\in \alpha \to \alpha \not\preceq A$ 
+    \end{itemize}
+\end{pf}    
+
+\begin{lemma}
+    If $S$ is a transitive set of ordinals, then $S$ is an ordinal. 
+\end{lemma}
+
+\noindent
+Given $A$, let $A^+$ be the least ordinal $\alpha$, $\alpha \not\preceq A$. $\gamma(x,y) \equiv y$ is the least ordinal such that $y \not\preceq x$. $\gamma$ is function like. 
+
+\begin{theorem}
+    If $\gamma(x,y)$ is a function like function, there is another function like $\theta(x,y)$ on the ordinals such that $\fa \alpha$ if $F = \{(\beta, \gamma) \, : \, \beta \in \alpha, \, \theta(\beta, \gamma)\}$ then the unique $z$ such that $\theta(\alpha, z)$ satisfies $\gamma(F, z)$ 
+\end{theorem}
+
+\begin{example}
+    alephs, $\aleph_0 = \omega$, $\aleph_1 = \aleph_0^+, \cdots , \aleph_{\alpha + 1} = \aleph_{\alpha}^+$, $\aleph_{\lambda} = \bigcup_{\alpha < \lambda} \aleph_{\alpha}$ if $\lambda$ limit 
+\end{example}

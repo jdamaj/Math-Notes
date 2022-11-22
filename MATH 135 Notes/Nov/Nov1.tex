@@ -1,0 +1,36 @@
+
+\subsection{The Replacement Axiom}
+
+\begin{itemize}
+    \item Every well ordering has a least element, eveyr element $t \ni a$ has a succesor $s(t) \in A$, $s(t)$ least element $\triangleright t$ 
+    \item Some element have a predecessor (calles succesor element) and some don't (limit elements)
+\end{itemize}
+
+\begin{definition}
+    A formula $\vp(x,y)$ is function like if $\fa x \, \ex ! y \, vp(x,y)$, function like on $A$ if $\fa x \in A \, \ex ! y \, \vp(x,y)$ 
+\end{definition}
+
+\begin{example}
+    If $\vp(x,y)$ is $y = \cP(x)$ ie. $(\fa z (z \in y \ifff z \subseteq x))$ or $y = \ran(x)$ ie. $\fa z(z \in y \ifff \ex w \, \langle w, z \rangle \in x)$ 
+\end{example}
+
+\begin{axiom}
+    For any formula $\vp(x,y)$ we have an axiom $\fa A$ if $\vp$ is function like on $A$, $\ex B$ such that $\fa x \in a \, \ex y \in B \, \vp(x,y)$ 
+\end{axiom}
+
+\noindent
+Let $\gamma(x,y)$ be the function $y = f(x)$. For a well ordering $(A, \triangleleft)$ define a function $E$ with domain $A$ by transfinite recursion, $\fa t \in A \, E(t) = \ran(E \upharpoonright_{\seg t})$ \\
+Consider this function over the polynomials in $\bN[x]$: 
+\begin{itemize}
+    \item $\seg(0) = \vn$ so $E \upharpoonright_{\seg t} \vn$ ie. $E(0)=0$ 
+    \item $\seg(1) = \{0\}$, $E \upharpoonright_{\seg 1} = \{ \langle 0, \vn \rangle \}$ so $E(1) = \{ \vn\}$ 
+    \item $\seg(2) = \{0,1\}$, $E \upharpoonright_{\seg 2} = \{\langle 0, \vn \rangle, \langle 1, \{\vn\} \rangle \}$ so $E(2)  = \{\vn, \{ \vn \}\}$ 
+    \item Continuing we get $0_{\bN}, 1_{\bN}, 2_{\bN}$, $E(x) = \omega$, $E(x+1) = \omega^+$, $E(x+2)= \omega^{++}, \cdots, E(2x) = \omega + \omega$ 
+\end{itemize}
+
+\noindent
+We call $\ran(E)$ the $\ve$-image of $(A, \triangleleft)$ 
+
+\begin{theorem}
+    Let $(A, \triangleleft)$ be a well ordering, let $\alpha = \ran(E)$. Let $\in_{\alpha} = \{\langle a, b \rangle \in \alpha \times \alpha \, | \, a \in b\}$, then $E$ is an isomorphism $(A, \triangleleft) \to (\alpha, \in_{\alpha})$, ie it is a bijection and $a \triangleleft b \ifff E(a) \in_{\alpha} E(b)$. Given well orderings $(A, \triangleleft_A)$ and $(B, \triangleleft_B)$ with $\ve$ images $\alpha$ and $\beta$, $(A, \triangleleft_A) \cong (B, \triangleleft_B) \ifff \alpha = \beta$ 
+\end{theorem}

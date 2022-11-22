@@ -1,0 +1,77 @@
+
+\subsection{Cumulative Hierarchy}
+
+Want to formalize hierarchy by defining $V_{\alpha} = \bigcup\{\cP(V_{\beta}) \, : \, \beta \in \alpha\}$. Want to define this using transfinite recusion but can't do this directly. Need approximate this function since cant have a domain ORD. For $\delta \in$ ORD, $F_{\delta}(\alpha) = \bigcup\{\cP(F_{\delta}(\beta)) \, : \, \beta \in \alpha\}$.
+
+\begin{theorem}
+    For any ordinal $\delta$ there exists an $F_{\delta}$ 
+\end{theorem}
+
+\begin{pf}
+    Transfinite recursion on $(\delta, \in_{\delta})$ with $y = \bigcup\{P(z) \, : \, z \in \ran(x)\}$. To check that this gives our desired function we see $F(\alpha) = \bigcup\{P(z) \, : \, z \in \ran(F\upharpoonright_{\seg \alpha})\} = \bigcup \{\cP(F(\beta)) \, : \, \beta \in \alpha\}$. Given $\delta_1, \delta_2$ with $\delta_1 \in \delta_2$ we claim that $F_{\delta_1}(\alpha) = F_{\delta_2}(\alpha)$ for $\alpha \in \delta_1$. Follows form the uniqueness of transfinite recusion since $F_{\delta_2} \upharpoonright_{\delta_1}$ satisfies the recursive conditions so must have $F_{\delta_2} \upharpoonright_{\delta_1} = F_{\delta_1}$ 
+\end{pf}
+
+\begin{definition}
+    $V_{\alpha} = F_{\delta}(\alpha)$ for any $\delta > \alpha$ 
+\end{definition}
+
+\noindent
+Observation
+\begin{enumerate}[label = (\roman*)]
+    \item $V_{\alpha} = \bigcup \{\cP(V_{\beta}) \,  : \, \beta \in \alpha\}$ 
+    \item $V_{\alpha}$ is a transitive set. 
+    \begin{pf}
+        By induction: $V_{\alpha} = \bigcup \{\cP(V_{\beta}) \, : \, \beta \in \alpha\}$. $x \in y \in V_{\alpha}$ so $y \in \cP(V_in {\beta})$ for some $\beta \in \alpha$, $y \subseteq V_{\beta}$ so $x \in V_{\beta}$ so $x \subseteq V_{\beta}$ so $x \in \cP(V_{\beta})$ and so $x \in V_{\alpha}$ 
+    \end{pf}
+    \item $\alpha \in \beta \to V_{\alpha} \subseteq V_{\beta}$ 
+    \begin{pf}
+        $V_{\beta} = \bigcup \{\cP(V_{\gamma}) \, : \, \gamma \in \beta\}$, $V_{\alpha} =  \bigcup \{\cP(V_{\gamma}) \, : \, \gamma \in \alpha\}$
+    \end{pf}
+\end{enumerate}
+
+\begin{theorem}
+    \begin{enumerate}[label = (\alph*)]
+        \item $V_0 = \vn$ 
+        \item $V_{\alpha}^+ = \cP(V_{\alpha})$ for all $\alpha$ 
+        \item If $\lambda$ is a limit ordinal, then $V_{\lambda} = \bigcup_{\beta \in \lambda}V_{\beta}$ 
+    \end{enumerate}
+\end{theorem}
+
+\begin{pf}
+    \begin{enumerate}[label = (\roman*)]
+        \setcounter{enumi}{1}
+        \item $V_{\alpha^+} = \bigcup \{\cP(V_{\beta}) \, : \, \beta \in \alpha^+\} = \bigcup\{\cP(V_{\beta}) \, : \, \beta \in \alpha\} \cup \cP(V_{\alpha}) = V_{\alpha} \cup \cP(V_{\alpha}) = \cP(V_{\alpha})$ 
+        \item if $x \in V_{\lambda} = \bigcup\{\cP(V_{\beta}) \, : \, \beta \in \lambda\}$, then $x \in \cP(V_{\beta})$ for some $\beta \in \lambda$ so $x \in V_{\beta^+}$ and $\beta^+ \in \lambda$ so $x \in \bigcup_{\beta \in \lambda} V_{\beta}$. If $x \in \bigcup_{x \in \lambda} V_{\beta}$, then $x \in V_{\beta}$ for $\beta \in \lambda$ so $x \subseteq V_{\beta}$ so $x \in \cP(V_{\beta})$ so $x \in V_{|lambda}$ 
+    \end{enumerate}
+\end{pf}
+
+\begin{definition}
+    A set $S$ is grounded if there is some $\alpha$ such that $S \subseteq V_{\alpha}$. If $S$ is grounded, $\rank(S)$ is the least $\alpha$ such that $S \subseteq V_{\alpha}$ 
+\end{definition}
+
+Observation: 
+\begin{enumerate}[label = (\roman*)]
+    \item If $A$ is grounded, then so are all $a \in A$ and $\rank(a) \in \rank(A)$ 
+    \begin{pf} $A \subseteq V_{\alpha} = \bigcup \{ \cP(V_{\beta}) \, : \, \beta \in \alpha\}$, $a \in A \to a \in \cP(V_{\beta})$ for $\beta \in \alpha$ so $a \subseteq V_{\beta}$ for $\beta \in \alpha$ 
+    \end{pf}
+    \item $\rank(A)=$ the least ordinal greater than $\rank(a)$ for $a \in A$ 
+    \begin{pf}
+        Consider $A$ and consider $\bigcup \{ \rank(a)^+ \, : \, a \in A\} = \alpha$. $\alpha \le \rank(A)$ since $\rank(A)$ is an upper bound for $\{\rank(a)^+ \, : \, a \in A\}$. Further, $\rank(A) \le \alpha$ since for $a \in A$, $a \subseteq V_{\rank(a)}$ so $a \in V_{\rank(a)^+}$ and so $a \in V_{\alpha}$ and $A \subseteq V_{\alpha}$ 
+    \end{pf}
+\end{enumerate}
+
+\begin{theorem}
+    The following are equivalent
+    \begin{enumerate}[label = (\roman*)]
+        \item (Regularity) For any nonempty set $A$, there is some $m \in A$ such that $A \cap m = \vn$ 
+        \item There does not exist a function $f$ with domain $\omega$ such that $f(n^+) \in f(n)$ for all $n$. 
+        \item Every set is grounded.
+    \end{enumerate}
+\end{theorem}
+
+\begin{pf}
+    i $\to$ ii) Suppose (ii) is false, then look at $\ran(f) = A$. For any $ a \in A$, $a = f(n)$ for some $n$ but $f(n^+) \in f(n)$ so $A \cap a \neq \vn$ \\ 
+    ii $\to$ iii) Suppose there is some non grouned set $a_0$, $a_0$ must have some non grounded element $a_1$, similarly, there is $a_2 \in a_1$ non grounded, $\cdots$ \\ 
+    Note: to make this more formal, need to use the transitive closure, and use choice \\
+    iii $\to$ i) For nonempty $A$, $A$ is grounded. Consider $\{ \rank(a) \, :\, a \in A\}$, a nonempty set of ordinals so it has some least element $\alpha$. Pick $m \in A$ with $\rank(m) = \alpha$, then $A \cap m = \vn$ since any elements of $m$ must have strictly smaller rank. 
+\end{pf}

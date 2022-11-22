@@ -2,7 +2,7 @@
 \subsection{Axiom of Choice}
 
 \begin{pf}[Pf (cont)]
-    $4 \to 3)$ We have a set $A$. We want $f: \cP(A) \setminus \{\vn\} \to A$, $F(B) \in B$. $B^* = \{ \langle B, b \rangle \, : \, b \in B \} \approx B$. $B \neq C \to B^* \cap C^* = \vn$. Let $\cA = \{B^* \, : \, B \subseteq A, \, B \neq \vn\}$. By (4) there is a set $C$ such that $\fa B^* \in \cA$, $|C \can B^*| = 1$. \\
+    $4 \to 3)$ We have a set $A$. We want $f: \cP(A) \setminus \{\vn\} \to A$, $F(B) \in B$. $B^* = \{ \langle B, b \rangle \, : \, b \in B \} \approx B$. $B \neq C \to B^* \cap C^* = \vn$. Let $\cA = \{B^* \, : \, B \subseteq A, \, B \neq \vn\}$. By (4) there is a set $C$ such that $\fa B^* \in \cA$, $|C \cap B^*| = 1$. \\
     $3 \to 1)$ Let $R$ be a relation. For $a \in \dom R$, we want to pick an element in $R_a = \{b \in \ran R \, | \, \langle a, b \rangle \in R \}$. let $A = \ran R$. By (3) there is $f: \cP(A) \setminus \{ \vn\} \to A$, $f(B) \in B$ for all $B \subseteq A$. $F = \{ \langle a , F(R_a) \rangle \, | \, a \in \dom R\}$ 
 \end{pf}
 
@@ -11,4 +11,21 @@
 Want to define a measure on $\bR$ with the following properties. 
 \begin{enumerate}
     \item $m([0,1])=1$
+    \item $m(A + r) = m(A)$
+    \item $m(\bigcup_{i \in \omega}A_i) = \sum_{i \in \omega}m(A_i)$
 \end{enumerate}
+
+\begin{theorem}
+    There is no $m: \cP(\bR) \to (\bR^{<0} \cup \infty)$ satsifying the above conditions. 
+\end{theorem}
+
+\begin{pf}
+    For $r, s \in [0,1]$, let $r \sim s$ if $r -s \in \bQ$. Let $[r] = \{s \in [0,1) \, | \, r -s \in \bQ\}$ Let $\cA = \{[r] \, : \, r \in [0,1) \}$. $\cA$ is a family of disjoint sets so by AC there is a set $C$ such that $|C \cap [r]| = 1$ for each $[r] \in \cA$. Assume $C \subseteq [0,1)$. \\
+    Consdier $C + q$ for $q \in \bQ$ 
+    \begin{itemize}
+        \item disjoint since if $p \neq q \in \bQ$, $(C + p) \cap (C + q) = \vn$ 
+        \item $\bigcup_{q \in \bQ}(C+q) = \bR$ 
+        \item $\bigcup_{q \in \bQ \cap [0,1)} (C+q) \subseteq [0,2)$ 
+    \end{itemize}
+    $m(\bR) = m( \bigcup_{q \in \bQ} (C+q)) = \sum_{q \in \bQ} (c+q) = \sum_{q \in \bQ}m(C)$, so $m(c)>0$ since $m(\bR) >1$. Also, $2 = m([0,2]) \ge m(\bigcup_{q \in \bQ \cap [0,1)} (C+q)) = \sum_{q \in \bQ \cap [0,1)}m(c+q) = \sum_{q \in \bQ \cap [0,1)}m(C) = \infty$, a contradiction. 
+\end{pf}

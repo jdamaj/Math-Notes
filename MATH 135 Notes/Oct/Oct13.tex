@@ -1,0 +1,38 @@
+
+\subsection{Cardinal Arithmetic}
+
+\begin{theorem}
+    $\kappa \cdot \kappa = \kappa$ for all infinite cardinals $\kappa$
+\end{theorem}
+
+\begin{proof}
+    Let $\cA = \{ f \in \cP((\kappa \times \kappa) \times \kappa) \, | \, f$ is a function $\dom(f) = \ran f \times \ran f$, one to one$\}$. If $A = \ran f$, $f$ is a bijection $A \times A \to A$. We need to show $\cA$ satisifes the conditions to apply Zorn's Lemma. Let $\cC \subseteq \cA$ be a chain, we want to show $\bigcup \cC \in \cA$. By the lemma, $\bigcup \cC$ is a function, $\dom (\bigcup \cC) = \bigcup \{ \dom f \, : \, f \in \cC\}$, $\ran(\bigcup \cC) = \bigcup \{ \ran f \, : \, f \in \cC\}$. By Zorn's Lemma, there is a maixmal $F \in \cA$. Let $A = \ran(F)$, $F: A \times A \to A$ bijection. Note that $A$ must be infinite or else $A \times A \not\approx A$. \\
+    If $A \approx \kappa$, then $\kappa \times \kappa \approx A \times A \stackrel{F}{\to} A \approx \kappa$ so $\kappa \times \kappa \approx \kappa$, as wanted. \\
+    If not, we want to get a contradiction with the maximality of $F$. If $A \prec \kappa$, then $A \prec \kappa \setminus A$, otherwise $\kappa = (\kappa \setminus A) \cup A \preceq A \sqcup A \approx A \prec \kappa$. Take $D \subseteq \kappa \setminus A$ if size $A$. $A \times D \cup D \times D \cup D \times A \approx A \times A \sqcup A \times A \sqcup A \times A \stackrel{F}{\approx} A \sqcup A \sqcup A \approx A \approx D$ so there is a bijection $h: A \times D \cup D \times D \cup D \times A \to D$, then $F \cup h \in \cA$, contradicting the maximality of $F$. 
+\end{proof}
+
+\begin{corollary}
+    If $\kappa$ and $\lambda$ are infinite cardinals, $\kappa + \lambda = \kappa \times \lambda = \max(\kappa, \lambda)$  
+\end{corollary}
+
+\begin{pf}
+    If $\kappa = \max(\kappa, \lambda)$, $\kappa \le \kappa + \lambda \le \kappa + \kappa = \kappa$, $\kappa \le \kappa \times \lambda \le \kappa \times \kappa = \kappa$. 
+\end{pf}
+
+\begin{itemize}
+    \item $\card \{f : \bR \to \bR\}  =2^{2^{\aleph_0}}$, $\card \{f :  \bR \to \bR \, :\, f$ cont $\} = 2^{\aleph_0}$ since if $f, g : \bR \to \bR$ continuous, then $f = g \ifff f \upharpoonright_{\bQ} = g \upharpoonright_{\bQ}$ so $\le \prescript{\bQ}{}{\bR} = 2^{\aleph_0}$ and $2^{\aleph_0} \le $ since have a constant function for each real number. 
+\end{itemize}
+
+\begin{theorem}
+    For $\kappa$ infinite and $\lambda$ such that $2 \le \lambda \le 2^{\kappa}$, $\lambda^{\kappa} = 2^{\kappa}$ 
+\end{theorem}
+
+\begin{pf}
+    $2^{\kappa} \le \lambda^{\kappa} \le (2^{\kappa})^{\kappa} = 2^{\kappa \cdot \kappa} = 2^{\kappa}$
+\end{pf}
+
+\noindent
+Continuum Hypothesis (CH): Every uncountble subset of $\bR$ is equinumerous to $\bR$. \\
+Thm(Godel): CH can't be refuted in ZFC \\ 
+Thm(Cohen): CH can't be proved in ZFC \\ 
+Generalized Continuum Hypothesis (GCH) : For every infinite cardinal $\kappa$, there is no $\lambda$ with $\kappa < \lambda < 2^{\kappa}$ 

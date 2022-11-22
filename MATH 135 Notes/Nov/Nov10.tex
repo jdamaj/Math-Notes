@@ -1,0 +1,17 @@
+
+\subsection{Transfinite Recursion}
+
+\begin{theorem}[Transfinite Recursion]
+    Let $(A, \triangleleft)$ be a well ordering and $\gamma(x,y)$ a function like formula, then there is a function $F$ with domain $A$ such that $\fa t \in A \, \gamma(F \upharpoonright_{\seg t}\, F(t))$. Moreover $F$ is unique. 
+\end{theorem}
+
+\begin{pf}
+    Let $B = \{t \in A \, : \, \ex$ a function $f$ with $\dom(f) = \seg t$, $\fa s \triangleleft t$, $\gamma(f \upharpoonright_{\seg s}, f(s))\}$. Want to show $B = A$. Pick $t \in A$. We show that if $\seg t \subseteq B$, $t \in B$ \\
+    Lemma: For $r \trianglelefteq r' \in A$ if $f_r$ has $\dom f_r = \seg r$ and $f_{r'}$ has $\dom f_{r'}$ then $f_r = f_{r'} \upharpoonright_{\seg r}$ \\ 
+    \begin{pf}
+        Let $I = \{s \in \seg r \, | \, f_r(s) = f_{r'}(s) \}$. Want to show $I = \seg r$ by transfinite induction. Take $s \in \seg r$, if we have that $\fa s' \triangleleft s$ $f_r(s') = f_{r'}(s')$, then $f_r \upharpoonright_{\seg s} = f_{r'} \upharpoonright_{\seg s}$. $f_r(s)$ is the unique $w$ such that $\gamma(f_r \upharpoonright_{\seg s}, w)$ and similarly for $f_{r'}(s)$ so it follows that $f_r(s) = f_{r'}(s)$ and so $I = \seg r$ 
+    \end{pf}
+    Case 1: $t = \text{succ}(t')$ and $t' \in B$. Let $f_t = f_{t'} \cup \{\langle t', w \rangle \}$ where $w$ is the unique $w$ satisfying $\gamma(f_{t'}, \omega)$ \\
+    Case 2: $t$ is a limit. Let $f_t = \bigcup_{r \triangleleft t} \{f_r \, | \, r \in seg t\}$ (set by replacement). Well defined since by IH since $\fa r \in \seg t$, $\ex ! f$ satisfying conditions. 
+\end{pf}
+
