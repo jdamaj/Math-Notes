@@ -1,0 +1,51 @@
+
+\subsection{Types}
+
+Notation: $\cM$ $\cL$-structure, $A \subseteq \cM = | \cM|$. $\cL_A$ is the expansion of $\cL$ by new constants $a \in A$, $\cM_A$ is the expransion of $\cM_A$ to an $\cL_A$ strucutre for $a \in A$ by $a^{\cM_A} :=a$ \\
+Note: $\Th(\cM_M)  = \text{ el diag}(\cM)$ \\
+The formulas in $\cL_A$ take the form $\vp(a_1, \ldots, a_l)$ where $\vp \in \cL$, free variables $v_1, \ldots, v_l$, $\overline{a} = (a_1, \ldots, a_l) \in A^l$  \\
+$\cL(v_1, \ldots, v_n) :=$ the formula in $\cL$ with free variables amonst $v_1, \ldots, v_l$ 
+
+\begin{definition}
+    Fix $l \in \bZ_+$ an $l$-type over $A$, $p = p(v_1, \ldots, v_l)$ is a subset of $\cL(v_1, \ldots, v_l)$ in which $p \cup \Th(\cM_A)$ is consistent and $\fa \vp \in \cL_A(v_1, \ldots, v_l)$ $\vp \in p$ or $\neg \vp \in p$. A subset $\Sigma \subseteq \cL_A(v_1, \ldots, v_l)$ such that $\Sigma \cup \Th(\cM_A)$ is consistent is sometimes called a possibly incomplete type of $A$.   
+\end{definition}
+
+Remark: 
+\begin{enumerate}
+    \item If $A= M = |\cM|$, a partial elementy map is $f: A \to \cN$ is an elementary embedding of $A$ into $\cN$
+    \item If $\ex f: \cM \dashrightarrow \cN$ partial element, then $\cM \equiv \cN$ (take $A = \vn$) 
+\end{enumerate}
+
+\begin{proposition}
+    if $f: \cM \to \cN$ is partial elementary, $\dom f = A$, then there is an expanion $\tilde{\cN}$ of $\cN$ to an $\cL_A$ structure such that $\cM_A \equiv \tilde{\cN}$ 
+\end{proposition}
+
+\begin{pf}
+    For $a \in A$, $a^{\tilde{\cN}} = f(a)$ then definition of $f$ being a partial elementary map is the assertion that $\cM_A \equiv \tilde{\cN}$ 
+\end{pf}
+
+\begin{definition}
+    $S_l^{\cM}(A)$ = the set of $l$ types of $A$
+\end{definition}
+
+\begin{proposition}
+    If $A \subseteq M = | \cM|$, $\cM$ an $\cL$ structure $l \in \cN$, $p \in S_l^{\cM}(A)$ then $\ex \cN \preceq \cM$ and $\overline{b} = (b_1, \ldots, b_n) \in N^{l}$ such that $(\cN, b_1, \ldots, b_l) \models p(v_1, \ldots, v_l)$  
+\end{proposition}
+
+\begin{pf}
+    Let $b_1, \ldots, b_l$ be new constant symbols. We will show that $\Sigma = p(b_1, \ldots, b_l) \cup \diae(\cM)$ is consistent. If this holds, we are done as a model $\tilde{\cN} \models \Sigma$ in $|cL$ has $\cN = \tilde{\cN} \upharpoonright_{\cL}$, $\cM \preceq \cN$ and $(\cN, b_1, \ldots, b_l) \models p$ . \\ 
+    Let $\Sigma_0 \subseteq \Sigma$ be finite. $\Sigma = \{ \vp(b_1, \ldots, b_l), \ldots, \vp_k(b_1, \ldots, b_l)\} \cup \{ \theta_1(m_1, \ldots, m_t), \ldots, \theta_n(m_1, \ldots, m_t)\}$. $p$ is consistent with $\Th(\cM_A)$, $\cM_A \models \ex \overline{y} \bigwedge \theta_i(\overline{y})  \in \Th(\cM_A)$ so $\ex \overline{v} \bigwedge \vp_i(\overline{v}) \wedge \ex \overline{y} \biwedge \theta_j(\overline{y})$ is consistent so $\ex$ $\cB \models \ex ex \overline{v} \bigwedge \vp_i(\overline{v}) \wedge \ex \overline{y} \bigwedge \theta_j(\overline{y})$ and $\ex b_1, \ldots, b_l \in B$, $\tilde{m_1}, \ldots, \tilde{m_l} \in B$ $\cB \upharpoonright_{\cL_A} \models \bigwedge \vp_i(\overline{b}) \wedge \bigwedge \theta_j(\overline{m})$
+\end{pf}
+
+\begin{definition}
+    If $l \in \bN$, $A \subseteq M \subseteq | \cM|$, $\cM$ $\cL$-structure, $p \in S_l^{\cM}(A)$. $a = (a_1, \ldots, a_l) \in M^l$, $a$ is a realization of $p$ is $\fa \vp(v_1, \ldots, v_l) \in p$, $\cM \models \vp(a_1, \ldots, a_l)$. $p$ is realized in $\cM$ if it has a realization. $p$ is omitted if it is not realized. 
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item $\cL = \cL(=)$, $\cM$ an infinite $\cL$ structure, $A \subseteq M = |\cM|$, $l=1$. Describe $S_1^{\cM}(A)$. \\
+        Fact: $\Th(\cM)$ has quantifier elimination, $S_1^{\cM}(A) = \{p_a \, : \, a \in A\} \cup \{g \}$ where $p_a = \{\vp(v_1) \in \cL(v_1) \, : \, \cM \models (v_1 = a) \to \vp(v_1)\}$. $g$ = consequences of $\{v_1 \neq a \, : \, a \in A\}$ 
+        \item $\cM = (\bZ, + , - , 0)$. $A = \bZ$, $l = 1$. For any $n \in \bZ$, $n|x \ifff \ex y (\overbrace{y + \cdots + y}^{n \text{ times}}=x)$ is not equivalent to quantifier free formula (all quantifier free formulas define finite or cofinite sets). With new relations $n|x$, $\Th(\cM)$ has quantifier elimination.   
+    \end{enumerate}
+\end{example}
+
