@@ -1,3 +1,21 @@
 
 \subsection{Attaching 2-cells} 
 
+Let $X$ be a compact Hausdorff space. Let $\vp: X \to Y$, for $Y$ Hausdorff, compact. Let $A \subseteq X$ closed. Let $\vO = X - A$, open. Let $C = \vp(A) \subseteq Y$, compact. Let $W = Y - C$, open. Require that $\vp|_{\cO}: \cO \to W$ is a homeomorphism. Let $R$ be a deformation retract of $X$ onto $A$. Then $R$ ``induces'' a deformation retraction of $Y$ onto $C$ such that the following diagram commutes. 
+\[ \begin{tikzcd}
+    X \times I \arrow[r, "R"] \arrow[d, "\vp \times \text{id}_I"] \arrow[rd] & X \arrow[d, "\vp"] \\ 
+    Y \times I \arrow[r, dashrightarrow, "\tilde{R}"] & Y
+\end{tikzcd}\]
+
+ie. $\vp(R(x,t)) = \tilde{R}(\vp(x),t)$. Take this to define $\tilde{R}$, we claim that $\tilde{R}$ is a retraction of $Y$ onto $C$. If $a \in A$, then $\vp(a) \in V$ so that $\tilde{R}(\vp(a),t) = \vp(R(a,t)) = \vp(a)$. We see that $\tilde{R}(c,t)=c$ for $c \in C$. \\
+Why is $\tilde{R}$ continuous?  \\
+Let $M,N$ be topological spaces and $M$ compact, Hausdorff, $\vp: M \to N$ continuous, onto. Then, $\cT_N$ = quotient topoloyg for $\vp$ form $\cT_M$. If $E \subseteq N$, $\vp^{-1}(E)$ is closed then $\vp^{-1}(E)$ is compact so $\vp(vp^{-1}(E))=E$ is compact so $E$ is closed. We see that $\vp \times \text{Id}_I: X \times I \to Y \times I$, $Y \times I$ has the quotient topology. \\ 
+Recall: For $M \stackrel{\vp}{\to} N \stackrel{f}{\to} Z$, $N$ with quotient topology, to check $f$ is continuous, suffices to check that $f \circ \vp$ is continuous. \\
+Claim follows since $\tilde{R} \circ ( \vp \times \text{Id}_I)  = \vp \circ R$ is continuous. 
+
+\begin{corollary}
+    If $U$ is an open subset of $X$, $A \subseteq X$ and $R(u,t) \in U$ for all $u \in U$, then $R$ induces a deformation retract of $U$ onto $A$. 
+\end{corollary}
+
+\noindent
+Let $X$ be path connected $Z,X$, $X = A \cup \cO$, compact, $\vp: X \to Z$, let $Y = \vp(X)$. Let $\vp: \cO \to$ open set in $Z$, homeomorphism, $C = \vp(A)$ compact in $Z$. Deformation retract of $X$ onto $A$, get a defomration retract of $Y$ onto $C$, $\tilde{R}$. 
