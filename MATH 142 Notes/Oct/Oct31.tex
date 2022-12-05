@@ -4,6 +4,40 @@
 Let $G, H$ be groups and let $B$, be a group and suppose we have $\vp_G: B \to G$, injective, $\vp_H: H \to B$ injective. Form $G*H$, let $N$ = smallest normal subgroup containing the words $\vp_G(b)\vp_H(B^{-1})$, $G*H/N$ is denoted by $G*_BH$ and called the free product of $G$ and $G$ amalgamted over $B$. \\
 
 \noindent
-$X = U \cup V$, $U \cap V$ path connected. Consider the following diagram. \\
+$X = U \cup V$, $U \cap V$ path connected. Consider the following diagram.
 
-For $b \in \pi_1(U \cap V)$, $\vp_U(i_u(b)) = \vp_V(i_v(b))$ so $\psi(q_U(i_U(b)))q_V(i_V(b))=e$
+\[\begin{tikzcd}
+    & \pi_1(U)  \arrow[d, "q_U"] \arrow[rd, "\vp_U"] & \\ 
+    \pi_1(U \cap V) \arrow[ru, "i_U"] \arrow[rd, "i_V"] & \pi_1(U) * \pi_1(V)/N \arrow[r, dashrightarrow, "\psi"] & \pi_1(X)\\
+    & \pi_1(V)  \arrow[u, "q_V"] \arrow[ru, "\vp_V"] & \\ 
+\end{tikzcd} \]
+
+For $b \in \pi_1(U \cap V)$, $\vp_U(i_u(b)) = \vp_V(i_v(b))$ so $\psi(q_U(i_U(b))q_V(i_V(b)))=e$. Let $N$ be the smallest normal subgroup containing all words $q_U(i_U(b))q_V(i_V(b))$ for $b \in \pi_1(U \cap v)$, then we have a map $\pi_1(U)*\pi_1(V) \to \pi_1(U)*\pi_1(V)/N \to \pi_1(X)$. 
+
+\begin{theorem}
+    $\pi_1(U)*\pi_1(V)/N \to \pi_1(X)$ given above is an isomorphism. 
+\end{theorem}
+
+\noindent
+Modern Version: Suppose there is some group $H$, and consider the following diagram. \\
+
+\[\begin{tikzcd}
+    & \pi_1(U)  \arrow[d] \arrow[rd, "\vp_U"] & \\ 
+    \pi_1(U \cap V) \arrow[ru, "i_U"] \arrow[rd, "i_V"] & \pi_1(U) * \pi_1(V)/N \arrow[r] & H \\
+    & \pi_1(V)  \arrow[u] \arrow[ru, "\vp_V"] & \\ 
+\end{tikzcd} \]
+
+If $\vp_U \circ i_U = \vp_V \circ i_v$, then if we let $N$ be the smallest normal subgroup containing $q_U(i_U(b))q_V(i_V(b^{-1}))$ for $b \in \pi_1(U \cap V)$, then there exists $\psi : \pi_1(U)*\pi_1(V) \to H$ such that the above diagram commutes. 
+
+\begin{corollary}
+    If $U \cap V$ is simply connected, ie, $\pi_1(U \cap V)=0$, then $\pi_1(X) = \pi_1(U)*\pi_1(V)$. 
+\end{corollary}
+
+\begin{example}
+    Consdier the followng: (Insert Figure) \\
+    $U$ and $V$ have a deformation retract onto $S^1$ so $\pi_1() = \bZ * \bZ$ ($F_2$, the free group on two generators).  
+\end{example} 
+
+\noindent
+$F_2$, generators $a,b$. $H(a)$ = set of all words that begin with $a$. $F_2 = H(a) \oplus H(b) \oplus H(b) \oplus H(a^{-1}) \oplus H(b^{-1}) \cup \{e\}$ but $a^{-1}H(a)$= all words begining with $a,b,b^{-1}$ so $F_2 = a^{-1}H(a) \oplus H(a)$ \\
+Banach Tarski Paradox: $B^3 \subseteq \bR^3$ using rigid motions, can split $B^3$ in 5 pieces, then you can reassemble into two copies of $B^3$. $\bR^3 \times SO_3 \supset F_2$, works for $B^n$, $n \ge 3$. 
