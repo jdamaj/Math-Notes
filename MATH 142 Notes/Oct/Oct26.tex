@@ -1,0 +1,42 @@
+
+\subsection{Group Actions}
+
+\begin{proposition}
+    Any free action of a finite group on a Hausdorff space is proper. 
+\end{proposition}
+
+\begin{pf}
+    Let $ x \in X$, for $g \in G$, $g \neq e_0$, $\alpha_g(x) \neq x$ so by Hausdorff we can find open sets $U_g, V_g$ such that $x \in U_g$, $\alpha_g(x) \in V_g$, $U_g \cap V_g = \vn$, then $\alpha_g^{-1}(V_g)$ contains $x$ and is opne .Let $\cO = \bigcap_{g \in G} (U_g \cap \alpha_g^{-1}(V_g))$, open , $x \in \cO$, then $\alpha_g(\theta)$ all disjoint for different $g$. 
+\end{pf}
+
+\begin{corollary}
+    $X$ is a covering space of $X/\alpha$ 
+\end{corollary}
+
+\begin{pf}
+    $X$ is path connected, choose a basepoint $x_*$, in $X/\alpha$ let $b_* = p(x_*)$, the covering correspondence $\pi_1(X/\alpha, b_*) \to p^{-1}(b_*)$ = orbit of $x_*$ in $X$. Map is surjective an if $X$ is path connected, then it is bijective. 
+\end{pf}
+
+\noindent
+Apply to $S^n/\alpha$, $p^{-1}(b_*)$ has two elements and since $S^n$ is simply connected, $\pi_1(X/\alpha)$ has two elements $\cong \bZ/2\bZ$. 
+
+\subsection{Free Products} 
+
+Free product of groups: Given a group $G$ and subgroups $\{G_{\lmabda}\}_{\lambda \in I}$ saya that $\{G_{\lambda}\}$ generates $G$ if every element of $G$ is a product of elements of various $G_{\lambda}$ ie. $\bigcup G_{\lambda}$ generates $G$. \\
+
+\noindent
+$V$, vector space, collection of subspaces $\{V_{\lambda}\}$, the collection $\{V_{\lambda}\}$ spans $V$, if every element of $V$ can be written as a finite combination of elements in $\{V_{\lambda}\}$. The vector spaces are independent if every element in $V$ has a unique expression as a sum of vectors in $V_{\lambda}$, equivalent to 0 having a unique expression, namely $0=0$. We have $V = \bigoplus V_{\lambda}$, internal direct sum. \\
+But if $\{V_{\lambda}\}$ is a collection of vector spaces, can form $V = \bigoplus V_{\lambda}$, elements of form $(v_1, \ldots, v_n)$, external direct sum. \\
+
+\noindent
+We say that $\{G_{\lambda}\}$ is free if any element of $G$ can be wriiten as a unique product of elements of the $G_{\lambda}$. Not exactly true, consider finite words in the alphabet $\bigcup G_{\lambda}$, expressions $x_1x_2 \cdots x_n$, $x_j \in \bigcup G_{\lambda}$, if $X_j, x_{j+1}$ in the same $G_{\lambda}$ can replace $x_j, x_{j+1}$ by $x_jx_{j+1} \in G_{\lambda}$. If $e_0$ appears, can omit it. Say that a word is reduced if it never contains $e_0$, and for every $j$, $x_j, x_{j+1}$ are in different $G_{\lambda}$. Every element in $G$ is represented by a reduced word, or is $e_0$. 
+
+\begin{definition}
+    $\{G_{\lambda}\}$ (that generate $G$) are free is every element of $G$ has a unique expression as a reduced word, or equivalently, $e_0$ has a unique expresion as a reduced word. 
+\end{definition}
+
+\noindent
+Equivalent since if $g \in G = x_1 \cdots x_n = y_1 \cdots y_m$ then $e_0 = x_1 \cdots x_n y_{m}^{-1} \cdots y_1^{-1}$ has a reduced forn $e_0$ iff $n=m$, $x_i = y_i$ for all $i$. 
+
+\noindent
+External Free product: $\{G_{\lambda}\}$ is a collection of groups. Let $G$ be the collection of reduced words in $\bigcup G_{\lambda}$ together with $e_0$ (symbol). Define a product of $x_1 \cdots x_n$, $y_1 \cdots y_m$ in $G$ to be the reduced word of $x_1 \cdots x_n y_1 \cdots y_m$. 
