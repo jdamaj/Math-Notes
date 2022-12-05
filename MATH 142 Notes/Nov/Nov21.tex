@@ -1,0 +1,17 @@
+
+\subsection{Labeling Schemes}
+
+We have an alphabet $a, b, c, \ldots$. Use the convention that clockwise is positive. Using labeling schmes get words in the alphabet + inverses of elements in the alphabet. Want to see what moves we can do to get different words for the same space. 
+\begin{itemize}
+    \item Cylic permutation: $w = ua \to au$ 
+    \item Cut: $uv \to uc, \, c^{-1}v$ where does not appear in $uv$ and each $u,v$ have two letters 
+    \item Paste: Given $uc, \, c^{-1}v \to uv$
+    \item Flip: flip along line to reverse direction of all letter, ie. $a_1 \cdots a_n \to a_n^{_1} \cdots a_1^{-1}$
+    \item Relabel: if $a$ appears in $w$ and if $f$ does not appear in $w$, can replace $a$ by $f$ and $a^{-1}$ by $f^{-1}$. (can also replace $a$ by $a^{-1}$ and $a^{-1}$ by $a$. Further, if $a,b$ appear in $w_1, \ldots, w_k$ in the form $ab$ can replace this everywhere by $f$, not appearing in $w_1, \ldots, w_k$. 
+    \item Cancelation: If we have $uee^{-1}v$ and $e$ appears no where else, and $u,v$ have at least two letter, can replace by $uv$. \\
+    Follows from other rules: $ucc^{-1}v \to uce, \, e^{_1}cv \to u(ce), (ce)^{-1}v \to ud, \, d^{-1}v \to uv$ 
+\end{itemize}
+
+\begin{example}
+    Klein bottle: $ab^{-1}a^{-1}b^{-1} \to baba^{-1} \to aba^{-1}b \to abc, \, c^{-1}a^{-1}b \to cab, \, b^{-1}ac \to ccaa$ ie. $P^2 \# P^2$. 
+\end{example}

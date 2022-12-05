@@ -1,0 +1,18 @@
+
+\subsection{More Fundamental Groups} 
+
+\begin{proposition}
+    Let $X,Y$ be topological spaces, $p: X \to Y$ onto, assume that $Y$ has the quotient topology. Assume that $p$ is closed, then if $X$ is normal then so is $Y$. If $X$ is Hausdorff, then so is $Y$.
+\end{proposition}
+
+\begin{pf}
+    Let $A,B$ be disjoint closed subsets of $Y$. Then $p^{-1}(A), p^{-1}(B)$ are closed disjoint. Since $X$ is normal, there are open subsets disjoint, $U, V$, with $p^{-1}(A) \subseteq U$, $p^{-1}(B) \subseteq V$. Let $C = X-U \supseteq p^{-1}(B), D = X-U \supseteq p^{-1}(A)$, $C,D$ closed. Then $p(C)$, $p(D)$ are closed. $p(C) \cap A = \vn$, $p(D) \cap B = \vn$. Let $U_0 = Y - p(C) \supseteq A$, open. $V_0 = p(D) \supseteq B$, open. Claim $U_0 \cap V_0 = \vn$ because if $x \in U_0$, then $p^{-1}(x) \cap C = \vn$, $x \in V_0$ $p^{-1}(x) \cap D = \vn$ so $p^{-1}(x) \subseteq U$ and $p^{-1}(x) \subseteq V$, a contradiction. 
+\end{pf}    
+
+\begin{itemize}
+    \item We see that for a finite number of identifications, the projection is a closed map since for closed $C$, $p^{-1}p(C)$ is a finite union of closed sets. 
+    \item Must show that all the vertices form an equivalence class 
+    \item A compact manifold without boundaries is called a closed manifold. 
+    For two closed surfaces, remove a circle from each and connect them via a tube, called ``connected sum'' \\
+    (Insert Figures)
+\end{itemize}
