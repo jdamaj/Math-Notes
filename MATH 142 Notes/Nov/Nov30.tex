@@ -1,0 +1,28 @@
+
+\subsection{Classification of Proper Schemes}
+
+Proper Schemes: Each letter appears exactly twice \\
+
+\noindent
+\textbf{Lemma 1}: If $w = y_0ay_1ay_2$, then $w \sim aay_0y_1^{-1}y_2$ \\
+$w \sim aa w_1$, if $w_1$ not of torus type, then $w_1 = z_0bz_1z_2$ \\ 
+$aaw_1 = (aaz_0)bz_1bz_2 \sim bb(aaz_0)z_1^{-1}z_2 = bbaaz_0z_1^{-1}z_2$ \\ 
+Repeat until $w \sim (a_1a_1)(a_2a_2) \cdots(a_k a_k)w'$, $w'$ is of torus type. \\
+
+\noindent
+\textbf{Lemma 2}: If $w=w_0w_1$ with $w_1$ of torus type with no ``$bb^{-1}$'', then $w \sim w_0aba^{_1}b^{-1}w_2$ 
+
+\begin{pf}
+    To begin, find a letter $a$ such that there are fewest other letters between $a$ and $a^{-1}$, then if a letter $b$ is between $a$ and $a^{-1}$, then $b^{-1}$ is not bwetween $a$ and $a^{-1}$. By relabeling we can get $w_1 = y_0ay_1by_2a^{-1}y_3b^{-1}y_4$.
+\end{pf}
+
+\begin{itemize}
+    \item If $w = w_0ccaba^{-1}b^{-1}w_1 \sim w_0aabbccw_1$
+\end{itemize}
+
+\begin{pf}
+    $w = [cc][ab][ba]^{-1}[w_1w_0] \sim [ab]c[ba]c[w1w_0] = [a]b[c]b[acw_1w_0] \sim bb[a][c]^{-1}[acw_1w_0] = [bb]a[c]^{-1}a[cw_1w_0] \sim aa[bb][c][c_1w_1w_0]$
+\end{pf}    
+
+\noindent
+Consequence: if one letter in $w$ appears without its inverse, then $w \sim (a_1a_1)(a_2a_2) \cdots (a_ka_k)$. If $w$ is of torus type, then by lemma 2 repeated, we get $w = [a_1b_1][a_2, b_2] \cdots [a_k,b_k] 
